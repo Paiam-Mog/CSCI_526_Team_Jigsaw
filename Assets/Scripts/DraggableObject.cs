@@ -9,6 +9,8 @@ public class DraggableObject : MonoBehaviour
     public Vector2 draggableAxis;
     public float draggableMax;
     public float draggableMin;
+    private Vector2 amtToMove;
+    private Vector2 directionToMove;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +48,12 @@ public class DraggableObject : MonoBehaviour
 
         if (dragging)
         {
+            directionToMove = inputData.inputPositionDeltaUnitVector;
+            amtToMove = inputData.inputPositionDeltaVector;
 
+            Vector2 movingVector = amtToMove * directionToMove;
+
+            thisTransform.position = inputData.inputPosition + movingVector;
         }
     }
 
@@ -54,5 +61,15 @@ public class DraggableObject : MonoBehaviour
     {
         Debug.Log("StopDragging:" + inputData.inputPosition);
         dragging = false;
+    }
+
+    private void DisplayInputData(InputHelper.InputData currentInputData)
+    {
+        Debug.Log(
+            "Input Position: " + currentInputData.inputPosition +
+            "\nPosition Delta Vector: <" + currentInputData.inputPositionDeltaVector.x + ", " + currentInputData.inputPositionDeltaVector.y + ">" +
+            "\nPosition Delta Unit Vector: <" + currentInputData.inputPositionDeltaUnitVector.x + ", " + currentInputData.inputPositionDeltaUnitVector.y + ">" +
+            "\nInput State: " + currentInputData.inputState
+        );
     }
 }
