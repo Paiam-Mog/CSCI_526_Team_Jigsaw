@@ -9,12 +9,17 @@ public class DraggableObject : MonoBehaviour
     public Vector2 draggableAxis;
     public float draggableMax;
     public float draggableMin;
-    private Vector2 amtToMove;
-    private Vector2 directionToMove;
+    private RectTransform thisTransform;
+    private float currentObjectPosition = 0;
+    private Vector2 initialPosition;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        thisTransform = (RectTransform)transform;
+        draggableAxis = draggableAxis.normalized;
+        initialPosition = thisTransform.position;
         InputHelper.onInputDown += StartDragging;
         InputHelper.onInputMove += UpdateDragging;
         InputHelper.onInputUp += StopDragging;
@@ -30,8 +35,6 @@ public class DraggableObject : MonoBehaviour
     {
         Debug.Log("StartDragging:" + inputData.inputPosition);
 
-        RectTransform thisTransform = (RectTransform)transform;
-
         if (InputHelper.CheckInputPositionInBounds(thisTransform))
         {
             dragging = true;
@@ -40,7 +43,6 @@ public class DraggableObject : MonoBehaviour
 
     private void UpdateDragging(InputHelper.InputData inputData)
     {
-        RectTransform thisTransform = (RectTransform)transform;
         if (!InputHelper.CheckInputPositionInBounds(thisTransform))
         {
             StopDragging(inputData);
@@ -48,12 +50,9 @@ public class DraggableObject : MonoBehaviour
 
         if (dragging)
         {
-            directionToMove = inputData.inputPositionDeltaUnitVector;
-            amtToMove = inputData.inputPositionDeltaVector;
+            float amt = Vector3.Dot(inputData.inputPositionDeltaVector, draggableAxis);
+            MoveObjectAlongAxis(amt);
 
-            Vector2 movingVector = amtToMove * directionToMove;
-
-            thisTransform.position = inputData.inputPosition + movingVector;
         }
     }
 
@@ -63,13 +62,19 @@ public class DraggableObject : MonoBehaviour
         dragging = false;
     }
 
-    private void DisplayInputData(InputHelper.InputData currentInputData)
+    private void MoveObjectAlongAxis(float amount)
     {
-        Debug.Log(
-            "Input Position: " + currentInputData.inputPosition +
-            "\nPosition Delta Vector: <" + currentInputData.inputPositionDeltaVector.x + ", " + currentInputData.inputPositionDeltaVector.y + ">" +
-            "\nPosition Delta Unit Vector: <" + currentInputData.inputPositionDeltaUnitVector.x + ", " + currentInputData.inputPositionDeltaUnitVector.y + ">" +
-            "\nInput State: " + currentInputData.inputState
-        );
+        currentObjectPosition += amount;
+        if(currentObjectPosition > draggableMax)
+        {
+            currentObjectPosition = draggableMax;
+        }
+        if(currentObjectPosition < draggableMin)
+        {
+            currentObjectPosition = draggableMin;
+        }
+        thisTransform.position = initialPosition + draggableAxis * currentObjectPosition; 
     }
+
+
 }
