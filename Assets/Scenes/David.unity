@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db45e0b1a54a7948aa0f4b330713d3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 1
+  color: 2
   maxDist: 100
   firePos: {fileID: 1229575303}
   collideWithMirror: 0
