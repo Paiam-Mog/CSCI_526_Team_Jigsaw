@@ -23,9 +23,9 @@ public class DraggableObjectNonUi : MonoBehaviour
 
         Debug.Log("working");
 
-        InputHelper.onInputDown += StartDragging;
-        InputHelper.onInputMove += UpdateDragging;
-        InputHelper.onInputUp += StopDragging;
+        InputHelper_NonUI.onInputDown += StartDragging;
+        InputHelper_NonUI.onInputMove += UpdateDragging;
+        InputHelper_NonUI.onInputUp += StopDragging;
     }
 
     // Update is called once per frame
@@ -34,18 +34,19 @@ public class DraggableObjectNonUi : MonoBehaviour
 
     }
 
-    private void StartDragging(InputHelper.InputData inputData)
+    private void StartDragging(InputHelper_NonUI.InputData inputData)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
+        Vector3 wp = inputData.inputPosition;
+        Debug.Log("start dragging:" + wp);
         if (collider.OverlapPoint(wp)) 
         {
             dragging = true;
         }
     }
 
-    private void UpdateDragging(InputHelper.InputData inputData)
+    private void UpdateDragging(InputHelper_NonUI.InputData inputData)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
+        Vector3 wp = inputData.inputPosition;
 
         if (!collider.OverlapPoint(wp))
         {
@@ -60,7 +61,7 @@ public class DraggableObjectNonUi : MonoBehaviour
         }
     }
 
-    private void StopDragging(InputHelper.InputData inputData)
+    private void StopDragging(InputHelper_NonUI.InputData inputData)
     {
         Debug.Log("StopDragging:" + inputData.inputPosition);
         dragging = false;
@@ -69,6 +70,7 @@ public class DraggableObjectNonUi : MonoBehaviour
     private void MoveObjectAlongAxis(float amount)
     {
         Debug.Log("Amount" + amount);
+        
         currentObjectPosition += amount;
         if (currentObjectPosition > draggableMax)
         {
