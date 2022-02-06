@@ -166,18 +166,6 @@ public class InputHelper : MonoBehaviour
         return currentInputData;
 	}
 
-    public static InputData GetNonUiInputData(InputData inputData)
-    {
-        InputData nonuiData;
-
-        nonuiData.inputPosition = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
-        nonuiData.inputPositionDeltaVector = Camera.main.ScreenToWorldPoint(inputData.inputPositionDeltaVector);
-        nonuiData.inputPositionDeltaUnitVector = nonuiData.inputPositionDeltaVector.normalized;
-        nonuiData.inputState = inputData.inputState;
-
-        return nonuiData;
-    }
-
     private void DisplayInputData() {
         Debug.Log(
             "Input Position: " + currentInputData.inputPosition +
