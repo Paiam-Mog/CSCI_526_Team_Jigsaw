@@ -43,6 +43,7 @@ public class DraggableObjectNonUi : MonoBehaviour
     private void UpdateDragging(InputHelperNonUi.InputData inputData)
     {
         if (!collider.OverlapPoint(inputData.inputPosition))
+
         {
             StopDragging(inputData);
         }
