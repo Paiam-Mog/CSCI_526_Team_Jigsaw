@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InputHelper : MonoBehaviour
+public class InputHelperNonUi : MonoBehaviour
 {
     public enum InputState
-	{
+    {
         InputDown,
         InputMove,
         InputUp,
         None
-	}
+    }
 
     [System.Serializable]
     public struct InputData
-	{
-        public Vector2 inputPosition;
-        public Vector2 inputPositionDeltaVector;
-        public Vector2 inputPositionDeltaUnitVector;
+    {
+        public Vector3 inputPosition;
+        public Vector3 inputPositionDeltaVector;
+        public Vector3 inputPositionDeltaUnitVector;
         public InputState inputState;
     }
 
@@ -31,7 +31,7 @@ public class InputHelper : MonoBehaviour
     public static UnityAction<InputData> onInputUp;
 
     private static InputData currentInputData;
-    private Vector2 previousPosition;
+    private Vector3 previousPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -50,20 +50,24 @@ public class InputHelper : MonoBehaviour
     void Update()
     {
         // Handle touch input
-        if (Input.touchCount > 0) {
+        if (Input.touchCount > 0)
+        {
             Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
             // No input recently
-            if (currentInputData.inputState == InputState.None) {
-                currentInputData.inputPosition = touch.position;
-                currentInputData.inputPositionDeltaVector = Vector2.zero;
-                currentInputData.inputPositionDeltaUnitVector = Vector2.zero;
+            if (currentInputData.inputState == InputState.None)
+            {
+                currentInputData.inputPosition = touchPosition;
+                currentInputData.inputPositionDeltaVector = Vector3.zero;
+                currentInputData.inputPositionDeltaUnitVector = Vector3.zero;
                 currentInputData.inputState = InputState.InputDown;
 
                 onInputDown.Invoke(currentInputData);
             }
-            else if (currentInputData.inputState == InputState.InputDown) {
-                Vector2 delta = touch.position - previousPosition;
+            else if (currentInputData.inputState == InputState.InputDown)
+            {
+                Vector3 delta = touchPosition - previousPosition;
 
                 currentInputData.inputPosition = touch.position;
                 currentInputData.inputPositionDeltaVector = delta;
@@ -72,33 +76,38 @@ public class InputHelper : MonoBehaviour
 
                 onInputMove.Invoke(currentInputData);
             }
-            else if (currentInputData.inputState == InputState.InputMove) {
-                Vector2 delta = touch.position - previousPosition;
+            else if (currentInputData.inputState == InputState.InputMove)
+            {
+                Vector3 delta = touchPosition - previousPosition;
                 currentInputData.inputPositionDeltaVector = delta;
                 currentInputData.inputPositionDeltaUnitVector = delta.normalized;
 
                 onInputMove.Invoke(currentInputData);
             }
 
-            previousPosition = touch.position;
+            previousPosition = touchPosition;
         }
-        else if (Input.touchCount == 0) {
-            if (currentInputData.inputState == InputState.InputMove || currentInputData.inputState == InputState.InputDown) {
+        else if (Input.touchCount == 0)
+        {
+            if (currentInputData.inputState == InputState.InputMove || currentInputData.inputState == InputState.InputDown)
+            {
                 currentInputData.inputState = InputState.InputUp;
 
                 OnInputUpEvent.Invoke(currentInputData);
             }
-            else if(currentInputData.inputState == InputState.InputUp) {
+            else if (currentInputData.inputState == InputState.InputUp)
+            {
                 currentInputData.inputPositionDeltaVector = Vector2.zero;
                 currentInputData.inputPositionDeltaUnitVector = Vector2.zero;
                 currentInputData.inputState = InputState.None;
-			}
-		}
+            }
+        }
 
         // Handle Mouse Input
-        Vector2 position = Input.mousePosition;
+        Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
             currentInputData.inputPosition = position;
             currentInputData.inputPositionDeltaVector = Vector2.zero;
             currentInputData.inputPositionDeltaUnitVector = Vector2.zero;
@@ -110,8 +119,9 @@ public class InputHelper : MonoBehaviour
             //Debug.Log("Mouse Input Down");
             //DisplayInputData();
         }
-        else if (Input.GetMouseButton(0)) {
-            Vector2 delta = position - previousPosition;
+        else if (Input.GetMouseButton(0))
+        {
+            Vector3 delta = position - previousPosition;
 
             currentInputData.inputPosition = position;
             currentInputData.inputPositionDeltaVector = delta;
@@ -124,8 +134,9 @@ public class InputHelper : MonoBehaviour
             //Debug.Log("Mouse Input Move");
             //DisplayInputData();
         }
-        else if (Input.GetMouseButtonUp(0)) {
-            Vector2 delta = position - previousPosition;
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Vector3 delta = position - previousPosition;
 
             currentInputData.inputPosition = position;
             currentInputData.inputPositionDeltaVector = delta;
@@ -138,8 +149,9 @@ public class InputHelper : MonoBehaviour
             //Debug.Log("Mouse Input Up");
             //DisplayInputData();
         }
-        else {
-            Vector2 delta = position - previousPosition;
+        else
+        {
+            Vector3 delta = position - previousPosition;
 
             currentInputData.inputPosition = position;
             currentInputData.inputPositionDeltaVector = delta;
@@ -156,29 +168,20 @@ public class InputHelper : MonoBehaviour
     /// </summary>
     /// <param name="rectTransform"></param>
     /// <returns></returns>
-    public static bool CheckInputPositionInBounds(RectTransform rectTransform) {
+    public static bool CheckInputPositionInBounds(RectTransform rectTransform)
+    {
         Vector2 localInputPosition = rectTransform.InverseTransformPoint(currentInputData.inputPosition);
 
         return rectTransform.rect.Contains(localInputPosition);
-	}
-
-    public static InputData GetInputData() {
-        return currentInputData;
-	}
-
-    public static InputData GetNonUiInputData(InputData inputData)
-    {
-        InputData nonuiData;
-
-        nonuiData.inputPosition = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
-        nonuiData.inputPositionDeltaVector = Camera.main.ScreenToWorldPoint(inputData.inputPositionDeltaVector);
-        nonuiData.inputPositionDeltaUnitVector = nonuiData.inputPositionDeltaVector.normalized;
-        nonuiData.inputState = inputData.inputState;
-
-        return nonuiData;
     }
 
-    private void DisplayInputData() {
+    public static InputData GetInputData()
+    {
+        return currentInputData;
+    }
+
+    private void DisplayInputData()
+    {
         Debug.Log(
             "Input Position: " + currentInputData.inputPosition +
             "\nPosition Delta Vector: <" + currentInputData.inputPositionDeltaVector.x + ", " + currentInputData.inputPositionDeltaVector.y + ">" +

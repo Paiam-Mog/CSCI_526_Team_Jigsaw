@@ -21,11 +21,9 @@ public class DraggableObjectNonUi : MonoBehaviour
         initialPosition = this.transform.position;
         collider = GetComponent<Collider2D>();
 
-        Debug.Log("working");
-
-        InputHelper.onInputDown += StartDragging;
-        InputHelper.onInputMove += UpdateDragging;
-        InputHelper.onInputUp += StopDragging;
+        InputHelperNonUi.onInputDown += StartDragging;
+        InputHelperNonUi.onInputMove += UpdateDragging;
+        InputHelperNonUi.onInputUp += StopDragging;
     }
 
     // Update is called once per frame
@@ -34,20 +32,17 @@ public class DraggableObjectNonUi : MonoBehaviour
 
     }
 
-    private void StartDragging(InputHelper.InputData inputData)
+    private void StartDragging(InputHelperNonUi.InputData inputData)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
-        if (collider.OverlapPoint(wp)) 
+        if (collider.OverlapPoint(inputData.inputPosition)) 
         {
             dragging = true;
         }
     }
 
-    private void UpdateDragging(InputHelper.InputData inputData)
+    private void UpdateDragging(InputHelperNonUi.InputData inputData)
     {
-        Vector3 wp = Camera.main.ScreenToWorldPoint(inputData.inputPosition);
-
-        if (!collider.OverlapPoint(wp))
+        if (!collider.OverlapPoint(inputData.inputPosition))
         {
             StopDragging(inputData);
         }
@@ -60,15 +55,13 @@ public class DraggableObjectNonUi : MonoBehaviour
         }
     }
 
-    private void StopDragging(InputHelper.InputData inputData)
+    private void StopDragging(InputHelperNonUi.InputData inputData)
     {
-        Debug.Log("StopDragging:" + inputData.inputPosition);
         dragging = false;
     }
 
     private void MoveObjectAlongAxis(float amount)
     {
-        Debug.Log("Amount" + amount);
         currentObjectPosition += amount;
         if (currentObjectPosition > draggableMax)
         {
