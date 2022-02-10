@@ -573,6 +573,32 @@ MonoBehaviour:
   angleMax: 90
   angleMin: -90
   boxCollider2D: {fileID: 799804508}
+--- !u!1 &895690013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 258067571146726638, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+  m_PrefabInstance: {fileID: 339372468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &895690014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895690013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e45aca1ba4e94e409bb7010efd683a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggableAxis: {x: 1, y: 0}
+  draggableMax: 5
+  draggableMin: 0
+  boxCollider2D: {fileID: 895690017}
+--- !u!61 &895690017 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 258067571146726635, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+  m_PrefabInstance: {fileID: 339372468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1263095592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,3 +656,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+--- !u!1 &1652984688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+  m_PrefabInstance: {fileID: 1263095592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1652984691 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8882622527377762907, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+  m_PrefabInstance: {fileID: 1263095592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1652984694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652984688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e45aca1ba4e94e409bb7010efd683a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggableAxis: {x: 1, y: 0}
+  draggableMax: 5
+  draggableMin: 0
+  boxCollider2D: {fileID: 1652984691}
