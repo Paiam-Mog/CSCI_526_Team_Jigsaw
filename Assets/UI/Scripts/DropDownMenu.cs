@@ -8,9 +8,11 @@ public class DropDownMenu: MonoBehaviour
     public Button dropdownBtn;
     public GameObject Menu;
     public bool isToggled;
+    TopBarScript topBarScript;
 
     void Awake()
     {
+        topBarScript = GetComponent<TopBarScript>();
         isToggled = false;
         gameObject.SetActive(false);
     }
@@ -26,7 +28,10 @@ public class DropDownMenu: MonoBehaviour
         {
             gameObject.SetActive(false);
             isToggled = false;
+
+            topBarScript.ResumeGame();
         }
+
     }
 
     public void CloseMenu()
