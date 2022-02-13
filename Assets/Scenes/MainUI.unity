@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 597273256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ab7403422cbd8419a4e1c147895c1c, type: 3}
+  m_Script: {fileID: 11500000, guid: f0103f73db5e98846ba21a948cffe9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1423355248}
@@ -2200,20 +2200,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1505451069}
-        m_TargetAssemblyTypeName: DropdownButton, Assembly-CSharp
+        m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
         m_MethodName: ToggleMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 597273260}
-        m_TargetAssemblyTypeName: TopBarScript, Assembly-CSharp
-        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
