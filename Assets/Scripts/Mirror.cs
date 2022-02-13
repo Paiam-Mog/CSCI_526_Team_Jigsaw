@@ -11,7 +11,11 @@ public class Mirror : MonoBehaviour
     private LineRenderer laser;
 
     private GameObject collidedMirror;
+    private GameObject collidedTarget;
+
     private bool collideWithMirror = false;
+    private bool collideWithTarget = false;
+
     private void Awake()
     {
         laser = GetComponent<LineRenderer>();
@@ -54,6 +58,19 @@ public class Mirror : MonoBehaviour
                 collidedMirror = _hit.collider.gameObject;
                 Vector2 reflectedDir = Vector2.Reflect(direction, _hit.normal);
                 collidedMirror.GetComponent<Mirror>().ReflectedLaser(_hit.point, reflectedDir, newLaserColor);
+
+                
+            }
+            else if (_hit.transform.tag == "Target")
+            {
+                if (!collideWithTarget)
+                    collideWithTarget = true;
+
+                //Debug.Log("Target Detected");
+                collidedTarget = _hit.collider.gameObject;
+                collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, newLaserColor);
+
+
             }
             else
             {

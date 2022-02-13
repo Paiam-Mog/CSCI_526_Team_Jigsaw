@@ -15,9 +15,11 @@ public class ShootLaser : MonoBehaviour
 
     [SerializeField] // Debug
     private bool collideWithMirror = false;
+    private bool collideWithTarget = false;
 
     private LineRenderer laser;
     private GameObject collidedMirror;
+    private GameObject collidedTarget;
     private void Awake()
     {
         laser = GetComponent<LineRenderer>();
@@ -64,6 +66,17 @@ public class ShootLaser : MonoBehaviour
                 collidedMirror = _hit.collider.gameObject;
                 Vector2 reflectedDir = Vector2.Reflect(transform.right, _hit.normal);
                 collidedMirror.GetComponent<Mirror>().ReflectedLaser(_hit.point, reflectedDir, color);
+            }  
+            else if(_hit.transform.tag == "Target")
+            {
+                if (!collideWithTarget)
+                    collideWithTarget = true;
+
+                //Debug.Log("Target Detected");
+                collidedTarget = _hit.collider.gameObject;
+                collidedTarget.GetComponent<Target>().DetectTarget(_hit.point,color);
+
+
             }
             else 
             {
