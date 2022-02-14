@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 258067571146726635}
   - component: {fileID: 258067571146726633}
   - component: {fileID: 258067571146726634}
+  - component: {fileID: 1548070804}
   m_Layer: 0
   m_Name: Mirror Blue(Temp)
   m_TagString: Mirror
@@ -222,3 +223,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 2
+--- !u!114 &1548070804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258067571146726638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e45aca1ba4e94e409bb7010efd683a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  draggableAxis: {x: 1, y: 0}
+  draggableMax: 5
+  draggableMin: 0
+  boxCollider2D: {fileID: 258067571146726635}
