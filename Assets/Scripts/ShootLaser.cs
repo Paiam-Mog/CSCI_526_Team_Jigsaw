@@ -54,6 +54,11 @@ public class ShootLaser : MonoBehaviour
 
     void Shoot()
     {
+
+        SB_Analytics sb_Analytics = new SB_Analytics();
+
+        sb_Analytics.levelCompleteTime(1,1);
+
         if (Physics2D.Raycast(firePos.position, transform.right))
         {
             RaycastHit2D _hit = Physics2D.Raycast(firePos.position, transform.right);
@@ -91,6 +96,8 @@ public class ShootLaser : MonoBehaviour
         {
             DrawRay(firePos.position, firePos.right * maxDist);
         }
+
+        sb_Analytics.levelCompleteTime(2,20);
     }
 
     void DrawRay(Vector2 startPos, Vector2 endPos)
