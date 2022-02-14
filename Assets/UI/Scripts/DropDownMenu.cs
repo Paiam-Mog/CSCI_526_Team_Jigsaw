@@ -7,26 +7,29 @@ public class DropDownMenu: MonoBehaviour
 {
     public Button dropdownBtn;
     public GameObject Menu;
-    public bool isToggled;
-    TopBarScript topBarScript;
+    public TopBarScript topBarScript;
+
+    [SerializeField]
+    private bool isToggled;
 
     void Awake()
     {
-        topBarScript = GetComponent<TopBarScript>();
         isToggled = false;
-        gameObject.SetActive(false);
+        Menu.SetActive(false);
     }
 
     public void ToggleMenu()
     {
         if(!isToggled)
         {
-            gameObject.SetActive(true);
+            Menu.SetActive(true);
             isToggled = true;
+
+            topBarScript.PauseGame();
         }
         else if (isToggled)
         {
-            gameObject.SetActive(false);
+            Menu.SetActive(false);
             isToggled = false;
 
             topBarScript.ResumeGame();
@@ -36,7 +39,9 @@ public class DropDownMenu: MonoBehaviour
 
     public void CloseMenu()
     {
-        gameObject.SetActive(false);
+        Menu.SetActive(false);
         isToggled = false;
+
+        topBarScript.ResumeGame();
     }
 }

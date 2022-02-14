@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Target : MonoBehaviour
 {
+    public UnityEvent onLevelCompleteEvent;
 
     [SerializeField]
     private ColorState color;
@@ -23,19 +25,12 @@ public class Target : MonoBehaviour
          {
             isCompleted = true;
             OnLevelComplete();
-         }
-        else
-        {
-            Debug.Log("Target Color not matched");
-
-        }
-        
+         }        
     }
 
     public void OnLevelComplete()
     {
-
-        Debug.Log("OnLevelComplete");
+        onLevelCompleteEvent.Invoke();
     }
 
 }
