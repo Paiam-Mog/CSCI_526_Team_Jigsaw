@@ -6,6 +6,7 @@ public class Mirror : MonoBehaviour
 {
     [SerializeField]
     private ColorState color;
+    [SerializeField]
     private ColorState newLaserColor;
 
     private LineRenderer laser;
@@ -24,26 +25,11 @@ public class Mirror : MonoBehaviour
     {
         laser.startWidth = 0.1f;
         laser.endWidth = 0.1f;
-        if (color == ColorState.Red)
-        {
-            laser.startColor = Color.red;
-            laser.endColor = Color.red;
-        }
-        else if (color == ColorState.Blue)
-        {
-            laser.startColor = Color.blue;
-            laser.endColor = Color.blue;
-        }
-        else if (color == ColorState.Green)
-        {
-            laser.startColor = Color.green;
-            laser.endColor = Color.green;
-        }
+        InitLaserColor();
     }
 
     public void ReflectedLaser(Vector2 startPos, Vector2 direction, ColorState inputColor)
     {
-        ChangeColor(inputColor);
         laser.enabled = true;
 
         if (Physics2D.Raycast(startPos, direction))
@@ -86,11 +72,13 @@ public class Mirror : MonoBehaviour
         {
             DrawRay(startPos, direction * 100);
         }
-
+        ChangeColor(inputColor);
     }
 
     public void LaserCollisionExit()
     {
+        newLaserColor = color;
+        InitLaserColor();
         laser.enabled = false;
     }
 
@@ -130,6 +118,25 @@ public class Mirror : MonoBehaviour
                 laser.endColor = Color.white;
                 newLaserColor = ColorState.White;
             }
+        }
+    }
+
+    void InitLaserColor()
+    {
+        if (color == ColorState.Red)
+        {
+            laser.startColor = Color.red;
+            laser.endColor = Color.red;
+        }
+        else if (color == ColorState.Blue)
+        {
+            laser.startColor = Color.blue;
+            laser.endColor = Color.blue;
+        }
+        else if (color == ColorState.Green)
+        {
+            laser.startColor = Color.green;
+            laser.endColor = Color.green;
         }
     }
 }
