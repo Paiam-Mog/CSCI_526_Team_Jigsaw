@@ -641,10 +641,10 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 803b8b64-6b67-43bb-9e71-c95476d282ea
+  cloudProjectId: 7b9359ca-32dd-4ded-b2fe-35b91498bab6
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Prototype (1)
+  projectName: Prototype
   organizationId: rohitputcha
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
