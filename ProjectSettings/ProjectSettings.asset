@@ -541,7 +541,7 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 2
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -641,11 +641,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 7b9359ca-32dd-4ded-b2fe-35b91498bab6
+  cloudProjectId: 423e9745-3122-4f99-bf47-c70e2e01237f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Prototype
-  organizationId: rohitputcha
+  projectName: TeamJigsawLaser
+  organizationId: bhilare
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   virtualTexturingSupportEnabled: 0
