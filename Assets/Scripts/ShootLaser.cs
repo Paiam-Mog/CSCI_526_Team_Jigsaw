@@ -22,7 +22,7 @@ public class ShootLaser : MonoBehaviour
     private GameObject collidedTarget;
     private void Awake()
     {
-        laser = GetComponent<LineRenderer>();
+        laser = GetComponent<LineRenderer>();    
     }
 
     private void Start()
@@ -75,8 +75,6 @@ public class ShootLaser : MonoBehaviour
                 //Debug.Log("Target Detected");
                 collidedTarget = _hit.collider.gameObject;
                 collidedTarget.GetComponent<Target>().DetectTarget(_hit.point,color);
-
-
             }
             else 
             {

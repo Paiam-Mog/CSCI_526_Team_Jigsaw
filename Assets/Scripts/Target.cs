@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine.Events;
 public class Target : MonoBehaviour
 {
     public UnityEvent onLevelCompleteEvent;
+
+    public TopBarScript topBarScript;
 
     [SerializeField]
     private ColorState color;
@@ -25,11 +28,16 @@ public class Target : MonoBehaviour
          {
             isCompleted = true;
             OnLevelComplete();
-         }        
+         }     
     }
 
     public void OnLevelComplete()
     {
+        //Debug.Log("Target Detected");
+        
+        CustomAnalytics analytics = new CustomAnalytics();
+        //Debug.Log($"{topBarScript.GetLevelNumber()}, {topBarScript.GetTimer()}");
+        analytics.levelCompleteTime(topBarScript.GetLevelNumber(), topBarScript.GetTimer());
         onLevelCompleteEvent.Invoke();
     }
 

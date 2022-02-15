@@ -13,6 +13,16 @@ public class TopBarScript : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI levelText;
 
+    public float GetTimer()
+    {
+        return startTime;
+    }
+
+    public int GetLevelNumber()
+    {
+        return scene.buildIndex;
+    }
+
     void Start()
     {
         scene = SceneManager.GetActiveScene();
