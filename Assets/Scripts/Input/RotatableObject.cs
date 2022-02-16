@@ -11,6 +11,8 @@ public class RotatableObject : MonoBehaviour
         MinAndMax
     }
 
+    public LaserInteractionCount laserInteractionCount;
+
     [Header("Rotation Variables")]
     public RotationStyle rotationBlockMethod;
     public int Sensitivity = 1;
@@ -29,6 +31,7 @@ public class RotatableObject : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+        // laserInteractionCount = new LaserInteractionCount();
         InputHelper.onInputDown += StartRotating;
         InputHelper.onInputMove += UpdateRotating;
         InputHelper.onInputUp += StopRotating;
@@ -37,6 +40,10 @@ public class RotatableObject : MonoBehaviour
     private void StartRotating(InputHelper.InputData inputData) {
         if (CheckPoint()) {
             rotating = true;
+
+            Debug.Log("StartRotating");
+            laserInteractionCount.incrementLaserTouchCount();
+
             Vector2 toMouse = inputData.inputPosition - (Vector2)transform.position;
             currentAngle = Vector3.SignedAngle(Vector2.up, toMouse.normalized, Vector3.forward);
 
