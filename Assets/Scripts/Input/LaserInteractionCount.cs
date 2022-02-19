@@ -11,17 +11,18 @@ public class LaserInteractionCount : MonoBehaviour {
 
 
     public int getLaserTouchCount() {
-        Debug.Log(laserTouchCount + "in getLaserTouchCount");
+        Debug.Log(laserTouchCount + " in getLaserTouchCount");
         return laserTouchCount;
     }
 
     public void setLaserTouchCount(int count) {
+        Debug.Log(count + " in setLaserTouchCount");
         laserTouchCount = count;
     }
 
     public void incrementLaserTouchCount() {
         laserTouchCount++;
-        Debug.Log(laserTouchCount + "in incrementLaserTouchCount");
+        Debug.Log(laserTouchCount + " in incrementLaserTouchCount");
     }
 
 

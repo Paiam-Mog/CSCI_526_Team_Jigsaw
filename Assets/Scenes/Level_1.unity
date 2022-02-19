@@ -343,6 +343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4462685340181257502, guid: 41b34aff9019be141921fad888649777, type: 3}
+      propertyPath: laserInteractionCount
+      value: 
+      objectReference: {fileID: 7215215126277440732}
     - target: {fileID: 4462685340181257503, guid: 41b34aff9019be141921fad888649777, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -391,7 +395,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6240406125108204909, guid: 41b34aff9019be141921fad888649777, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 41b34aff9019be141921fad888649777, type: 3}
 --- !u!4 &704947777 stripped
 Transform:
@@ -1369,6 +1374,10 @@ PrefabInstance:
       propertyPath: topBarScript
       value: 
       objectReference: {fileID: 412963335}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: laserInteractionCount
+      value: 
+      objectReference: {fileID: 7215215126277440732}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1

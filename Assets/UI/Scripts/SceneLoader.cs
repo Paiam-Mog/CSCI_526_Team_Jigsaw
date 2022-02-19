@@ -8,6 +8,8 @@ public class SceneLoader : MonoBehaviour
     Scene scene;
     string currentSceneName;
 
+    public LaserInteractionCount laserInteractionCount;
+
     void Awake()
     {
         scene = SceneManager.GetActiveScene();
@@ -16,11 +18,15 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene() //assign this play / complete level
     {
+        if(scene.buildIndex!=0) {
+            laserInteractionCount.setLaserTouchCount(0);
+        }
         SceneManager.LoadScene(scene.buildIndex + 1);
     }
 
     public void QuitToMainMenu() //assign this play / complete level
     {
+        laserInteractionCount.setLaserTouchCount(0);
         SceneManager.LoadScene(0);
     }
 
@@ -31,6 +37,9 @@ public class SceneLoader : MonoBehaviour
 
     public void Quit() //assign this to quit button
     {
+        if(scene.buildIndex!=0) {
+            laserInteractionCount.setLaserTouchCount(0);
+        }
         Application.Quit();
     }
 }
