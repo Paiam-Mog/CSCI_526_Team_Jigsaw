@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour
 {
 
     private float startTime;
+    
     string currentSceneName;
 
     public TextMeshProUGUI timerText;
@@ -32,6 +33,11 @@ public class GameManagerScript : MonoBehaviour
     {
         startTime += Time.deltaTime;
         DisplayTime();
+
+        if(Input.GetKey(KeyCode.X))
+        {
+            GetTime();
+        }
     }
 
     public void LoadNextScene() //assign this play / complete level
@@ -66,6 +72,19 @@ public class GameManagerScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(startTime / 60);
         float seconds = Mathf.FloorToInt(startTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+    }
+
+    public string GetTime()
+    {
+
+        float minutes = Mathf.FloorToInt(startTime / 60);
+        float seconds = Mathf.FloorToInt(startTime % 60);
+
+        string tempTime = minutes + " : " + seconds;
+
+        Debug.Log(tempTime);
+        return tempTime;
     }
 
     public void PauseGame()

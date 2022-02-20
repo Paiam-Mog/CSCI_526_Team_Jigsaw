@@ -18,7 +18,7 @@ public class DropDownMenu: MonoBehaviour
     {
         isToggled = false;
         Menu.SetActive(false);
-        gm.GetComponent<GameManagerScript>();
+        
     }
 
     public void ToggleMenu()
