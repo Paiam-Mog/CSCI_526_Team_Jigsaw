@@ -11,14 +11,11 @@ public class DropDownMenu: MonoBehaviour
     [SerializeField] 
     GameManagerScript gm;
 
-    [SerializeField]
     private bool isToggled;
 
     void Awake()
     {
-        isToggled = false;
-        Menu.SetActive(false);
-        
+        CloseMenu();
     }
 
     public void ToggleMenu()

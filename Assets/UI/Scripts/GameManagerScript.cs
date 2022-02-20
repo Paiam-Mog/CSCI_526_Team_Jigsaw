@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     private float startTime;
+    private int starCount;
 
     Color star1Color;
     Color star2Color;
@@ -30,7 +31,9 @@ public class GameManagerScript : MonoBehaviour
         currentSceneName = scene.name;
 
         TextMeshPro textmeshPro = GetComponent<TextMeshPro>();
+
         startTime = 0f;
+        starCount = 0;
         levelText.text = "Level " + scene.buildIndex;
 
         Time.timeScale = 1;
@@ -39,14 +42,54 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         startTime += Time.deltaTime;
-        DisplayTime();
 
+        DisplayTime();
         DisplayStars();
 
         if (Input.GetKey(KeyCode.X))
         {
             GetTime();
         }
+    }
+
+    void DisplayTime()
+    {
+        float minutes = Mathf.FloorToInt(startTime / 60);
+        float seconds = Mathf.FloorToInt(startTime % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+    }
+
+    void DisplayStars()
+    {
+        if (startTime <= 10.0f)
+        {
+            star1.enabled = true;
+            star2.enabled = true;
+            star3.enabled = true;
+            starCount = 3;
+        }
+        else if (10.0f <= startTime && startTime < 20.0f)
+        {
+            star1.enabled = false;
+            starCount = 2;
+
+        }
+        else if (20.0f <= startTime && startTime < 30.0f)
+        {
+            star2.enabled = false;
+            starCount = 1;
+        }
+        else
+        {
+            star3.enabled = false;
+            starCount = 0;
+        }
+    }
+
+    public int GetStarCount()
+    {
+        return starCount;
     }
 
     public void LoadNextScene() //assign this play / complete level
@@ -67,37 +110,6 @@ public class GameManagerScript : MonoBehaviour
     public void Quit() //assign this to quit button
     {
         Application.Quit();
-    }
-
-    void DisplayTime()
-    {
-        float minutes = Mathf.FloorToInt(startTime / 60);
-        float seconds = Mathf.FloorToInt(startTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-    }
-
-    void DisplayStars()
-    {
-        if(startTime <= 10.0f)
-        {
-            star1.enabled = true;
-            star2.enabled = true;
-            star3.enabled = true;
-        }
-        else if (10.0f <= startTime && startTime < 20.0f)
-        {
-            star1.enabled = false;
-
-        }
-        else if (20.0f <= startTime && startTime < 30.0f)
-        {
-            star2.enabled = false;
-        }
-        else
-        {
-            star3.enabled = false;
-        }
     }
 
     public void PauseGame()
