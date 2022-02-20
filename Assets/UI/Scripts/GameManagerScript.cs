@@ -7,14 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-
     private float startTime;
-    
+
+    Color star1Color;
+    Color star2Color;
+    Color star3Color;
+
     string currentSceneName;
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI levelText;
-    
+
+    [SerializeField] Image star1;
+    [SerializeField] Image star2;
+    [SerializeField] Image star3;
+
     private Scene scene;
 
     void Awake()
@@ -34,7 +41,9 @@ public class GameManagerScript : MonoBehaviour
         startTime += Time.deltaTime;
         DisplayTime();
 
-        if(Input.GetKey(KeyCode.X))
+        DisplayStars();
+
+        if (Input.GetKey(KeyCode.X))
         {
             GetTime();
         }
@@ -60,13 +69,6 @@ public class GameManagerScript : MonoBehaviour
         Application.Quit();
     }
 
-    public Scene GetScene()
-    {
-        Debug.Log("Scene " + scene.buildIndex);
-
-        return SceneManager.GetActiveScene();
-    }
-
     void DisplayTime()
     {
         float minutes = Mathf.FloorToInt(startTime / 60);
@@ -75,16 +77,27 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
-    public string GetTime()
+    void DisplayStars()
     {
+        if(startTime <= 10.0f)
+        {
+            star1.enabled = true;
+            star2.enabled = true;
+            star3.enabled = true;
+        }
+        else if (10.0f <= startTime && startTime < 20.0f)
+        {
+            star1.enabled = false;
 
-        float minutes = Mathf.FloorToInt(startTime / 60);
-        float seconds = Mathf.FloorToInt(startTime % 60);
-
-        string tempTime = minutes + " : " + seconds;
-
-        Debug.Log(tempTime);
-        return tempTime;
+        }
+        else if (20.0f <= startTime && startTime < 30.0f)
+        {
+            star2.enabled = false;
+        }
+        else
+        {
+            star3.enabled = false;
+        }
     }
 
     public void PauseGame()
@@ -100,6 +113,22 @@ public class GameManagerScript : MonoBehaviour
     public float GetTimer()
     {
         return startTime;
+    }
+
+    public float GetTime()
+    {
+        float tempTime = startTime;
+
+        Debug.Log(tempTime);
+
+        return tempTime;
+    }
+
+    public Scene GetScene()
+    {
+        Debug.Log("Scene " + scene.buildIndex);
+
+        return SceneManager.GetActiveScene();
     }
 
     public int GetLevelNumber()
