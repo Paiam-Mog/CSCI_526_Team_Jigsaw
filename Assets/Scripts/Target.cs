@@ -9,7 +9,8 @@ public class Target : MonoBehaviour
 {
     public UnityEvent onLevelCompleteEvent;
 
-    public TopBarScript topBarScript;
+    [SerializeField] 
+    GameManagerScript gm;
 
     public LaserInteractionCount laserInteractionCount;
 
@@ -39,12 +40,12 @@ public class Target : MonoBehaviour
         //Debug.Log("Target Detected");
         CustomAnalytics analytics = new CustomAnalytics();
         // Debug.Log($"{topBarScript.GetLevelNumber()}, {topBarScript.GetTimer()}");
-        analytics.levelCompleteTime(topBarScript.GetLevelNumber(), topBarScript.GetTimer());
+        analytics.levelCompleteTime(gm.GetLevelNumber(), gm.GetTimer());
 
         laserInteractionCount = FindObjectOfType<LaserInteractionCount>();
 
         // Debug.Log($"{topBarScript.GetLevelNumber()}, {laserInteractionCount.getLaserTouchCount()}");
-        analytics.levelLaserInteractionCount(topBarScript.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
+        analytics.levelLaserInteractionCount(gm.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
         onLevelCompleteEvent.Invoke();
     }
 
