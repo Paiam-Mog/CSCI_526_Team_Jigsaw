@@ -56,7 +56,10 @@ public class ShootLaser : MonoBehaviour
     {
         if (Physics2D.Raycast(firePos.position, transform.right))
         {
+            //Debug.Log("Transform Shoot: " + firePos.position);
+
             RaycastHit2D _hit = Physics2D.Raycast(firePos.position, transform.right);
+            Debug.Log("ShootLaser Hit" + _hit.point);
             DrawRay(firePos.position, _hit.point);
             if (_hit.transform.tag == "Mirror")
             {
@@ -65,8 +68,9 @@ public class ShootLaser : MonoBehaviour
 
                 collidedMirror = _hit.collider.gameObject;
                 Vector2 reflectedDir = Vector2.Reflect(transform.right, _hit.normal);
+                Debug.Log("Shoot Direction" + reflectedDir);
                 collidedMirror.GetComponent<Mirror>().ReflectedLaser(_hit.point, reflectedDir, color);
-            }  
+            }
             else if(_hit.transform.tag == "Target")
             {
                 if (!collideWithTarget)
