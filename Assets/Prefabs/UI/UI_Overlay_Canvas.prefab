@@ -491,7 +491,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1174,7 +1174,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1724,7 +1724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2228854617743465225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1771,7 +1771,7 @@ GameObject:
   - component: {fileID: 6423159259131038391}
   - component: {fileID: 5536516405837560740}
   m_Layer: 5
-  m_Name: Star2
+  m_Name: EarnedStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 8719229246681553286}
   - component: {fileID: 3248390167670664711}
   m_Layer: 5
-  m_Name: Star1
+  m_Name: EarnedStar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3256,7 +3256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7920056396849166764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3300,7 +3300,6 @@ MonoBehaviour:
   dropdownBtn: {fileID: 7920056396795909843}
   Menu: {fileID: 1596237253039878043}
   gm: {fileID: 0}
-  isToggled: 0
 --- !u!114 &581237368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3484,7 +3483,6 @@ MonoBehaviour:
   dropdownBtn: {fileID: 7920056396795909843}
   Menu: {fileID: 2046889773228398018}
   gm: {fileID: 0}
-  isToggled: 0
 --- !u!1 &7920056397051690992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5550,7 +5548,7 @@ GameObject:
   - component: {fileID: 7494227531873895976}
   - component: {fileID: 5544548635292412917}
   m_Layer: 5
-  m_Name: Star3
+  m_Name: EarnedStar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

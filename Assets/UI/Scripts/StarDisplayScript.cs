@@ -25,6 +25,8 @@ public class StarDisplayScript : MonoBehaviour
 
     void UpdateStarCount()
     {
+        gm.GetStarCount();
+
         if (gm.GetStarCount() == 1)
         {
             earnedStar1.enabled = true;
@@ -34,20 +36,15 @@ public class StarDisplayScript : MonoBehaviour
         else if (gm.GetStarCount() == 2)
         {
             earnedStar1.enabled = true;
-            earnedStar2.enabled = false;
+            earnedStar2.enabled = true;
             earnedStar3.enabled = false;
         }
         else if (gm.GetStarCount() == 3)
         {
             earnedStar1.enabled = true;
-            earnedStar2.enabled = false;
-            earnedStar3.enabled = false;
+            earnedStar2.enabled = true;
+            earnedStar3.enabled = true;
         }
-        else
-        {
-            earnedStar1.enabled = false;
-            earnedStar2.enabled = false;
-            earnedStar3.enabled = false;
-        }
+
     }
 }

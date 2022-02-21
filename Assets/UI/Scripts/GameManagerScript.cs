@@ -62,7 +62,7 @@ public class GameManagerScript : MonoBehaviour
 
     void DisplayStars()
     {
-        if (startTime <= 10.0f)
+        if (startTime < 10.0f)
         {
             star1.enabled = true;
             star2.enabled = true;
@@ -72,18 +72,17 @@ public class GameManagerScript : MonoBehaviour
         else if (10.0f <= startTime && startTime < 20.0f)
         {
             star1.enabled = false;
+            star2.enabled = true;
+            star3.enabled = true;
             starCount = 2;
 
         }
         else if (20.0f <= startTime && startTime < 30.0f)
         {
+            star1.enabled = false;
             star2.enabled = false;
-            starCount = 1;
-        }
-        else
-        {
-            star3.enabled = false;
-            starCount = 0;
+            star3.enabled = true;
+            starCount -= 1;
         }
     }
 
