@@ -40,7 +40,6 @@ public class LaserDataManager : MonoBehaviour
     public UnityAction onLaserDataGenerated;    // need to include UnityEngine.Events library
     private GameObject collidedMirror;
     private GameObject collidedTarget;
-    private bool flagMirrorReflection;
     private List<LaserData> laserDatas = new List<LaserData>();
     private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
     private int maxCount = 10;
@@ -50,7 +49,7 @@ public class LaserDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flagMirrorReflection = false;
+
         //LaserData currentLaser = new LaserData();
         //currentLaser.startPoint = firePosition.position;
         //initialLaserDirection = transform.right;
@@ -76,15 +75,6 @@ public class LaserDataManager : MonoBehaviour
         Debug.Log("step:5" + count);
         Debug.Log("step:6" + _dir);
         RaycastHit2D _hit;
-        if (flagMirrorReflection)
-        {
-            _hit = Physics2D.Raycast(initialLaserPoint + initialLaserDirection * 1.1f, initialLaserDirection);
-        }
-        else
-        {
-            _hit = Physics2D.Raycast(firePosition.position, transform.right);
-            //initialLaserPosition = firePosition.position
-        }
 
         if (!flagMirrorReflection)
         {
