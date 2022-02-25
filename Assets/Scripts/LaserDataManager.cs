@@ -44,12 +44,33 @@ public class LaserDataManager : MonoBehaviour
     private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
     private int maxCount = 10;
 
+    private LineRenderer laser;
 
 
     // Start is called before the first frame update
     void Start()
     {
+     /*   laser = GetComponent<LineRenderer>();
+        
+        laser.startWidth = 0.1f;
+            laser.endWidth = 0.1f;
 
+            if (color == ColorState.Red)
+            {
+                laser.startColor = Color.red;
+                laser.endColor = Color.red;
+            }
+            else if (color == ColorState.Blue)
+            {
+                laser.startColor = Color.blue;
+                laser.endColor = Color.blue;
+            }
+            else if (color == ColorState.Green)
+            {
+                laser.startColor = Color.green;
+                laser.endColor = Color.green;
+            } */
+        
         //LaserData currentLaser = new LaserData();
         //currentLaser.startPoint = firePosition.position;
         //initialLaserDirection = transform.right;
@@ -72,16 +93,16 @@ public class LaserDataManager : MonoBehaviour
 
     public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, int count)
     {
-        Debug.Log("step:5" + count);
-        Debug.Log("step:6" + _dir);
+        Debug.Log("step:5 " + count);
+        Debug.Log("step:6 " + _dir);
         RaycastHit2D _hit;
 
         if (!flagMirrorReflection)
         {
             _hit = Physics2D.Raycast(_startPos, dir);
             float distance = Vector2.Distance(_startPos, _hit.point);
-            Debug.DrawRay(_startPos, _dir * distance, Color.red);
-            Debug.Log("tag is" + _hit.transform.tag);
+            Debug.DrawRay(_startPos, _dir * distance);
+            Debug.Log("tag is: " + _hit.transform.tag);
             if (count <= maxCount)
             {
                 count++;
@@ -158,4 +179,9 @@ public class LaserDataManager : MonoBehaviour
         return reflectionPoints;
     }
 
+    void DrawRay(Vector2 startPos, Vector2 endPos)
+    {
+        laser.SetPosition(0, startPos);
+        laser.SetPosition(1, endPos);
+    }
 }
