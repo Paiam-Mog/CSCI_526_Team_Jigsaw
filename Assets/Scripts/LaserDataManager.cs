@@ -14,14 +14,11 @@ public class LaserDataManager : MonoBehaviour
     [SerializeField]
     private Transform firepos;
 
-    private bool flagMirrorReflection = false;
-
-
     public class LaserData
     {
         public Vector2 startPoint;
         public Vector2 endPoint;
-        public ColorState laserColor;
+        // public ColorState laserColor;
         //ReflectionPoint originReflection;
         //ReflectionPoint endingReflection;
     }
@@ -40,8 +37,13 @@ public class LaserDataManager : MonoBehaviour
     public UnityAction onLaserDataGenerated;    // need to include UnityEngine.Events library
     private GameObject collidedMirror;
     private GameObject collidedTarget;
+
+    [SerializeField]
     private List<LaserData> laserDatas = new List<LaserData>();
+
+    [SerializeField]
     private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
+
     private int maxCount = 10;
 
 
@@ -50,15 +52,6 @@ public class LaserDataManager : MonoBehaviour
     void Start()
     {
 
-        //LaserData currentLaser = new LaserData();
-        //currentLaser.startPoint = firePosition.position;
-        //initialLaserDirection = transform.right;
-
-        // LaserData currentLaser = new LaserData();
-        //currentLaser.startPoint = initialLaserPoint.position;
-        //  initialLaserDirection = transform.right;
-        // GenerateLaserData();
-      //  InitLaserColor();
     }
 
     // Update is called once per frame
@@ -67,103 +60,73 @@ public class LaserDataManager : MonoBehaviour
 
         startPos = firepos.position;
         dir = firepos.right;
-        Debug.Log("update startposition" + startPos);
-        Debug.Log("update direction:" + dir);
-        GenerateLaserData(startPos, dir, 1);
+        laserDatas = new List<LaserData>();
+        reflectionPoints = new List<ReflectionPoint>();
+        GenerateLaserData(startPos, dir, null, 1);
     }
 
-    public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, int count)
+    public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, ReflectionPoint prev_reflection, int count)
     {
        
         RaycastHit2D _hit;
 
-        if (!flagMirrorReflection)
+        _hit = Physics2D.Raycast(_startPos+ _dir * 1.1f, _dir);
+        if (_hit.collider != null)
         {
-            _hit = Physics2D.Raycast(_startPos+ _dir * 1.1f, _dir);
-            if (_hit.collider != null)
-            {
-                float distance = Vector2.Distance(_startPos, _hit.point);
-                Debug.Log("start position:" + _startPos);
-                Debug.Log("hit point" + _hit.point);
-                Debug.Log("distance" + distance);
-                // Debug.Log("end Position:" + _dir * distance);
+            LaserData laser = new LaserData();
+            laser.startPoint = _startPos;
+            laser.endPoint = _hit.point;
 
-                //Physics2D.Raycast(startPos + direction * 1.1f, direction)
-                Debug.DrawRay(_startPos, _dir * distance, Color.red);
-                Debug.Log("tag is" + _hit.transform.tag);
-                if (count <= maxCount)
+            if(prev_reflection != null){
+                prev_reflection.exitLaser = laser;
+                reflectionPoints.Add(prev_reflection);
+            }
+
+            laserDatas.Add(laser);
+
+            float distance = Vector2.Distance(_startPos, _hit.point);
+            Debug.DrawRay(_startPos, _dir * distance, Color.red);
+
+            if (count <= maxCount)
+            {
+                count++;
+                if (_hit.transform.tag == "Mirror")
                 {
-                    count++;
-                    if (_hit.transform.tag == "Mirror")
-                    {
-                        Vector2 reflectedDir = Vector2.Reflect(_dir, _hit.normal);
-                        GenerateLaserData(_hit.point, reflectedDir, count);
-                        // Debug.Log("tag " + count);
-                    }
-                    else if (_hit.transform.tag == "Target")
-                    {
-                        collidedTarget = _hit.collider.gameObject;
-                        collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
-                    }
-                    else
-                    {
-                        Debug.Log("No Surface");
-                    }
+                    Vector2 reflectedDir = Vector2.Reflect(_dir, _hit.normal);
 
+                    ReflectionPoint reflectionPoint = new ReflectionPoint();
+                    reflectionPoint.position = _hit.point;
+                    reflectionPoint.entryLaser = laser;
 
+                    GenerateLaserData(_hit.point, reflectedDir, reflectionPoint, count);
                 }
+                else if (_hit.transform.tag == "Target")
+                {
+                    collidedTarget = _hit.collider.gameObject;
+                    collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
+                }
+                else
+                {
+                    Debug.Log("No Surface");
+                }
+
+
             }
-            else
-            {
-                Debug.Log("collider null");
-            }
-
-
-            //ChangeColor(inputColor);
-            //laser.laserColor = color;
-            //laser.endPoint = _hit.point;
-
-
+        }
+        else
+        {
+            Debug.Log("collider null");
         }
 
-
-        
-        //LaserData reflectedLaser = new LaserData();
-        // reflectedLaser.startPoint = _hit.point;
-
-        // Debug.Log("Reflected Laser" + reflectedLaser.startPoint);
-
-        // ReflectionPoint reflectionPoint = new ReflectionPoint();
-
-        // reflectionPoint.position = _hit.point;
-        //reflectionPoint.entryLaser = laser;
-        //reflectionPoint.exitLaser = reflectedLaser;
-        // laserDatas.Add(laser);
-        //reflectionPoints.Add(reflectionPoint);
-
-
-
-        //foreach (var x in reflectionPoints)
-        //{
-        //  Debug.Log(x.ToString());
-        //}
-
-        //            GenerateLaserData();
-
-
-
-        //else
-        //{
-        //    if (collideWithMirror)
-        //    {
-        //        collidedMirror.GetComponent<Mirror>().LaserCollisionExit();
-        //        collideWithMirror = false;
-        //    }
-        //}
+        // int c = 1;
+        // foreach (var x in laserDatas)
+        // {
+        //  Debug.Log("Reflection " + c + " " + x.startPoint + " " + x.endPoint);
+        //  c++;
+        // }
+ 
         //onLaserDataGenerated.Invoke();
    
-
-    
     }
 
 
