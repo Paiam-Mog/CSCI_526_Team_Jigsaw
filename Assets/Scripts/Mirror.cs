@@ -57,8 +57,6 @@ public class Mirror : MonoBehaviour
                 //Debug.Log("Target Detected");
                 collidedTarget = _hit.collider.gameObject;
                 collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, newLaserColor);
-
-
             }
             else
             {
