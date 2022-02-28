@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 4462685339569237725}
+    - target: {fileID: 7920056396849166771, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7920056396981013953, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_Name
       value: UI_Overlay_Canvas
@@ -731,6 +735,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 4462685339569237725}
+    - target: {fileID: 7920056397034211301, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7920056397236621900, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
