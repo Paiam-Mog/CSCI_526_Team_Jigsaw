@@ -23,6 +23,9 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Image star2;
     [SerializeField] Image star3;
 
+    [SerializeField] float maxTimeFor3Stars;
+    [SerializeField] float maxTimeFor2Stars;
+
     private Scene scene;
 
     void Awake()
@@ -67,14 +70,18 @@ public class GameManagerScript : MonoBehaviour
 
     void DisplayStars()
     {
-        if (startTime < 10.0f)
+        if (star1 == null || star2 == null || star3 == null) {
+            return;
+		}
+
+        if (startTime <= maxTimeFor3Stars && starCount == 0)
         {
             star1.enabled = true;
             star2.enabled = true;
             star3.enabled = true;
             starCount = 3;
         }
-        else if (10.0f <= startTime && startTime < 20.0f)
+        else if (maxTimeFor3Stars < startTime && startTime <= maxTimeFor2Stars && starCount == 3)
         {
             star1.enabled = false;
             star2.enabled = true;
@@ -82,12 +89,12 @@ public class GameManagerScript : MonoBehaviour
             starCount = 2;
 
         }
-        else if (20.0f <= startTime && startTime < 30.0f)
+        else if (maxTimeFor2Stars < startTime && starCount == 2)
         {
             star1.enabled = false;
             star2.enabled = false;
             star3.enabled = true;
-            starCount -= 1;
+            starCount = 1;
         }
     }
 

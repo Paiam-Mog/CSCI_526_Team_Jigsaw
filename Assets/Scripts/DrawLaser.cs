@@ -15,6 +15,8 @@ public class DrawLaser : MonoBehaviour
 
     public List<LaserDataManager.ReflectionPoint> reflectionPoints;
 
+    public Dictionary<GameObject, int> interactingMirrorsCount;
+
     private GameObject[] mirrors;
 
     // Use this for initialization
@@ -29,8 +31,18 @@ public class DrawLaser : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        interactingMirrorsCount = new Dictionary<GameObject, int>();
         laserDatas = laserDataManager.GetLaserDatas();
         reflectionPoints = laserDataManager.GetReflectionPoints();
+        //foreach (var reflectionPoint in reflectionPoints)
+        //{
+          //  if (!interactingMirrorsCount.ContainsKey(reflectionPoint.mirror))
+          //  {
+          //      interactingMirrorsCount[reflectionPoint.mirror] = 0;
+          //  }
+
+          //  interactingMirrorsCount[reflectionPoint.mirror]++;
+        //}
 
         if (laserDatas.Count > 0)
         {
