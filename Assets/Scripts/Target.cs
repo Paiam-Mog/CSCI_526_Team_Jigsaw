@@ -16,6 +16,9 @@ public class Target : MonoBehaviour
     [SerializeField]
     private ColorState color;
 
+    public SpriteRenderer targetNodeSprite;
+    public ColorTable colorTable;
+
     private GameObject collidedTarget;
     private bool collideWithTarget;
     private bool isCompleted;
@@ -24,6 +27,11 @@ public class Target : MonoBehaviour
     {
         collideWithTarget = false;
         isCompleted = false;
+
+        if (targetNodeSprite != null && colorTable != null)
+        {
+            targetNodeSprite.color = colorTable.GetColor(color);
+        }
     }
     public void DetectTarget(Vector2 startPos, ColorState inputColor)
     {
