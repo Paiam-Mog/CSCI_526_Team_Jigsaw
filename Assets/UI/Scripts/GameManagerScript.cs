@@ -34,7 +34,9 @@ public class GameManagerScript : MonoBehaviour
 
         startTime = 0f;
         starCount = 0;
-        levelText.text = "Level " + scene.buildIndex;
+        if (levelText) {
+            levelText.text = "Level " + scene.buildIndex;
+        }
 
         Time.timeScale = 1;
     }
@@ -56,7 +58,10 @@ public class GameManagerScript : MonoBehaviour
     {
         float minutes = Mathf.FloorToInt(startTime / 60);
         float seconds = Mathf.FloorToInt(startTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        if (timerText) {
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
 
     }
 
@@ -95,6 +100,10 @@ public class GameManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(scene.buildIndex + 1);
     }
+
+    public void LoadScene(int sceneIndex) {
+        SceneManager.LoadScene(sceneIndex);
+	}
 
     public void QuitToMainMenu() //assign this play / complete level
     {
