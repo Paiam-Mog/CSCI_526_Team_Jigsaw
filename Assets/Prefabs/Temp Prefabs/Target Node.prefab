@@ -127,6 +127,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  topBarScript: {fileID: 0}
+  gm: {fileID: 0}
   laserInteractionCount: {fileID: 0}
   color: 7
