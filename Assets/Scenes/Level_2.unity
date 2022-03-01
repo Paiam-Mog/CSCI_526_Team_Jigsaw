@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: draggableAxis.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 1552236468}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
       value: Mirror Green(Temp)
@@ -716,6 +720,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+--- !u!1 &1552236467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+  m_PrefabInstance: {fileID: 1552236466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1552236468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552236467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d31f3135eb847d582aacc03a895fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627939183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1188,10 @@ PrefabInstance:
       propertyPath: laserInteractionCount
       value: 
       objectReference: {fileID: 7215215126277440732}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2

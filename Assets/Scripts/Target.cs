@@ -12,7 +12,7 @@ public class Target : MonoBehaviour
     GameManagerScript gm;
 
     public LaserInteractionCount laserInteractionCount;
-    // public MirrorInteractionCount mirrorInteractionCount;
+    public MirrorInteractionCount mirrorInteractionCount;
 
     [SerializeField]
     private ColorState color;
@@ -58,8 +58,13 @@ public class Target : MonoBehaviour
         customAnalytics.levelCompleteStars(gm.GetLevelNumber(), gm.GetStarCount());
         customAnalytics.levelStartedVsFinished(gm.GetLevelNumber(), 0, 1);
 
-        // mirrorInteractionCount = FindObjectOfType<MirrorInteractionCount>();
-        // customAnalytics.levelMirrorInteractionCount(gm.GetLevelNumber(), mirrorInteractionCount.getMirrorTouchCount());
+        MirrorInteractionCount[] mirrorInteractionCountObjects = FindObjectsOfType<MirrorInteractionCount>();
+        int mirrorTouchCount = 0;
+        foreach(MirrorInteractionCount mirrorInteractionCount in mirrorInteractionCountObjects) {
+            mirrorTouchCount += mirrorInteractionCount.getMirrorTouchCount();
+        }
+        customAnalytics.levelMirrorInteractionCount(gm.GetLevelNumber(), mirrorTouchCount);
+
 
         onLevelCompleteEvent.Invoke();
     }

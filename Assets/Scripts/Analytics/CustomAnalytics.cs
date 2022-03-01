@@ -61,9 +61,9 @@ public class CustomAnalytics : MonoBehaviour
         Dictionary<string, object> analyticsData = new Dictionary<string, object>
             {
                 {"Level", level },
-                {"mirrorInteractionCount", mirrorInteractionCount },
+                {"mirrorInteractionCount", count },
             };
-        Debug.Log("levelMirrorInteractionCount " + level + " -> " + mirrorInteractionCount);
+        Debug.Log("levelMirrorInteractionCount " + level + " -> " + count);
         AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelMirrorInteraction", analyticsData);
         Debug.Log("Analytics Result (level v/s mirror interaction): " + analyticsResult);
     }

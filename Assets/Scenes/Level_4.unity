@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: draggableAxis.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 1415235460}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
       value: Mirror Green(Temp)
@@ -367,6 +371,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+--- !u!1 &1415235459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
+  m_PrefabInstance: {fileID: 1415235458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1415235460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415235459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d31f3135eb847d582aacc03a895fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1508563068
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +478,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 1548070803}
     - target: {fileID: 258067571146726636, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -507,6 +532,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+--- !u!1 &1548070802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 258067571146726638, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+  m_PrefabInstance: {fileID: 1548070801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1548070803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548070802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d31f3135eb847d582aacc03a895fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1586073241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -514,6 +556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 1586073243}
     - target: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
       propertyPath: m_Name
       value: Mirror Red(Temp)
@@ -564,6 +610,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+--- !u!1 &1586073242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+  m_PrefabInstance: {fileID: 1586073241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1586073243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586073242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d31f3135eb847d582aacc03a895fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627939183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1098,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7215215126277440732}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: mirrorInteractionCount
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1115,6 +1182,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5894650999389185649, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7215215124375001517, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_Size.x
       value: 1.2
@@ -1203,7 +1274,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7215215126277440728}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed24bc88aa85446c1b4b302c6396e242, type: 3}
   m_Name: 
