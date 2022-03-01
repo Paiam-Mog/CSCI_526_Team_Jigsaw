@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,13 +8,17 @@ public class Target : MonoBehaviour
 {
     public UnityEvent onLevelCompleteEvent;
 
-    public TopBarScript topBarScript;
+    [SerializeField] 
+    GameManagerScript gm;
 
     public LaserInteractionCount laserInteractionCount;
     // public MirrorInteractionCount mirrorInteractionCount;
 
     [SerializeField]
     private ColorState color;
+
+    public SpriteRenderer targetNodeSprite;
+    public ColorTable colorTable;
 
     private GameObject collidedTarget;
     private bool collideWithTarget;
