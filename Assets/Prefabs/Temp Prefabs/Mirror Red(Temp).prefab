@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8882622527377762904}
   - component: {fileID: 8882622527377762907}
   - component: {fileID: 8882622527377762906}
-  - component: {fileID: 8882622527377762853}
   - component: {fileID: 2119076727}
   m_Layer: 0
   m_Name: Mirror Red(Temp)
@@ -210,19 +209,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &8882622527377762853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8882622527377762852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebad98618f195774b9a58059c7087749, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 1
 --- !u!114 &2119076727
 MonoBehaviour:
   m_ObjectHideFlags: 0
