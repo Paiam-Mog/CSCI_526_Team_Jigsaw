@@ -34,7 +34,9 @@ public class Mirror : MonoBehaviour
 
         if (Physics2D.Raycast(startPos, direction))
         {
+
             RaycastHit2D _hit = Physics2D.Raycast(startPos + direction * 1.1f, direction);
+            Debug.Log("Hit Mirror" + _hit.point);
             DrawRay(startPos, _hit.point);
             if (_hit.transform.tag == "Mirror")
             {
@@ -55,8 +57,6 @@ public class Mirror : MonoBehaviour
                 //Debug.Log("Target Detected");
                 collidedTarget = _hit.collider.gameObject;
                 collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, newLaserColor);
-
-
             }
             else
             {
