@@ -68,4 +68,17 @@ public class CustomAnalytics : MonoBehaviour
         Debug.Log("Analytics Result (level v/s mirror interaction): " + analyticsResult);
     }
 
+
+    public void levelLaserSegmentsCount(int level, int count)
+    {
+        Dictionary<string, object> analyticsData = new Dictionary<string, object>
+            {
+                {"Level", level },
+                {"laserSegmentsCount", count },
+            };
+        Debug.Log("levelLaserSegmentsCount " + level + " -> " + count);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelLaserSegmentCount", analyticsData);
+        Debug.Log("Analytics Result (level v/s laser segment count): " + analyticsResult);
+    }
+
 }

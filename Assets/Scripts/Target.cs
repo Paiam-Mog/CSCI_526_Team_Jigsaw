@@ -24,6 +24,8 @@ public class Target : MonoBehaviour
     private bool collideWithTarget;
     private bool isCompleted;
 
+    public LaserDataManager laserDataManager;
+
     private void start()
     {
         collideWithTarget = false;
@@ -65,6 +67,8 @@ public class Target : MonoBehaviour
         }
         customAnalytics.levelMirrorInteractionCount(gm.GetLevelNumber(), mirrorTouchCount);
 
+        var laserData = laserDataManager.GetLaserDatas();
+        customAnalytics.levelLaserSegmentsCount(gm.GetLevelNumber(), laserData.Count);
 
         onLevelCompleteEvent.Invoke();
     }
