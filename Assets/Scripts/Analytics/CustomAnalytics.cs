@@ -39,7 +39,7 @@ public class CustomAnalytics : MonoBehaviour
                 {"Stars", stars }
             };
         Debug.Log("levelCompleteStars: " + level + " -> " + stars);
-        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelComplete", analyticsData);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelCompleteStars", analyticsData);
         Debug.Log("Analytics Result (level complete stars): " + analyticsResult);
     }
 
@@ -52,7 +52,7 @@ public class CustomAnalytics : MonoBehaviour
                 {"Finished", finished}
             };
         Debug.Log("levelStartedVsFinished: " + level + " -> " + started + " -> " + finished);
-        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelComplete", analyticsData);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelStartedFinished", analyticsData);
         Debug.Log("Analytics Result (level started vs finsihed): " + analyticsResult);
     }
 
@@ -64,7 +64,7 @@ public class CustomAnalytics : MonoBehaviour
                 {"mirrorInteractionCount", mirrorInteractionCount },
             };
         Debug.Log("levelMirrorInteractionCount " + level + " -> " + mirrorInteractionCount);
-        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelComplete", analyticsData);
+        AnalyticsResult analyticsResult = Analytics.CustomEvent("LevelMirrorInteraction", analyticsData);
         Debug.Log("Analytics Result (level v/s mirror interaction): " + analyticsResult);
     }
 
