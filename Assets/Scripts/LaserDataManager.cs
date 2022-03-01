@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class LaserDataManager : MonoBehaviour
 {
     [SerializeField]
-    private ColorState color;
+    private ColorState initColor;
 
     [SerializeField]
     private float maxDist = 100f;
@@ -14,16 +14,18 @@ public class LaserDataManager : MonoBehaviour
     [SerializeField]
     private Transform firepos;
 
-    private bool flagMirrorReflection = false;
+    private readonly string MirrorTag = "Mirror";
 
+    private readonly string TargetTag = "Target";
 
+    private readonly int maxCount = 10;
+
+    
     public class LaserData
     {
         public Vector2 startPoint;
         public Vector2 endPoint;
         public ColorState laserColor;
-        //ReflectionPoint originReflection;
-        //ReflectionPoint endingReflection;
     }
 
     public class ReflectionPoint
@@ -31,6 +33,7 @@ public class LaserDataManager : MonoBehaviour
         public Vector2 position;
         public LaserData entryLaser;
         public LaserData exitLaser;
+        public GameObject mirror;
     }
 
     private Vector2 dir; // Could be replaced by using the initialLaserPoint’s forward 
@@ -38,45 +41,29 @@ public class LaserDataManager : MonoBehaviour
     public UnityAction onLaserDataGenerated;    // need to include UnityEngine.Events library
     private GameObject collidedMirror;
     private GameObject collidedTarget;
-    private List<LaserData> laserDatas = new List<LaserData>();
-    private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
-    private int maxCount = 10;
 
-    private LineRenderer laser;
+    [SerializeField]
+    private List<LaserData> laserDatas = new List<LaserData>();
+
+    [SerializeField]
+    private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
+
+    private GameObject[] mirrors;
+    private Dictionary<ColorState, GameObject> mirrorsDict;
+
+    private ColorTable colorTable;
 
     // Start is called before the first frame update
     void Start()
     {
-     /*   laser = GetComponent<LineRenderer>();
-        
-        laser.startWidth = 0.1f;
-            laser.endWidth = 0.1f;
+        mirrorsDict = new Dictionary<ColorState, GameObject>();
+        colorTable = new ColorTable();
 
-            if (color == ColorState.Red)
-            {
-                laser.startColor = Color.red;
-                laser.endColor = Color.red;
-            }
-            else if (color == ColorState.Blue)
-            {
-                laser.startColor = Color.blue;
-                laser.endColor = Color.blue;
-            }
-            else if (color == ColorState.Green)
-            {
-                laser.startColor = Color.green;
-                laser.endColor = Color.green;
-            } */
-        
-        //LaserData currentLaser = new LaserData();
-        //currentLaser.startPoint = firePosition.position;
-        //initialLaserDirection = transform.right;
-
-        // LaserData currentLaser = new LaserData();
-        //currentLaser.startPoint = initialLaserPoint.position;
-        //  initialLaserDirection = transform.right;
-        // GenerateLaserData();
-
+        mirrors = GameObject.FindGameObjectsWithTag(MirrorTag);
+        foreach(var mirror in mirrors)
+        {
+            mirrorsDict.Add(colorTable.GetColorState(mirror.GetComponent<SpriteRenderer>().color), mirror);
+        }
     }
 
     // Update is called once per frame
@@ -84,85 +71,67 @@ public class LaserDataManager : MonoBehaviour
     {
         startPos = firepos.position;
         dir = firepos.right;
-        GenerateLaserData(startPos, dir, 1);
+        laserDatas = new List<LaserData>();
+        reflectionPoints = new List<ReflectionPoint>();
+        GenerateLaserData(startPos, dir, null, 1, initColor);
     }
 
-    public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, int count)
+    public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, ReflectionPoint prev_reflection, int count, ColorState color)
     {
-        Debug.Log("step:5 " + count);
-        Debug.Log("step:6 " + _dir);
         RaycastHit2D _hit;
 
-        if (!flagMirrorReflection)
+        _hit = Physics2D.Raycast(_startPos+ _dir * 1.1f, _dir);
+        if (_hit.collider != null)
         {
-            _hit = Physics2D.Raycast(_startPos, dir);
-            float distance = Vector2.Distance(_startPos, _hit.point);
-            Debug.DrawRay(_startPos, _dir * distance);
-            Debug.Log("tag is: " + _hit.transform.tag);
+            LaserData laser = new LaserData();
+            laser.startPoint = _startPos;
+            laser.endPoint = _hit.point;
+            laser.laserColor = color;
+
+            if(prev_reflection != null)
+            {
+                prev_reflection.exitLaser = laser;
+                reflectionPoints.Add(prev_reflection);
+            }
+
+            laserDatas.Add(laser);
+
+            //float distance = Vector2.Distance(_startPos, _hit.point);
+            //Debug.DrawRay(_startPos, _dir * distance, GetColor(color));
+
             if (count <= maxCount)
             {
                 count++;
-                if (_hit.transform.tag == "Mirror")
+                if (_hit.transform.tag == MirrorTag)
                 {
                     Vector2 reflectedDir = Vector2.Reflect(_dir, _hit.normal);
-                    GenerateLaserData(_hit.point, reflectedDir, count);
-                    Debug.Log("tag " + count);
+
+                    collidedMirror = _hit.collider.gameObject;
+                    ColorState mirrorColor = colorTable.GetColorState(collidedMirror.GetComponent<SpriteRenderer>().color);
+
+                    ReflectionPoint reflectionPoint = new ReflectionPoint();
+                    reflectionPoint.position = _hit.point;
+                    reflectionPoint.entryLaser = laser;
+                    reflectionPoint.mirror = mirrorsDict[mirrorColor];
+
+                    GenerateLaserData(_hit.point, reflectedDir, reflectionPoint, count, colorTable.ChangeColor(color, mirrorColor));
                 }
-                else if (_hit.transform.tag == "Target")
+                else if (_hit.transform.tag == TargetTag)
                 {
                     collidedTarget = _hit.collider.gameObject;
                     collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
                 }
-                else
-                {
-                    Debug.Log("No Surface");
-                }
+                //else
+                //{
+                //    Debug.Log("No Surface");
+                //}
             }
-
-            // _hit = Physics2D.Raycast(initialLaserPoint.position, initialLaserDirection);
-
-
-            //laser.laserColor = color;
-            //laser.endPoint = _hit.point;
-
-
         }
-
-
-        // float distance = Vector3.Distance(initialLaserPoint.position, _hit.point);
-        //LaserData reflectedLaser = new LaserData();
-        // reflectedLaser.startPoint = _hit.point;
-
-        // Debug.Log("Reflected Laser" + reflectedLaser.startPoint);
-
-        // ReflectionPoint reflectionPoint = new ReflectionPoint();
-
-        // reflectionPoint.position = _hit.point;
-        //reflectionPoint.entryLaser = laser;
-        //reflectionPoint.exitLaser = reflectedLaser;
-        // laserDatas.Add(laser);
-        //reflectionPoints.Add(reflectionPoint);
-
-
-
-        //foreach (var x in reflectionPoints)
-        //{
-        //  Debug.Log(x.ToString());
-        //}
-
-        //            GenerateLaserData();
-
-
-
-        //else
-        //{
-        //    if (collideWithMirror)
-        //    {
-        //        collidedMirror.GetComponent<Mirror>().LaserCollisionExit();
-        //        collideWithMirror = false;
-        //    }
-        //}
-        //onLaserDataGenerated.Invoke();
+        else
+        {
+            Debug.Log("collider null");
+        }
+   
     }
 
     public List<LaserData> GetLaserDatas()
@@ -173,11 +142,5 @@ public class LaserDataManager : MonoBehaviour
     public List<ReflectionPoint> GetReflectionPoints()
     {
         return reflectionPoints;
-    }
-
-    void DrawRay(Vector2 startPos, Vector2 endPos)
-    {
-        laser.SetPosition(0, startPos);
-        laser.SetPosition(1, endPos);
     }
 }

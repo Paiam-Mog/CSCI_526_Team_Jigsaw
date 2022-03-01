@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +8,16 @@ public class Target : MonoBehaviour
 {
     public UnityEvent onLevelCompleteEvent;
 
-    public TopBarScript topBarScript;
+    [SerializeField] 
+    GameManagerScript gm;
 
     public LaserInteractionCount laserInteractionCount;
 
     [SerializeField]
     private ColorState color;
+
+    public SpriteRenderer targetNodeSprite;
+    public ColorTable colorTable;
 
     private GameObject collidedTarget;
     private bool collideWithTarget;
@@ -24,6 +27,11 @@ public class Target : MonoBehaviour
     {
         collideWithTarget = false;
         isCompleted = false;
+
+        if (targetNodeSprite != null && colorTable != null)
+        {
+            targetNodeSprite.color = colorTable.GetColor(color);
+        }
     }
     public void DetectTarget(Vector2 startPos, ColorState inputColor)
     {
@@ -39,12 +47,12 @@ public class Target : MonoBehaviour
         //Debug.Log("Target Detected");
         CustomAnalytics analytics = new CustomAnalytics();
         // Debug.Log($"{topBarScript.GetLevelNumber()}, {topBarScript.GetTimer()}");
-        analytics.levelCompleteTime(topBarScript.GetLevelNumber(), topBarScript.GetTimer());
+        analytics.levelCompleteTime(gm.GetLevelNumber(), gm.GetTimer());
 
         laserInteractionCount = FindObjectOfType<LaserInteractionCount>();
 
         // Debug.Log($"{topBarScript.GetLevelNumber()}, {laserInteractionCount.getLaserTouchCount()}");
-        analytics.levelLaserInteractionCount(topBarScript.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
+        analytics.levelLaserInteractionCount(gm.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
         onLevelCompleteEvent.Invoke();
     }
 

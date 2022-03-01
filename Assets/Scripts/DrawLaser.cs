@@ -49,15 +49,14 @@ public class DrawLaser : MonoBehaviour
             DrawRay(initLaser, laserDatas[0]);
         }
 
-        //foreach(var mirror in mirrors)
-        //{
-        //    mirror.GetComponent<LineRenderer>().enabled = false;
-        //}
+        foreach(var mirror in mirrors)
+        {
+            mirror.GetComponent<LineRenderer>().enabled = false;
+        }
 
         foreach(var reflectionPoint in reflectionPoints)
         {
-            LineRenderer mirrorLaser = reflectionPoint.mirror.AddComponent<LineRenderer>();
-            mirrorLaser = Instantiate(new LineRenderer());
+            LineRenderer mirrorLaser = reflectionPoint.mirror.GetComponent<LineRenderer>();
             mirrorLaser.enabled = true;
             DrawRay(mirrorLaser, reflectionPoint.exitLaser);
         }
