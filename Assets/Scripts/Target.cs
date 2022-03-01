@@ -12,6 +12,7 @@ public class Target : MonoBehaviour
     public TopBarScript topBarScript;
 
     public LaserInteractionCount laserInteractionCount;
+    // public MirrorInteractionCount mirrorInteractionCount;
 
     [SerializeField]
     private ColorState color;
@@ -24,6 +25,14 @@ public class Target : MonoBehaviour
     {
         collideWithTarget = false;
         isCompleted = false;
+
+        if (targetNodeSprite != null && colorTable != null)
+        {
+            targetNodeSprite.color = colorTable.GetColor(color);
+        }
+        
+        CustomAnalytics customAnalytics = new CustomAnalytics();
+        customAnalytics.levelStartedVsFinished(gm.GetLevelNumber(), 1, 0);
     }
     public void DetectTarget(Vector2 startPos, ColorState inputColor)
     {
@@ -37,14 +46,18 @@ public class Target : MonoBehaviour
     public void OnLevelComplete()
     {
         //Debug.Log("Target Detected");
-        CustomAnalytics analytics = new CustomAnalytics();
-        // Debug.Log($"{topBarScript.GetLevelNumber()}, {topBarScript.GetTimer()}");
-        analytics.levelCompleteTime(topBarScript.GetLevelNumber(), topBarScript.GetTimer());
+        CustomAnalytics customAnalytics = new CustomAnalytics();
+        customAnalytics.levelCompleteTime(gm.GetLevelNumber(), gm.GetTimer());
 
         laserInteractionCount = FindObjectOfType<LaserInteractionCount>();
+        customAnalytics.levelLaserInteractionCount(gm.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
 
-        // Debug.Log($"{topBarScript.GetLevelNumber()}, {laserInteractionCount.getLaserTouchCount()}");
-        analytics.levelLaserInteractionCount(topBarScript.GetLevelNumber(), laserInteractionCount.getLaserTouchCount());
+        customAnalytics.levelCompleteStars(gm.GetLevelNumber(), gm.GetStarCount());
+        customAnalytics.levelStartedVsFinished(gm.GetLevelNumber(), 0, 1);
+
+        // mirrorInteractionCount = FindObjectOfType<MirrorInteractionCount>();
+        // customAnalytics.levelMirrorInteractionCount(gm.GetLevelNumber(), mirrorInteractionCount.getMirrorTouchCount());
+
         onLevelCompleteEvent.Invoke();
     }
 
