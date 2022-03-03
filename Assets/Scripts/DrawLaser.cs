@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DrawLaser : MonoBehaviour
@@ -15,7 +16,7 @@ public class DrawLaser : MonoBehaviour
 
     public List<LaserDataManager.ReflectionPoint> reflectionPoints;
 
-    public Dictionary<GameObject, int> interactingMirrorsCount;
+    public Dictionary<GameObject, List<LaserDataManager.LaserData>> interactingMirrorLasers;
 
     private GameObject[] mirrors;
 
@@ -31,34 +32,55 @@ public class DrawLaser : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        interactingMirrorsCount = new Dictionary<GameObject, int>();
         laserDatas = laserDataManager.GetLaserDatas();
         reflectionPoints = laserDataManager.GetReflectionPoints();
-        //foreach (var reflectionPoint in reflectionPoints)
-        //{
-          //  if (!interactingMirrorsCount.ContainsKey(reflectionPoint.mirror))
-          //  {
-          //      interactingMirrorsCount[reflectionPoint.mirror] = 0;
-          //  }
+        interactingMirrorLasers = new Dictionary<GameObject, List<LaserDataManager.LaserData>>();
 
-          //  interactingMirrorsCount[reflectionPoint.mirror]++;
-        //}
+        foreach (var reflectionPoint in reflectionPoints)
+        {
+            if (!interactingMirrorLasers.ContainsKey(reflectionPoint.mirror))
+            {
+                interactingMirrorLasers[reflectionPoint.mirror] = new List<LaserDataManager.LaserData>(); ;
+            }
+
+            interactingMirrorLasers[reflectionPoint.mirror].Add(reflectionPoint.exitLaser);
+        }
+
+        foreach (var mirror in mirrors)
+        {
+            foreach (Transform child in mirror.transform)
+            {
+                LineRenderer renderer = child.gameObject.GetComponent<LineRenderer>();
+                renderer.enabled = false;
+            }
+        }
 
         if (laserDatas.Count > 0)
         {
             DrawRay(initLaser, laserDatas[0]);
         }
 
-        foreach(var mirror in mirrors)
+        foreach (var pair in interactingMirrorLasers)
         {
-            mirror.GetComponent<LineRenderer>().enabled = false;
-        }
+            GameObject reflectionMirror = pair.Key;
+            List<LaserDataManager.LaserData> mirrorLasers = pair.Value;
 
-        foreach(var reflectionPoint in reflectionPoints)
-        {
-            LineRenderer mirrorLaser = reflectionPoint.mirror.GetComponent<LineRenderer>();
-            mirrorLaser.enabled = true;
-            DrawRay(mirrorLaser, reflectionPoint.exitLaser);
+            int mirrorLasersCount = mirrorLasers.Count;
+
+            for (int i = 0; i < mirrorLasersCount; i++)
+            {
+                if (reflectionMirror.transform.childCount < mirrorLasersCount)
+                {
+                    GameObject laserRenderer = Instantiate(Resources.Load("Renderer")) as GameObject;
+                    laserRenderer.transform.parent = reflectionMirror.transform;
+                }
+
+                GameObject laserRendererObject = reflectionMirror.transform.GetChild(i).gameObject;
+                laserRendererObject.name = $"{reflectionMirror.name} - {i + 1}";
+                LineRenderer renderer = laserRendererObject.GetComponent<LineRenderer>();
+                renderer.enabled = true;
+                DrawRay(renderer, mirrorLasers[i]);
+            }
         }
     }
 
