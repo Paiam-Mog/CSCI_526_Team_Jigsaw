@@ -12,6 +12,8 @@ public class DraggableObject : MonoBehaviour
     private float currentObjectPosition = 0;
     private Vector2 initialPosition;
 
+    public MirrorInteractionCount mirrorInteractionCount;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -32,6 +34,8 @@ public class DraggableObject : MonoBehaviour
 
         if (CheckPoint()) {
             dragging = true;
+
+            mirrorInteractionCount.incrementMirrorTouchCount();
         }
     }
 
