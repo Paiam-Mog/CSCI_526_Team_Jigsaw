@@ -190,7 +190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 477.1, y: 197.76}
+  m_AnchoredPosition: {x: 451.5, y: 197.76}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &505440773
@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 39175429}
     - target: {fileID: 388630374511188682, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -291.1
+      value: -262.8
       objectReference: {fileID: 0}
     - target: {fileID: 388630374511188682, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1083,6 +1083,10 @@ PrefabInstance:
     - target: {fileID: 7215215125727447246, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_Name
       value: Laser Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215215126277440731, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 966648be7093725468dd4292f5636f2c, type: 3}
