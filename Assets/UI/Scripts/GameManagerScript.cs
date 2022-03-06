@@ -109,6 +109,11 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public void LoadScene(int sceneIndex) {
+        if(sceneIndex>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(sceneIndex, 1, 0);
+        }
         SceneManager.LoadScene(sceneIndex);
 	}
 
