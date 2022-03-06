@@ -40,6 +40,7 @@ public class GameManagerScript : MonoBehaviour
         totalLevels = SceneManager.sceneCountInBuildSettings;
 
         starScores = new List<int>();
+
         /*
         for (int i = SceneManager.GetActiveScene().buildIndex; i <= totalLevels; i++)
         {
