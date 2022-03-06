@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 7533677824443904129}
+    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
+      propertyPath: maxTimeFor3Stars
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4462685340181257503, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: m_RootOrder
       value: 0

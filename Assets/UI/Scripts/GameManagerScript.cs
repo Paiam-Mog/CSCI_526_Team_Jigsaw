@@ -10,6 +10,8 @@ public class GameManagerScript : MonoBehaviour
     private float startTime;
     private int starCount;
 
+    int totalLevels;
+
     Color star1Color;
     Color star2Color;
     Color star3Color;
@@ -18,6 +20,7 @@ public class GameManagerScript : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI levelText;
+    public List<int> starScores;    // the index in this list should = the levelNumber
 
     [SerializeField] Image star1;
     [SerializeField] Image star2;
@@ -30,6 +33,22 @@ public class GameManagerScript : MonoBehaviour
 
     void Awake()
     {
+
+        maxTimeFor3Stars = 30.0f;
+        maxTimeFor2Stars = 60.0f;
+
+        totalLevels = SceneManager.sceneCountInBuildSettings;
+
+        starScores = new List<int>();
+        /*
+        for (int i = SceneManager.GetActiveScene().buildIndex; i <= totalLevels; i++)
+        {
+            starScores[i] = GetStarCount();
+            starScores[0] = 0;
+         
+        }
+        */
+        
         scene = SceneManager.GetActiveScene();
         currentSceneName = scene.name;
 
@@ -162,5 +181,6 @@ public class GameManagerScript : MonoBehaviour
     {
         return scene.buildIndex;
     }
+
 
 }
