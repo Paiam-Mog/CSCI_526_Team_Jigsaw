@@ -34,8 +34,14 @@ public class InputHelper : MonoBehaviour
     private static InputData currentInputData;
     private Vector2 previousPosition;
 
-    // Start is called before the first frame update
-    void Start() {
+	private void Awake() {
+        onInputDown = null;
+        onInputMove = null;
+        onInputUp = null;
+	}
+
+	// Start is called before the first frame update
+	void Start() {
         onInputDown += OnInputDownEvent.Invoke;
         onInputMove += OnInputMoveEvent.Invoke;
         onInputUp += OnInputUpEvent.Invoke;
