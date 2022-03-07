@@ -106,6 +106,11 @@ public class GameManagerScript : MonoBehaviour
     public void LoadNextScene() //assign this play / complete level
     {
         SceneManager.LoadScene(scene.buildIndex + 1);
+        if(scene.buildIndex+1>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(scene.buildIndex+1, 1, 0);
+        }
     }
 
     public void LoadScene(int sceneIndex) {
@@ -125,6 +130,11 @@ public class GameManagerScript : MonoBehaviour
     public void ResetLevel() //assign this play / complete level
     {
         SceneManager.LoadScene(currentSceneName);
+        if(scene.buildIndex>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(scene.buildIndex, 1, 0);
+        }
     }
 
     public void Quit() //assign this to quit button
