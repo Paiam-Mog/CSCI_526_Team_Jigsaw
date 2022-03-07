@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 7215215125727447247}
   - component: {fileID: 7215215126277440730}
   - component: {fileID: 7215215126277440731}
+  - component: {fileID: 5240517709858255152}
   m_Layer: 0
   m_Name: Laser Cannon(Temp)
   m_TagString: Untagged
@@ -390,7 +391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7215215125727447246}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23e4b4caac49f1343b1570de514672fa, type: 3}
   m_Name: 
@@ -401,4 +402,23 @@ MonoBehaviour:
   degreeSegment: 15
   angleMax: 90
   angleMin: -90
+  boxCollider2D: {fileID: 7215215126277440730}
+--- !u!114 &5240517709858255152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215215125727447246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9bd6f94967870d42b882a22e33076ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserInteractionCount: {fileID: 5894650999389185649}
+  rotationBlockMethod: 0
+  Sensitivity: 0.2
+  degreeSegment: 15
+  angleMax: 0
+  angleMin: 0
   boxCollider2D: {fileID: 7215215126277440730}

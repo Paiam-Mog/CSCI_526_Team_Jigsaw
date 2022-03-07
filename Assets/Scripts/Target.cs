@@ -35,9 +35,6 @@ public class Target : MonoBehaviour
         {
             targetNodeSprite.color = colorTable.GetColor(color);
         }
-        
-        CustomAnalytics customAnalytics = new CustomAnalytics();
-        customAnalytics.levelStartedVsFinished(gm.GetLevelNumber(), 1, 0);
     }
     public void DetectTarget(Vector2 startPos, ColorState inputColor)
     {

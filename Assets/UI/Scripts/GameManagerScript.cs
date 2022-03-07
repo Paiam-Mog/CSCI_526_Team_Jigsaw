@@ -20,11 +20,14 @@ public class GameManagerScript : MonoBehaviour
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI levelText;
-    public List<int> starScores;    // the index in this list should = the levelNumber
 
     [SerializeField] Image star1;
     [SerializeField] Image star2;
     [SerializeField] Image star3;
+
+    [SerializeField] Image earnedStar1;
+    [SerializeField] Image earnedStar2;
+    [SerializeField] Image earnedStar3;
 
     [SerializeField] float maxTimeFor3Stars;
     [SerializeField] float maxTimeFor2Stars;
@@ -38,17 +41,6 @@ public class GameManagerScript : MonoBehaviour
         maxTimeFor2Stars = 60.0f;
 
         totalLevels = SceneManager.sceneCountInBuildSettings;
-
-        starScores = new List<int>();
-
-        /*
-        for (int i = SceneManager.GetActiveScene().buildIndex; i <= totalLevels; i++)
-        {
-            starScores[i] = GetStarCount();
-            starScores[0] = 0;
-         
-        }
-        */
         
         scene = SceneManager.GetActiveScene();
         currentSceneName = scene.name;
@@ -56,10 +48,13 @@ public class GameManagerScript : MonoBehaviour
         TextMeshPro textmeshPro = GetComponent<TextMeshPro>();
 
         startTime = 0f;
+
         starCount = 0;
+
         if (levelText) {
             levelText.text = "Level " + scene.buildIndex;
         }
+
 
         Time.timeScale = 1;
     }
@@ -70,11 +65,14 @@ public class GameManagerScript : MonoBehaviour
 
         DisplayTime();
         DisplayStars();
+        UpdateStarCount();
+
 
         if (Input.GetKey(KeyCode.X))
         {
             GetTime();
         }
+
     }
 
     void DisplayTime()
@@ -84,6 +82,30 @@ public class GameManagerScript : MonoBehaviour
 
         if (timerText) {
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+    }
+
+    void UpdateStarCount() //TopBar and Menu stars
+    {
+
+        if (GetStarCount() == 1)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = false;
+            earnedStar3.enabled = false;
+        }
+        else if (GetStarCount() == 2)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = true;
+            earnedStar3.enabled = false;
+        }
+        else if (GetStarCount() == 3)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = true;
+            earnedStar3.enabled = true;
         }
 
     }
@@ -126,24 +148,42 @@ public class GameManagerScript : MonoBehaviour
     public void LoadNextScene() //assign this play / complete level
     {
         SceneManager.LoadScene(scene.buildIndex + 1);
+        if(scene.buildIndex+1>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(scene.buildIndex+1, 1, 0);
+        }
     }
 
-    public void LoadScene(int sceneIndex) {
+    public void LoadScene(int sceneIndex) 
+    {
+        if(sceneIndex>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(sceneIndex, 1, 0);
+        }
         SceneManager.LoadScene(sceneIndex);
 	}
 
     public void QuitToMainMenu() //assign this play / complete level
     {
+        SaveGame();
         SceneManager.LoadScene(0);
     }
 
     public void ResetLevel() //assign this play / complete level
     {
         SceneManager.LoadScene(currentSceneName);
+        if(scene.buildIndex>0)
+        {
+            CustomAnalytics customAnalytics = new CustomAnalytics();
+            customAnalytics.levelStartedVsFinished(scene.buildIndex, 1, 0);
+        }
     }
 
     public void Quit() //assign this to quit button
     {
+        SaveGame();
         Application.Quit();
     }
 
@@ -181,6 +221,13 @@ public class GameManagerScript : MonoBehaviour
     public int GetLevelNumber()
     {
         return scene.buildIndex;
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("stars", GetStarCount());
+        PlayerPrefs.SetInt("furthestLevel", GetLevelNumber());
+        PlayerPrefs.SetFloat("time", GetTime());
     }
 
 

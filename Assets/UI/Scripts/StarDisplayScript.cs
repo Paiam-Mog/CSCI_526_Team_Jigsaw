@@ -2,49 +2,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StarDisplayScript : MonoBehaviour
 {
-    [SerializeField] private GameManagerScript gm;
+    [SerializeField] public GameObject[] levelBtnObjects;
 
-    [SerializeField] Image earnedStar1;
-    [SerializeField] Image earnedStar2;
-    [SerializeField] Image earnedStar3;
+    int levelStarCount;
 
     void Awake()
     {
-        earnedStar1.enabled = false;
-        earnedStar2.enabled = false;
-        earnedStar3.enabled = false;
+        levelStarCount = PlayerPrefs.GetInt("stars");
     }
 
-    void Update()
+    public void Update()
     {
-        UpdateStarCount();
+        UpdateLevelSelectionScores();
     }
 
-    void UpdateStarCount()
+    public void UpdateLevelSelectionScores() //level selection screen stars
     {
-        gm.GetStarCount();
+        foreach (GameObject levelGO in levelBtnObjects)
+        {
+            GameObject levelStar1 = GameObject.Find("EarnedStar1");
+            GameObject levelStar2 = GameObject.Find("EarnedStar2");
+            GameObject levelStar3 = GameObject.Find("EarnedStar3");
 
-        if (gm.GetStarCount() == 1)
-        {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = false;
-            earnedStar3.enabled = false;
+            if (levelStarCount == 1)
+            {
+                levelStar1.SetActive(true);
+                levelStar2.SetActive(false);
+                levelStar3.SetActive(false);
+            }
+            else if (levelStarCount == 2)
+            {
+                levelStar1.SetActive(true);
+                levelStar2.SetActive(true);
+                levelStar3.SetActive(false);
+            }
+            else if (levelStarCount == 3)
+            {
+                levelStar1.SetActive(true);
+                levelStar2.SetActive(true);
+                levelStar3.SetActive(true);
+            }
+            else
+            {
+                levelStar1.SetActive(false);
+                levelStar2.SetActive(false);
+                levelStar3.SetActive(false);
+            }
         }
-        else if (gm.GetStarCount() == 2)
-        {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = true;
-            earnedStar3.enabled = false;
-        }
-        else if (gm.GetStarCount() == 3)
-        {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = true;
-            earnedStar3.enabled = true;
-        }
-
     }
 }
