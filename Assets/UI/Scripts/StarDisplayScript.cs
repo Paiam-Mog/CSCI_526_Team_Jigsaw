@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class StarDisplayScript : MonoBehaviour
 {
     [SerializeField] public GameObject[] levelBtnObjects;
+    [SerializeField] GameManagerScript gm;
 
     int levelStarCount;
 
@@ -15,43 +16,74 @@ public class StarDisplayScript : MonoBehaviour
         levelStarCount = PlayerPrefs.GetInt("stars");
     }
 
-    public void Update()
-    {
-        UpdateLevelSelectionScores();
-    }
 
     public void UpdateLevelSelectionScores() //level selection screen stars
     {
-        foreach (GameObject levelGO in levelBtnObjects)
+        for (int i = 0; i < levelBtnObjects.Length; i++)
         {
-            GameObject levelStar1 = GameObject.Find("EarnedStar1");
-            GameObject levelStar2 = GameObject.Find("EarnedStar2");
-            GameObject levelStar3 = GameObject.Find("EarnedStar3");
+            Image levelStar1 = GameObject.Find("Star_Slot1/EarnedStar1").GetComponent<Image>();
+            Image levelStar2 = GameObject.Find("Star_Slot2/EarnedStar2").GetComponent<Image>();
+            Image levelStar3 = GameObject.Find("Star_Slot3/EarnedStar3").GetComponent<Image>();
 
-            if (levelStarCount == 1)
+            if (gm.starList[i] == 1)
             {
-                levelStar1.SetActive(true);
-                levelStar2.SetActive(false);
-                levelStar3.SetActive(false);
+                levelStar1.enabled = true;
+                levelStar2.enabled = false;
+                levelStar3.enabled = false;
             }
-            else if (levelStarCount == 2)
+            else if (gm.starList[i] == 2)
             {
-                levelStar1.SetActive(true);
-                levelStar2.SetActive(true);
-                levelStar3.SetActive(false);
+                levelStar1.enabled = true;
+                levelStar2.enabled = true;
+                levelStar3.enabled = false;
             }
-            else if (levelStarCount == 3)
+            else if (gm.starList[i] == 3)
             {
-                levelStar1.SetActive(true);
-                levelStar2.SetActive(true);
-                levelStar3.SetActive(true);
+                levelStar1.enabled = true;
+                levelStar2.enabled = true;
+                levelStar3.enabled = true;
             }
             else
             {
-                levelStar1.SetActive(false);
-                levelStar2.SetActive(false);
-                levelStar3.SetActive(false);
+                levelStar1.enabled = false;
+                levelStar2.enabled = false;
+                levelStar3.enabled = false;
             }
         }
+        /*
+        foreach (GameObject levelGO in levelBtnObjects)
+        {
+            Image levelStar1 = GameObject.Find("Star_Slot1/EarnedStar1").GetComponent<Image>();
+            Image levelStar2 = GameObject.Find("Star_Slot2/EarnedStar2").GetComponent<Image>();
+            Image levelStar3 = GameObject.Find("Star_Slot3/EarnedStar3").GetComponent<Image>();
+
+            if (levelStarCount == 1)
+            {
+                levelStar1.enabled = true;
+                levelStar2.enabled = false;
+                levelStar3.enabled = false;
+
+
+            }
+            else if (levelStarCount == 2)
+            {
+                levelStar1.enabled = true;
+                levelStar2.enabled = true;
+                levelStar3.enabled = false;
+            }
+            else if (levelStarCount == 3)
+            {
+                levelStar1.enabled = true;
+                levelStar2.enabled = true;
+                levelStar3.enabled = true;
+            }
+            else
+            {
+                levelStar1.enabled = false;
+                levelStar2.enabled = false;
+                levelStar3.enabled = false;
+            }
+        }
+        */
     }
 }

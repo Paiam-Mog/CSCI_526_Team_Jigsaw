@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public List<int> starList = new List<int>();
+
     private float startTime;
     private int starCount;
 
@@ -52,7 +54,7 @@ public class GameManagerScript : MonoBehaviour
         starCount = 0;
 
         if (levelText) {
-            levelText.text = "Level " + scene.buildIndex;
+            levelText.text = "Level " + (scene.buildIndex - 1);
         }
 
 
@@ -138,6 +140,7 @@ public class GameManagerScript : MonoBehaviour
             star3.enabled = true;
             starCount = 1;
         }
+
     }
 
     public int GetStarCount()
@@ -147,6 +150,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void LoadNextScene() //assign this play / complete level
     {
+
         SceneManager.LoadScene(scene.buildIndex + 1);
         if(scene.buildIndex+1>0)
         {
@@ -157,7 +161,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void LoadScene(int sceneIndex) 
     {
-        if(sceneIndex>0)
+
+        if (sceneIndex>0)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
             customAnalytics.levelStartedVsFinished(sceneIndex, 1, 0);
@@ -167,6 +172,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void QuitToMainMenu() //assign this play / complete level
     {
+
         SaveGame();
         SceneManager.LoadScene(0);
     }
@@ -225,6 +231,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void SaveGame()
     {
+        starList.Add(starCount);
         PlayerPrefs.SetInt("stars", GetStarCount());
         PlayerPrefs.SetInt("furthestLevel", GetLevelNumber());
         PlayerPrefs.SetFloat("time", GetTime());
