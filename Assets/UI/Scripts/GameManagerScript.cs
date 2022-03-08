@@ -150,22 +150,21 @@ public class GameManagerScript : MonoBehaviour
 
     public void LoadNextScene() //assign this play / complete level
     {
-
-        SceneManager.LoadScene(scene.buildIndex + 1);
-        if(scene.buildIndex+1>0)
+        if(scene.buildIndex+1>1)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
-            customAnalytics.levelStartedVsFinished(scene.buildIndex+1, 1, 0);
+            customAnalytics.levelStartedVsFinished(scene.buildIndex, 1, 0);
         }
+        SceneManager.LoadScene(scene.buildIndex + 1);
     }
 
     public void LoadScene(int sceneIndex) 
     {
 
-        if (sceneIndex>0)
+        if (sceneIndex>1)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
-            customAnalytics.levelStartedVsFinished(sceneIndex, 1, 0);
+            customAnalytics.levelStartedVsFinished(sceneIndex-1, 1, 0);
         }
         SceneManager.LoadScene(sceneIndex);
 	}
@@ -180,10 +179,10 @@ public class GameManagerScript : MonoBehaviour
     public void ResetLevel() //assign this play / complete level
     {
         SceneManager.LoadScene(currentSceneName);
-        if(scene.buildIndex>0)
+        if(scene.buildIndex>1)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
-            customAnalytics.levelStartedVsFinished(scene.buildIndex, 1, 0);
+            customAnalytics.levelStartedVsFinished(GetLevelNumber(), 1, 0);
         }
     }
 
@@ -226,7 +225,7 @@ public class GameManagerScript : MonoBehaviour
 
     public int GetLevelNumber()
     {
-        return scene.buildIndex;
+        return scene.buildIndex-1;
     }
 
     public void SaveGame()
