@@ -564,6 +564,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mirror Red(Temp)
       objectReference: {fileID: 0}
+    - target: {fileID: 8882622527377762904, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8882622527377762904, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8882622527377762905, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1093,6 +1101,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 446480024}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: color
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: topBarScript
       value: 

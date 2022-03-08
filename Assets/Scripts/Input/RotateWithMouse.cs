@@ -6,7 +6,9 @@ public class RotateWithMouse : MonoBehaviour
 {
     private bool rotating = false;
     public LaserInteractionCount laserInteractionCount;
+    public MirrorInteractionCount mirrorInteractionCount;
 
+    public bool isLaserCannon = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,10 @@ public class RotateWithMouse : MonoBehaviour
         if (CheckPoint())
         {
             rotating = true;
-            laserInteractionCount.incrementLaserTouchCount();
+            if (isLaserCannon)
+                laserInteractionCount.incrementLaserTouchCount();
+            else
+                mirrorInteractionCount.incrementMirrorTouchCount();
         }
     }
 
