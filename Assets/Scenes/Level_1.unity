@@ -421,14 +421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1912229206643984611, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458262102387251658, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7920056396233588601, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -448,10 +440,6 @@ PrefabInstance:
     - target: {fileID: 7920056396981013953, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_Name
       value: UI_Overlay_Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7920056396981014012, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7920056396981014013, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_Pivot.x

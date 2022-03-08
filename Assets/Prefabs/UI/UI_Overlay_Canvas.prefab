@@ -3075,10 +3075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b540ac5c4297e4f8ef4fa5cd88a28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
-  earnedStar1: {fileID: 3248390167670664711}
-  earnedStar2: {fileID: 5536516405837560740}
-  earnedStar3: {fileID: 5544548635292412917}
+  levelBtnObjects: []
 --- !u!1 &7920056396981013953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,7 +3138,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &7920056396981013955
 MonoBehaviour:
@@ -4610,7 +4607,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7920056397728008461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameManagerScript, Assembly-CSharp
+        m_MethodName: LoadNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7920056397949644504
 GameObject:
   m_ObjectHideFlags: 0
