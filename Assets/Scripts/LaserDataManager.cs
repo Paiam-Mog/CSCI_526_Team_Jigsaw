@@ -49,21 +49,27 @@ public class LaserDataManager : MonoBehaviour
     private List<ReflectionPoint> reflectionPoints = new List<ReflectionPoint>();
 
     private GameObject[] mirrors;
-    private Dictionary<ColorState, GameObject> mirrorsDict;
+    private Dictionary<GameObject, ColorState> mirrorsDict;
 
     private ColorTable colorTable;
 
     // Start is called before the first frame update
     void Start()
     {
-        mirrorsDict = new Dictionary<ColorState, GameObject>();
+        mirrorsDict = new Dictionary<GameObject, ColorState>();
         colorTable = new ColorTable();
 
         mirrors = GameObject.FindGameObjectsWithTag(MirrorTag);
         foreach(var mirror in mirrors)
         {
-            mirrorsDict.Add(colorTable.GetColorState(mirror.GetComponent<SpriteRenderer>().color), mirror);
+            mirrorsDict.Add(mirror, colorTable.GetColorState(mirror.GetComponent<SpriteRenderer>().color));
         }
+
+        startPos = firepos.position;
+        dir = firepos.right;
+        laserDatas = new List<LaserData>();
+        reflectionPoints = new List<ReflectionPoint>();
+        GenerateLaserData(startPos, dir, null, 1, initColor);
     }
 
     // Update is called once per frame
@@ -112,7 +118,7 @@ public class LaserDataManager : MonoBehaviour
                     ReflectionPoint reflectionPoint = new ReflectionPoint();
                     reflectionPoint.position = _hit.point;
                     reflectionPoint.entryLaser = laser;
-                    reflectionPoint.mirror = mirrorsDict[mirrorColor];
+                    reflectionPoint.mirror = collidedMirror;
 
                     GenerateLaserData(_hit.point, reflectedDir, reflectionPoint, count, colorTable.ChangeColor(color, mirrorColor));
                 }
