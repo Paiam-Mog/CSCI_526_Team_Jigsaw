@@ -10,6 +10,8 @@ public class GameManagerScript : MonoBehaviour
     private float startTime;
     private int starCount;
 
+    int totalLevels;
+
     Color star1Color;
     Color star2Color;
     Color star3Color;
@@ -23,6 +25,10 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Image star2;
     [SerializeField] Image star3;
 
+    [SerializeField] Image earnedStar1;
+    [SerializeField] Image earnedStar2;
+    [SerializeField] Image earnedStar3;
+
     [SerializeField] float maxTimeFor3Stars;
     [SerializeField] float maxTimeFor2Stars;
 
@@ -30,16 +36,25 @@ public class GameManagerScript : MonoBehaviour
 
     void Awake()
     {
+
+        maxTimeFor3Stars = 30.0f;
+        maxTimeFor2Stars = 60.0f;
+
+        totalLevels = SceneManager.sceneCountInBuildSettings;
+        
         scene = SceneManager.GetActiveScene();
         currentSceneName = scene.name;
 
         TextMeshPro textmeshPro = GetComponent<TextMeshPro>();
 
         startTime = 0f;
+
         starCount = 0;
+
         if (levelText) {
             levelText.text = "Level " + scene.buildIndex;
         }
+
 
         Time.timeScale = 1;
     }
@@ -50,11 +65,14 @@ public class GameManagerScript : MonoBehaviour
 
         DisplayTime();
         DisplayStars();
+        UpdateStarCount();
+
 
         if (Input.GetKey(KeyCode.X))
         {
             GetTime();
         }
+
     }
 
     void DisplayTime()
@@ -64,6 +82,30 @@ public class GameManagerScript : MonoBehaviour
 
         if (timerText) {
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+
+    }
+
+    void UpdateStarCount() //TopBar and Menu stars
+    {
+
+        if (GetStarCount() == 1)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = false;
+            earnedStar3.enabled = false;
+        }
+        else if (GetStarCount() == 2)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = true;
+            earnedStar3.enabled = false;
+        }
+        else if (GetStarCount() == 3)
+        {
+            earnedStar1.enabled = true;
+            earnedStar2.enabled = true;
+            earnedStar3.enabled = true;
         }
 
     }
@@ -113,7 +155,8 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-    public void LoadScene(int sceneIndex) {
+    public void LoadScene(int sceneIndex) 
+    {
         if(sceneIndex>0)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
@@ -124,6 +167,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void QuitToMainMenu() //assign this play / complete level
     {
+        SaveGame();
         SceneManager.LoadScene(0);
     }
 
@@ -139,6 +183,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void Quit() //assign this to quit button
     {
+        SaveGame();
         Application.Quit();
     }
 
@@ -177,5 +222,13 @@ public class GameManagerScript : MonoBehaviour
     {
         return scene.buildIndex;
     }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("stars", GetStarCount());
+        PlayerPrefs.SetInt("furthestLevel", GetLevelNumber());
+        PlayerPrefs.SetFloat("time", GetTime());
+    }
+
 
 }
