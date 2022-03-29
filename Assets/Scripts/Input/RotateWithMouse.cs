@@ -9,51 +9,46 @@ public class RotateWithMouse : MonoBehaviour
     public MirrorInteractionCount mirrorInteractionCount;
 
     public bool isLaserCannon = true;
+
+    [SerializeField]
+    private float Sensitivity = 1f;
     // Start is called before the first frame update
     void Start()
     {
         // laserInteractionCount = new LaserInteractionCount();
-        InputHelper.onInputDown += StartRotating;
-        InputHelper.onInputMove += UpdateRotating;
-        InputHelper.onInputUp += StopRotating;
+        // InputHelper.onInputDown += StartRotating;
+
     }
 
-    private void StartRotating(InputHelper.InputData inputData)
+    private void StartRotating()
     {
-        if (CheckPoint())
-        {
-            rotating = true;
-            if (isLaserCannon)
-                laserInteractionCount.incrementLaserTouchCount();
-            else
-                mirrorInteractionCount.incrementMirrorTouchCount();
-        }
+        if (isLaserCannon)
+            laserInteractionCount.incrementLaserTouchCount();
+        else
+            mirrorInteractionCount.incrementMirrorTouchCount();
+    
     }
 
-    private void UpdateRotating(InputHelper.InputData inputData)
-    {
-        if (rotating)
-        {
-            Vector2 toMouse = (Vector2)Camera.main.ScreenToWorldPoint(inputData.inputPosition)- (Vector2)transform.position;
-            Vector3 difference = Camera.main.ScreenToWorldPoint(inputData.inputPosition) - transform.position;
+    public void RotateClockwise(GameObject cannon){
+        StartRotating();
 
-            difference.Normalize();
-
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-               
-        }
+        // Debug.Log(cannon.transform.position);
+        cannon.transform.Rotate(0f, 0f, -1f * Sensitivity);
     }
 
-    private void StopRotating(InputHelper.InputData inputData)
-    {
-        rotating = false;
+    public void RotateCounterClockwise(GameObject cannon){
+        StartRotating();
+
+        // Debug.Log(cannon.transform.position);
+        cannon.transform.Rotate(0f, 0f, 1f * Sensitivity);
+
     }
 
-    protected virtual bool CheckPoint()
-    {
-        RectTransform thisTransform = (RectTransform)transform;
 
-        return InputHelper.CheckInputPositionInBounds(thisTransform);
+    protected virtual void CheckPoint()
+    {
+
+        // return true;
+
     }
 }
