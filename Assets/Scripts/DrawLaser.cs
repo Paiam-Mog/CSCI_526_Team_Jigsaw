@@ -18,7 +18,11 @@ public class DrawLaser : MonoBehaviour
 
     public Dictionary<GameObject, List<LaserDataManager.LaserData>> interactingMirrorLasers;
 
+    public Dictionary<GameObject, List<LaserDataManager.LaserData>> interactingPrismLasers;
+
     private GameObject[] mirrors;
+
+    private GameObject[] prisms;
 
     // Use this for initialization
     public void Start()
@@ -27,6 +31,7 @@ public class DrawLaser : MonoBehaviour
         colorTable = new ColorTable();
 
         mirrors = GameObject.FindGameObjectsWithTag("Mirror");
+        prisms = GameObject.FindGameObjectsWithTag("Prism");
     }
 
     // Update is called once per frame
@@ -49,6 +54,15 @@ public class DrawLaser : MonoBehaviour
         foreach (var mirror in mirrors)
         {
             foreach (Transform child in mirror.transform)
+            {
+                LineRenderer renderer = child.gameObject.GetComponent<LineRenderer>();
+                renderer.enabled = false;
+            }
+        }
+
+        foreach (var prism in prisms)
+        {
+            foreach (Transform child in prism.transform)
             {
                 LineRenderer renderer = child.gameObject.GetComponent<LineRenderer>();
                 renderer.enabled = false;
