@@ -46,6 +46,10 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedMirror;
     private GameObject collidedTarget;
     private GameObject collidedPrism;
+    private Vector2 prev= new Vector2(0.0f, 0.0f);
+    private bool flag = true;
+    float angle1 = -50f;
+    float angle2 = 50f;
 
     [SerializeField]
     private List<LaserData> laserDatas = new List<LaserData>();
@@ -64,6 +68,7 @@ public class LaserDataManager : MonoBehaviour
     void Start()
     {
         mirrorsDict = new Dictionary<GameObject, ColorState>();
+        prismsDict = new Dictionary<GameObject, ColorState>();
         colorTable = new ColorTable();
 
         mirrors = GameObject.FindGameObjectsWithTag(MirrorTag);
@@ -146,16 +151,24 @@ public class LaserDataManager : MonoBehaviour
                 }
                 else if (_hit.transform.tag == PrismTag)
                 {
+                    float angle = 0.0f;
+                    if (!flag)
+                    {
+                        Debug.Log("hit angle:" + Vector2.Angle(prev, _hit.point));
+                        angle = Vector2.SignedAngle(prev, _hit.point);
+                    }
+                    
                     collidedPrism = _hit.collider.gameObject;
                     PolygonCollider2D sr = collidedPrism.GetComponent<PolygonCollider2D>();
                     Vector2 _prismLaserDir = collidedPrism.transform.right;
-                    Vector2 _dir1 = Quaternion.Euler(0, 0, -60) * _prismLaserDir;
-                    Vector2 _dir2 = Quaternion.Euler(0, 0, 60) * _prismLaserDir;
+                    Vector3 scaleFactor = collidedPrism.transform.localScale;
+                    angle1 = angle1 - angle*scaleFactor.z;
+                    angle2 = angle2 - angle*scaleFactor.z;
+                    Vector2 _dir1 = Quaternion.Euler(0, 0, angle1) * _prismLaserDir;
+                    Vector2 _dir2 = Quaternion.Euler(0, 0, angle2) * _prismLaserDir;
                     
 
-                    //if (!isHitPrism)
-                    //{
-                        Debug.Log("in prism");
+                   
 
                         for (int i = 0; i < sr.points.Length; i++)
                         {
@@ -176,6 +189,7 @@ public class LaserDataManager : MonoBehaviour
 
                         Vector2 vertex1 = (prismVertex1 + prismVertex2) / 2;
                         Vector2 vertex2 = (prismVertex3 + prismVertex2) / 2;
+
 
                         Debug.Log(vertex2);
                         Debug.Log(vertex1);
@@ -199,6 +213,8 @@ public class LaserDataManager : MonoBehaviour
                     //}
 
                     //isHitPrism = true;
+                    prev = _hit.point;
+                    flag = false;
 
                 }
                 //else
