@@ -48,8 +48,8 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedPrism;
     private Vector2 prev= new Vector2(0.0f, 0.0f);
     private bool flag = true;
-    float angle1 = -50f;
-    float angle2 = 50f;
+    float angle1 = -60f;
+    float angle2 = 60f;
 
     [SerializeField]
     private List<LaserData> laserDatas = new List<LaserData>();
