@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public List<int> starList = new List<int>();
+    public int[] starList;
 
     private float startTime;
     private int starCount;
@@ -31,6 +31,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] Image earnedStar2;
     [SerializeField] Image earnedStar3;
 
+    [SerializeField] Target targetNode;
+
     [SerializeField] float maxTimeFor3Stars;
     [SerializeField] float maxTimeFor2Stars;
 
@@ -43,7 +45,9 @@ public class GameManagerScript : MonoBehaviour
         maxTimeFor2Stars = 60.0f;
 
         totalLevels = SceneManager.sceneCountInBuildSettings;
-        
+
+        starList = new int[totalLevels];
+
         scene = SceneManager.GetActiveScene();
         currentSceneName = scene.name;
 
@@ -63,17 +67,19 @@ public class GameManagerScript : MonoBehaviour
 
     void Update()
     {
+
         startTime += Time.deltaTime;
 
         DisplayTime();
         DisplayStars();
-        UpdateStarCount();
 
+        UpdateStarCount();
 
         if (Input.GetKey(KeyCode.X))
         {
             GetTime();
         }
+
 
     }
 
@@ -88,31 +94,44 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
-    void UpdateStarCount() //TopBar and Menu stars
+    void UpdateStarCount() //Completion menu stars
     {
-
-        if (GetStarCount() == 1)
+        if (targetNode == null)
         {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = false;
-            earnedStar3.enabled = false;
-        }
-        else if (GetStarCount() == 2)
-        {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = true;
-            earnedStar3.enabled = false;
-        }
-        else if (GetStarCount() == 3)
-        {
-            earnedStar1.enabled = true;
-            earnedStar2.enabled = true;
-            earnedStar3.enabled = true;
+            return;
         }
 
+        else if (targetNode.GetIsCompleted() == true)
+        {
+            if (GetStarCount() == 1)
+            {
+                earnedStar1.enabled = true;
+                earnedStar2.enabled = false;
+                earnedStar3.enabled = false;
+            }
+            else if (GetStarCount() == 2)
+            {
+                earnedStar1.enabled = true;
+                earnedStar2.enabled = true;
+                earnedStar3.enabled = false;
+            }
+            else if (GetStarCount() == 3)
+            {
+                earnedStar1.enabled = true;
+                earnedStar2.enabled = true;
+                earnedStar3.enabled = true;
+            }
+            else
+            {
+                return;
+            }
+
+            starList[GetLevelNumber()] = GetStarCount();
+
+        }
     }
 
-    void DisplayStars()
+    void DisplayStars() //TopBar live updating stars
     {
         if (star1 == null || star2 == null || star3 == null) {
             return;
@@ -150,6 +169,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void LoadNextScene() //assign this play / complete level
     {
+
         if(scene.buildIndex+1>1)
         {
             CustomAnalytics customAnalytics = new CustomAnalytics();
@@ -230,7 +250,6 @@ public class GameManagerScript : MonoBehaviour
 
     public void SaveGame()
     {
-        starList.Add(starCount);
         PlayerPrefs.SetInt("stars", GetStarCount());
         PlayerPrefs.SetInt("furthestLevel", GetLevelNumber());
         PlayerPrefs.SetFloat("time", GetTime());

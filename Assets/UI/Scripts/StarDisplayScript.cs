@@ -13,9 +13,11 @@ public class StarDisplayScript : MonoBehaviour
 
     void Awake()
     {
-        levelStarCount = PlayerPrefs.GetInt("stars");
-    }
 
+        levelStarCount = PlayerPrefs.GetInt("stars");
+        Debug.Log(gm.starList);
+
+    }
 
     public void UpdateLevelSelectionScores() //level selection screen stars
     {
@@ -50,6 +52,7 @@ public class StarDisplayScript : MonoBehaviour
                 levelStar3.enabled = false;
             }
         }
+
         /*
         foreach (GameObject levelGO in levelBtnObjects)
         {
