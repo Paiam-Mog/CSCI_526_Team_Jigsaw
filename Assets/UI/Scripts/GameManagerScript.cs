@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public List<int> starList = new List<int>();
+    public struct LevelStars
+	{
+        public int levelNumber;
+        public int starsEarned;
+	}
+    public static List<LevelStars> starList = new List<LevelStars>();
 
     private float startTime;
     private int starCount;
@@ -172,7 +177,7 @@ public class GameManagerScript : MonoBehaviour
     public void QuitToMainMenu() //assign this play / complete level
     {
 
-        SaveGame();
+        //SaveGame();
         SceneManager.LoadScene(0);
     }
 
@@ -188,7 +193,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void Quit() //assign this to quit button
     {
-        SaveGame();
+        //SaveGame();
         Application.Quit();
     }
 
@@ -230,8 +235,12 @@ public class GameManagerScript : MonoBehaviour
 
     public void SaveGame()
     {
-        starList.Add(starCount);
-        PlayerPrefs.SetInt("stars", GetStarCount());
+        LevelStars levelStars;
+        levelStars.levelNumber = GetLevelNumber();
+        levelStars.starsEarned = GetStarCount();
+        starList.Add(levelStars);
+
+        PlayerPrefs.SetInt("levelStars_" + GetLevelNumber(), GetStarCount());
         PlayerPrefs.SetInt("furthestLevel", GetLevelNumber());
         PlayerPrefs.SetFloat("time", GetTime());
     }
