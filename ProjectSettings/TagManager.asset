@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Mirror
   - Target
+  - Prism
   layers:
   - Default
   - TransparentFX
