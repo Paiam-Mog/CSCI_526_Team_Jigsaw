@@ -6,13 +6,13 @@ public class RotateWithMouse3D : RotateWithMouse
 {
     public BoxCollider2D boxCollider2D;
 
-    protected override bool CheckPoint()
+    protected override void CheckPoint()
     {
-        if (boxCollider2D == null)
-        {
-            return false;
-        }
+        // if (boxCollider2D == null)
+        // {
+        //     return false;
+        // }
 
-        return InputHelper.CheckInputPositionInCollider(boxCollider2D);
+        // return InputHelper.CheckInputPositionInCollider(boxCollider2D);
     }
 }
