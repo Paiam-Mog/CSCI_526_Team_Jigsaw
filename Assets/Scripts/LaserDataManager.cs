@@ -61,6 +61,7 @@ public class LaserDataManager : MonoBehaviour
     private GameObject[] prisms;
     private Dictionary<GameObject, ColorState> mirrorsDict;
     private Dictionary<GameObject, ColorState> prismsDict;
+    private List<ColorState> colors = new List<ColorState>();
 
     private ColorTable colorTable;
 
@@ -208,8 +209,10 @@ public class LaserDataManager : MonoBehaviour
                             mirror = collidedPrism
                         };
 
-                        GenerateLaserData(vertex1, _dir1, point1, count, ColorState.Yellow);
-                        GenerateLaserData(vertex2, _dir2, point2, count, ColorState.Green);
+                        colors = colorTable.RefractColor(color);
+
+                        GenerateLaserData(vertex1, _dir1, point1, count, colors[0]);
+                        GenerateLaserData(vertex2, _dir2, point2, count, colors[1]);
                     //}
 
                     //isHitPrism = true;
