@@ -17,7 +17,6 @@ public class RotateWithMouse : MonoBehaviour
     {
         // laserInteractionCount = new LaserInteractionCount();
         // InputHelper.onInputDown += StartRotating;
-
     }
 
     private void StartRotating()
@@ -41,14 +40,16 @@ public class RotateWithMouse : MonoBehaviour
 
         // Debug.Log(cannon.transform.position);
         cannon.transform.Rotate(0f, 0f, 1f * Sensitivity);
-
     }
 
 
     protected virtual void CheckPoint()
     {
-
         // return true;
 
     }
+
+    public void PauseRotation() {
+        Sensitivity = 0f;
+	}
 }
