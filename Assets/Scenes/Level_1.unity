@@ -684,6 +684,14 @@ PrefabInstance:
       propertyPath: earnedStar3
       value: 
       objectReference: {fileID: 388630374769641007}
+    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
+      propertyPath: maxTimeFor2Stars
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
+      propertyPath: maxTimeFor3Stars
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4462685340181257503, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: m_RootOrder
       value: 0

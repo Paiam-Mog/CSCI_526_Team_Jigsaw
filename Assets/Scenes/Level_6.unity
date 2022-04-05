@@ -246,6 +246,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1357095157}
@@ -340,6 +344,10 @@ PrefabInstance:
     - target: {fileID: 3148001806677790930, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -774,6 +782,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 960321685}
@@ -868,6 +880,10 @@ PrefabInstance:
     - target: {fileID: 3148001806677790930, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1253,6 +1269,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625265726987904877, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 691564247}
@@ -1347,6 +1367,10 @@ PrefabInstance:
     - target: {fileID: 3148001806677790930, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+      propertyPath: delayBetweenInteractions
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3628651153468303905, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1694,7 +1718,7 @@ PrefabInstance:
       objectReference: {fileID: 388630374769641006}
     - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: maxTimeFor2Stars
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: maxTimeFor3Stars

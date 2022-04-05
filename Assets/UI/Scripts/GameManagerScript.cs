@@ -44,9 +44,6 @@ public class GameManagerScript : MonoBehaviour
     void Awake()
     {
 
-        maxTimeFor3Stars = 30.0f;
-        maxTimeFor2Stars = 60.0f;
-
         totalLevels = SceneManager.sceneCountInBuildSettings;
         
         scene = SceneManager.GetActiveScene();
