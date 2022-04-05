@@ -164,25 +164,4 @@ public class ColorTable : MonoBehaviour
             return inputColor;
         }
     }
-
-    public List<ColorState> RefractColor(ColorState inputColor){
-
-        if(inputColor == ColorState.Red || inputColor == ColorState.Cyan){
-            List<ColorState> colors = new List<ColorState>{ColorState.Blue, ColorState.Green};
-            return colors;
-        } 
-        else if(inputColor == ColorState.Blue || inputColor == ColorState.Yellow){
-            List<ColorState> colors = new List<ColorState>{ColorState.Red, ColorState.Green};
-            return colors;
-        }
-        else if(inputColor == ColorState.Green || inputColor == ColorState.Magenta){
-            List<ColorState> colors = new List<ColorState>{ColorState.Red, ColorState.Blue};
-            return colors;
-        }
-        else{
-            List<ColorState> colors = new List<ColorState>{ColorState.White, ColorState.White};
-            return colors;
-        }
-    
-    }
 }
