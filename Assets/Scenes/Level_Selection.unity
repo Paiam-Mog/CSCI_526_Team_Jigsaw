@@ -1449,14 +1449,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelBtnObjects:
   - {fileID: 2063059124}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gm: {fileID: 0}
+  - {fileID: 1277716890}
+  - {fileID: 1005101650}
+  - {fileID: 663261899}
+  - {fileID: 738745547}
+  - {fileID: 187990071}
+  - {fileID: 12439175}
+  numberOfLevels: 7
 --- !u!4 &551414304
 Transform:
   m_ObjectHideFlags: 0
