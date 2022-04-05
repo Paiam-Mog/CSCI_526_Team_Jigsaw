@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7215215126277440730}
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7215215126277440731}
     - target: {fileID: 572174756303738043, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
       propertyPath: delayBetweenInteractions
       value: 0.05
@@ -218,6 +230,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Canvases
       objectReference: {fileID: 0}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7215215126277440730}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateCounterClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7215215126277440731}
     - target: {fileID: 3468851518500204867, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -483,6 +507,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &570610331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 570610330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &570610332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 570610330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &570610333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570610331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 310108836}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 310108835}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &570610334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570610332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 310108836}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 310108835}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1 &593998661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,6 +1194,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &944496443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 944496442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &944496444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 944496442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &944496445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944496443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1621163930}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1621163929}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &944496446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944496444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1621163930}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1621163929}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1001 &991022983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1334,6 +1490,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &1187391592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1187391591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1187391593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1187391591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1187391594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187391592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1734199460}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1734199459}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &1187391595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187391593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1734199460}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1734199459}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1001 &1249284751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1467,6 +1689,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &1249284752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1249284751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1249284753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1249284751}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249284754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249284752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 991022986}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 991022985}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &1249284755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249284753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 991022986}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 991022985}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1 &1343783299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +2117,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &1532831573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1532831572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1532831574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1532831572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1532831575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532831573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 706441799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 706441798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &1532831576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532831574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 706441799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 706441798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1001 &1539970247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1962,6 +2316,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &1539970248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1539970247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1539970249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 1539970247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1539970250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539970248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2070201088}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2070201087}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &1539970251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539970249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2070201088}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2070201087}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1001 &1621163927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2417,6 +2837,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+--- !u!1 &2079791140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 2079791139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2079791141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
+  m_PrefabInstance: {fileID: 2079791139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2079791142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079791140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 781339799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 781339798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
+--- !u!114 &2079791143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079791141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 781339799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 781339798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBetweenInteractions: 0.1
 --- !u!1001 &388630374769641005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2838,7 +3324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2850,6 +3336,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
@@ -2865,6 +3383,38 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 446480024}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 991022986}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 706441799}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 781339799}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 1621163930}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 2070201088}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_Target
+      value: 
+      objectReference: {fileID: 310108836}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 1734199460}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_Target
+      value: 
+      objectReference: {fileID: 7215215126277440730}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2877,8 +3427,40 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToggleMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2887,6 +3469,38 @@ PrefabInstance:
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: SaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: PauseRotation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_MethodName
+      value: PauseRotation
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2901,6 +3515,38 @@ PrefabInstance:
       value: GameManagerScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_TargetAssemblyTypeName
+      value: RotateWithMouse, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2910,6 +3556,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[8].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
+      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[10].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5584628198756828276, guid: 572cc4b74228fca40b3052063ba71027, type: 3}

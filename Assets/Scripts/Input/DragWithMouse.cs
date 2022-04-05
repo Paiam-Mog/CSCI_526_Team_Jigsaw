@@ -65,4 +65,8 @@ public class DragWithMouse : MonoBehaviour
         }
         mirror.transform.position = initialPosition + draggableAxis * currentObjectPosition;
     }
+
+    public void PauseDrag() {
+        Sensitivity = 0f;
+    }
 }
