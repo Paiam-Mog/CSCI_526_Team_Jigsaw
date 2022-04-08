@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateWithMouse3D : RotateWithMouse
+public class DragWithMouse3D : DragWithMouse
 {
     public BoxCollider2D boxCollider2D;
 
