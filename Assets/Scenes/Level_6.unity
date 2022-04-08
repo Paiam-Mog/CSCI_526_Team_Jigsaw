@@ -223,72 +223,6 @@ PrefabInstance:
     - {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
     - {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
---- !u!1 &87811671 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1986157425334601156, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
-  m_PrefabInstance: {fileID: 87811670}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &87811672 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1272093596940181103, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
-  m_PrefabInstance: {fileID: 87811670}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &87811673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87811671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 707514023}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 707514021}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
---- !u!114 &87811674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87811672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 707514023}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 707514021}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
 --- !u!114 &309453691 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 543049461452529368, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
@@ -433,72 +367,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
---- !u!1 &408096940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 408096939}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &408096941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 408096939}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &408096942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408096940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1357095157}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1357095156}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
---- !u!114 &408096943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408096941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1357095157}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1357095156}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
 --- !u!114 &446480024 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
@@ -1035,72 +903,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
---- !u!1 &842187530 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 842187529}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &842187531 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 842187529}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &842187532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842187530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960321685}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 960321684}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
---- !u!114 &842187533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842187531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 960321685}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 960321684}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
 --- !u!114 &880259695 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1713641271177368454, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
@@ -1588,72 +1390,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
---- !u!1 &1973552390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4039213244423075346, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 1973552389}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1973552391 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3619054406032043449, guid: 413c2a2a0d599374baa574d10bc45e6a, type: 3}
-  m_PrefabInstance: {fileID: 1973552389}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1973552392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973552390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 691564247}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 691564246}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
---- !u!114 &1973552393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973552391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec4cba9d2412f44ab24afb60963b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 691564247}
-        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
-        m_MethodName: RotateClockwise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 691564246}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  delayBetweenInteractions: 0.1
 --- !u!1001 &388630374769641005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2071,7 +1807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2083,22 +1819,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
@@ -2114,22 +1834,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 446480024}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 960321685}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
-      value: 
-      objectReference: {fileID: 1357095157}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
-      value: 
-      objectReference: {fileID: 691564247}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Target
-      value: 
-      objectReference: {fileID: 707514023}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -2139,22 +1843,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
@@ -2170,22 +1858,6 @@ PrefabInstance:
       value: SaveGame
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: PauseRotation
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: PauseRotation
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
-      value: PauseRotation
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: PauseRotation
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DropDownMenu, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -2198,22 +1870,6 @@ PrefabInstance:
       value: GameManagerScript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: RotateWithMouse, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: RotateWithMouse, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
-      value: RotateWithMouse, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: RotateWithMouse, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -2223,22 +1879,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-      propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5584628198756828276, guid: 572cc4b74228fca40b3052063ba71027, type: 3}

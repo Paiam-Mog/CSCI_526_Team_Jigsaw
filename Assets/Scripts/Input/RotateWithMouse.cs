@@ -48,8 +48,4 @@ public class RotateWithMouse : MonoBehaviour
         // return true;
 
     }
-
-    public void PauseRotation() {
-        Sensitivity = 0f;
-	}
 }
