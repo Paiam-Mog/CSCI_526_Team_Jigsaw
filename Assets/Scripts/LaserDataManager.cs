@@ -45,9 +45,9 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedPrism;
     private Vector2 prev= new Vector2(0.0f, 0.0f);
     private bool flag = true;
-    private List<float> angles1 = new List<float> { 60f, 180f };
-    private List<float> angles2 = new List<float> { 60f, -60f };
-    private List<float> angles3 = new List<float> { 180f, -60f };
+    private List<float> angles1 = new List<float> { -60f, 180f };
+    private List<float> angles2 = new List<float> { -60f, 60f };
+    private List<float> angles3 = new List<float> { 180f, 60f };
 
     private int side = 0;
 
@@ -248,7 +248,6 @@ public class LaserDataManager : MonoBehaviour
 
                     prev = _hit.point;
                     flag = false;
-
                 }
             }
         }
