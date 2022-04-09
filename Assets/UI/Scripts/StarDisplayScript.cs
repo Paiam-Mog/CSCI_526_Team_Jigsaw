@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class StarDisplayScript : MonoBehaviour
@@ -17,6 +18,10 @@ public class StarDisplayScript : MonoBehaviour
 
     [SerializeField] public Image bubbleGrid1;
     [SerializeField] public Image bubbleGrid2;
+
+    int totalStarCount;
+
+    public TextMeshProUGUI totalStarsText;
 
     void Awake()
     {
@@ -38,6 +43,9 @@ public class StarDisplayScript : MonoBehaviour
 
     public void UpdateLevelSelectionScores() //level selection screen stars
     {
+        totalStarsText.text = "0";
+        totalStarCount = int.Parse(totalStarsText.text);
+
         for (int i = 0; i < levelBtnObjects.Length; i++)
         {
             Image levelStar1 = levelBtnObjects[i].transform.Find("Star_Slot1/EarnedStar1").GetComponent<Image>();
@@ -75,7 +83,12 @@ public class StarDisplayScript : MonoBehaviour
                 levelStar2.enabled = false;
                 levelStar3.enabled = false;
             }
+
+            totalStarCount += levelStarCount;
+
         }
+
+        totalStarsText.text = totalStarCount.ToString();
     }
 
     public void SwitchPage()
