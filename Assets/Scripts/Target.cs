@@ -70,4 +70,9 @@ public class Target : MonoBehaviour
         onLevelCompleteEvent.Invoke();
     }
 
+    public bool GetIsCompleted()
+    {
+        return isCompleted;
+    }
+
 }
