@@ -22,8 +22,6 @@ public class LaserDataManager : MonoBehaviour
 
     private readonly int maxCount = 10;
 
-    private bool isHitPrism = false;
-
     
     public class LaserData
     {
@@ -61,6 +59,7 @@ public class LaserDataManager : MonoBehaviour
     private GameObject[] prisms;
     private Dictionary<GameObject, ColorState> mirrorsDict;
     private Dictionary<GameObject, ColorState> prismsDict;
+    private List<ColorState> colors = new List<ColorState>();
 
     private ColorTable colorTable;
 
@@ -157,59 +156,59 @@ public class LaserDataManager : MonoBehaviour
                         Debug.Log("hit angle:" + Vector2.Angle(prev, _hit.point));
                         angle = Vector2.SignedAngle(prev, _hit.point);
                     }
-                    
+
                     collidedPrism = _hit.collider.gameObject;
                     PolygonCollider2D sr = collidedPrism.GetComponent<PolygonCollider2D>();
-                    Vector2 _prismLaserDir = collidedPrism.transform.right;
-                    Vector3 scaleFactor = collidedPrism.transform.localScale;
-                    angle1 = angle1 - angle*scaleFactor.z;
-                    angle2 = angle2 - angle*scaleFactor.z;
+
+                    Transform prismTransform = collidedPrism.transform;
+                    Vector2 _prismLaserDir = prismTransform.right;
+                    Vector3 scaleFactor = prismTransform.localScale;
+                    angle1 -= angle*scaleFactor.z;
+                    angle2 -= angle*scaleFactor.z;
                     Vector2 _dir1 = Quaternion.Euler(0, 0, angle1) * _prismLaserDir;
                     Vector2 _dir2 = Quaternion.Euler(0, 0, angle2) * _prismLaserDir;
                     
+                    for (int i = 0; i < sr.points.Length; i++)
+                    {
+                        Debug.Log(sr.points[i]);
+                    }
 
-                   
+                    Vector2 pivot = prismTransform.position;
 
-                        for (int i = 0; i < sr.points.Length; i++)
-                        {
-                            Debug.Log(sr.points[i]);
-                        }
+                    Vector2 prismVertex1 = pivot + sr.points[0] * scaleFactor.x;
+                    Vector2 prismVertex2 = pivot + sr.points[1] * scaleFactor.x;
+                    Vector2 prismVertex3 = pivot + sr.points[2] * scaleFactor.x;
+                    //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
+                    //Debug.Log(offset);
 
-                        Vector2 pivot = sr.bounds.center;
+                    Debug.Log(prismVertex1);
+                    Debug.Log(prismVertex2);
+                    Debug.Log(prismVertex3);
 
-                        Vector2 prismVertex1 = pivot + sr.points[0];
-                        Vector2 prismVertex2 = pivot + sr.points[1];
-                        Vector2 prismVertex3 = pivot + sr.points[2];
-                        //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
-                        //Debug.Log(offset);
-
-                        Debug.Log(prismVertex1);
-                        Debug.Log(prismVertex2);
-                        Debug.Log(prismVertex3);
-
-                        Vector2 vertex1 = (prismVertex1 + prismVertex2) / 2;
-                        Vector2 vertex2 = (prismVertex3 + prismVertex2) / 2;
+                    Vector2 vertex1 = (prismVertex1 + prismVertex2) / 2;
+                    Vector2 vertex2 = (prismVertex3 + prismVertex2) / 2;
 
 
-                        Debug.Log(vertex2);
-                        Debug.Log(vertex1);
+                    Debug.Log(vertex2);
+                    Debug.Log(vertex1);
 
-                        ReflectionPoint point1 = new ReflectionPoint
-                        {
-                            position = vertex1,
-                            entryLaser = laser,
-                            mirror = collidedPrism
-                        };
+                    ReflectionPoint point1 = new ReflectionPoint
+                    {
+                        position = vertex1,
+                        entryLaser = laser,
+                        mirror = collidedPrism
+                    };
 
-                        ReflectionPoint point2 = new ReflectionPoint
-                        {
-                            position = vertex2,
-                            entryLaser = laser,
-                            mirror = collidedPrism
-                        };
+                    ReflectionPoint point2 = new ReflectionPoint
+                    {
+                        position = vertex2,
+                        entryLaser = laser,
+                        mirror = collidedPrism
+                    };
 
-                        GenerateLaserData(vertex1, _dir1, point1, count, ColorState.Yellow);
-                        GenerateLaserData(vertex2, _dir2, point2, count, ColorState.Green);
+                    colors = colorTable.RefractColor(color);
+                    GenerateLaserData(vertex1, _dir1, point1, count, colors[0]);
+                    GenerateLaserData(vertex2, _dir2, point2, count, colors[1]);
                     //}
 
                     //isHitPrism = true;
