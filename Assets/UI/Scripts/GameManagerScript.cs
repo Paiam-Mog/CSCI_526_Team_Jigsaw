@@ -233,5 +233,10 @@ public class GameManagerScript : MonoBehaviour
         PlayerPrefs.SetFloat("time", GetTime());
     }
 
+    public void ClearPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
 
 }
