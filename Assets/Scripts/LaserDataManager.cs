@@ -22,7 +22,6 @@ public class LaserDataManager : MonoBehaviour
 
     private readonly int maxCount = 10;
 
-    
     public class LaserData
     {
         public Vector2 startPoint;
@@ -46,8 +45,11 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedPrism;
     private Vector2 prev= new Vector2(0.0f, 0.0f);
     private bool flag = true;
-    float angle1 = -60f;
-    float angle2 = 60f;
+    private List<float> angles1 = new List<float> { 60f, 180f };
+    private List<float> angles2 = new List<float> { 60f, -60f };
+    private List<float> angles3 = new List<float> { 180f, -60f };
+
+    private int side = 0;
 
     [SerializeField]
     private List<LaserData> laserDatas = new List<LaserData>();
@@ -163,10 +165,6 @@ public class LaserDataManager : MonoBehaviour
                     Transform prismTransform = collidedPrism.transform;
                     Vector2 _prismLaserDir = prismTransform.right;
                     Vector3 scaleFactor = prismTransform.localScale;
-                    angle1 -= angle*scaleFactor.z;
-                    angle2 -= angle*scaleFactor.z;
-                    Vector2 _dir1 = Quaternion.Euler(0, 0, angle1) * _prismLaserDir;
-                    Vector2 _dir2 = Quaternion.Euler(0, 0, angle2) * _prismLaserDir;
                     
                     for (int i = 0; i < sr.points.Length; i++)
                     {
@@ -178,6 +176,7 @@ public class LaserDataManager : MonoBehaviour
                     Vector2 prismVertex1 = pivot + sr.points[0] * scaleFactor.x;
                     Vector2 prismVertex2 = pivot + sr.points[1] * scaleFactor.x;
                     Vector2 prismVertex3 = pivot + sr.points[2] * scaleFactor.x;
+
                     //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
                     //Debug.Log(offset);
 
@@ -185,12 +184,49 @@ public class LaserDataManager : MonoBehaviour
                     Debug.Log(prismVertex2);
                     Debug.Log(prismVertex3);
 
-                    Vector2 vertex1 = (prismVertex1 + prismVertex2) / 2;
-                    Vector2 vertex2 = (prismVertex3 + prismVertex2) / 2;
+                    float distanceFromVertex1 = Vector2.Distance(prismVertex1, _hit.point);
+                    float distanceFromVertex2 = Vector2.Distance(prismVertex2, _hit.point);
+                    float distanceFromVertex3 = Vector2.Distance(prismVertex3, _hit.point);
 
+                    Vector2 vertex1 = new Vector2();
+                    Vector2 vertex2 = new Vector2();
 
+                    if (distanceFromVertex1 < distanceFromVertex2 && distanceFromVertex3 < distanceFromVertex2)
+                    {
+                        side = 2;
+
+                        angles2[0] -= angle * scaleFactor.z;
+                        angles2[1] -= angle * scaleFactor.z;
+
+                        vertex1 = (prismVertex1 + prismVertex2) / 2;
+                        vertex2 = (prismVertex3 + prismVertex2) / 2;
+                    }
+                    else if (distanceFromVertex2 < distanceFromVertex3 && distanceFromVertex1 < distanceFromVertex3)
+                    {
+                        side = 3;
+
+                        angles3[0] -= angle * scaleFactor.z;
+                        angles3[1] -= angle * scaleFactor.z;
+
+                        vertex1 = (prismVertex1 + prismVertex3) / 2;
+                        vertex2 = (prismVertex2 + prismVertex3) / 2;
+                    }
+                    else if (distanceFromVertex3 < distanceFromVertex1 && distanceFromVertex2 < distanceFromVertex1)
+                    {
+                        side = 1;
+
+                        angles1[0] -= angle * scaleFactor.z;
+                        angles1[1] -= angle * scaleFactor.z;
+
+                        vertex1 = (prismVertex2 + prismVertex1) / 2;
+                        vertex2 = (prismVertex3 + prismVertex1) / 2;
+                    }
+                   
                     Debug.Log(vertex2);
                     Debug.Log(vertex1);
+
+                    Vector2 _dir1 = Quaternion.Euler(0, 0, (side == 1 ? angles1[0] : side == 2 ? angles2[0] : angles3[0])) * _prismLaserDir;
+                    Vector2 _dir2 = Quaternion.Euler(0, 0, (side == 1 ? angles1[1] : side == 2 ? angles2[1] : angles3[1])) * _prismLaserDir;
 
                     ReflectionPoint point1 = new ReflectionPoint
                     {
@@ -209,17 +245,11 @@ public class LaserDataManager : MonoBehaviour
                     colors = colorTable.RefractColor(color);
                     GenerateLaserData(vertex1, _dir1, point1, count, colors[0]);
                     GenerateLaserData(vertex2, _dir2, point2, count, colors[1]);
-                    //}
 
-                    //isHitPrism = true;
                     prev = _hit.point;
                     flag = false;
 
                 }
-                //else
-                //{
-                //    Debug.Log("No Surface");
-                //}
             }
         }
         else
