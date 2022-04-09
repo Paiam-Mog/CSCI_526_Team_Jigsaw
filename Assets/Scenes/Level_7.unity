@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6396354240465992312, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
 --- !u!4 &160793771 stripped
@@ -3631,34 +3635,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1254573207, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: initColor
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5240517709858255152, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: Sensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5894650999389185649, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215124375001517, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215124375001517, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215124375001517, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 98fd7a98e303aba4998d60d4cfb89126, type: 3}
-    - target: {fileID: 7215215124375001517, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7215215125727447232, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3706,22 +3682,6 @@ PrefabInstance:
     - target: {fileID: 7215215125727447246, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_Name
       value: Laser Cannon
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215125727447247, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Size.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215125727447247, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Size.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7215215125727447247, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3a4b28a2da1bda844bed468fb56ffee8, type: 3}
-    - target: {fileID: 7215215125727447247, guid: 966648be7093725468dd4292f5636f2c, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 966648be7093725468dd4292f5636f2c, type: 3}

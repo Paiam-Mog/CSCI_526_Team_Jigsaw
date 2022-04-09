@@ -9,11 +9,23 @@ public class StarDisplayScript : MonoBehaviour
     [SerializeField] public GameObject[] levelBtnObjects;
     [SerializeField] int numberOfLevels = 8;
 
-    //int levelStarCount;
+    [SerializeField] public GameObject levelBtnGrid1;
+    [SerializeField] public GameObject levelBtnGrid2;
+
+    [SerializeField] public GameObject arrow_Right;
+    [SerializeField] public GameObject arrow_Left;
+
+    [SerializeField] public Image bubbleGrid1;
+    [SerializeField] public Image bubbleGrid2;
 
     void Awake()
     {
-        for(int i = 1; i <= numberOfLevels; i++) {
+        levelBtnGrid1.SetActive(true);         //specifically for UI level selection arrows and bubbles
+        levelBtnGrid2.SetActive(false);
+        arrow_Right.SetActive(true);
+        arrow_Left.SetActive(false);
+
+        for (int i = 1; i <= numberOfLevels; i++) {
             GameManagerScript.LevelStars levelStars;
             levelStars.levelNumber = i;
             levelStars.starsEarned = PlayerPrefs.GetInt("levelStars_" + i);
@@ -23,7 +35,6 @@ public class StarDisplayScript : MonoBehaviour
 
         UpdateLevelSelectionScores();
     }
-
 
     public void UpdateLevelSelectionScores() //level selection screen stars
     {
@@ -65,40 +76,31 @@ public class StarDisplayScript : MonoBehaviour
                 levelStar3.enabled = false;
             }
         }
-        /*
-        foreach (GameObject levelGO in levelBtnObjects)
+    }
+
+    public void SwitchPage()
+    {
+        if(levelBtnGrid1.activeSelf)
         {
-            Image levelStar1 = GameObject.Find("Star_Slot1/EarnedStar1").GetComponent<Image>();
-            Image levelStar2 = GameObject.Find("Star_Slot2/EarnedStar2").GetComponent<Image>();
-            Image levelStar3 = GameObject.Find("Star_Slot3/EarnedStar3").GetComponent<Image>();
+            levelBtnGrid2.SetActive(true);
+            levelBtnGrid1.SetActive(false);
 
-            if (levelStarCount == 1)
-            {
-                levelStar1.enabled = true;
-                levelStar2.enabled = false;
-                levelStar3.enabled = false;
+            arrow_Left.SetActive(true);
+            arrow_Right.SetActive(false);
 
-
-            }
-            else if (levelStarCount == 2)
-            {
-                levelStar1.enabled = true;
-                levelStar2.enabled = true;
-                levelStar3.enabled = false;
-            }
-            else if (levelStarCount == 3)
-            {
-                levelStar1.enabled = true;
-                levelStar2.enabled = true;
-                levelStar3.enabled = true;
-            }
-            else
-            {
-                levelStar1.enabled = false;
-                levelStar2.enabled = false;
-                levelStar3.enabled = false;
-            }
+            bubbleGrid1.color = Color.grey;
+            bubbleGrid2.color = Color.white;
         }
-        */
+        else
+        {
+            levelBtnGrid2.SetActive(false);
+            levelBtnGrid1.SetActive(true);
+
+            arrow_Right.SetActive(true);
+            arrow_Left.SetActive(false);
+
+            bubbleGrid1.color = Color.white;
+            bubbleGrid2.color = Color.grey;
+        }
     }
 }
