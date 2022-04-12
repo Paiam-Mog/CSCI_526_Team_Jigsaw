@@ -32,10 +32,12 @@ public class ClickAndHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
 
     public void OnPointerDown(PointerEventData eventData) {
         interacting = true;
+        SoundEffectController.instance.PlayMovingSound();
 	}
 
     public void OnPointerUp(PointerEventData eventData) {
         interacting = false;
+        SoundEffectController.instance.PlayMovingEndSound();
     }
 
     public void OnPointerClick(PointerEventData eventData) {
