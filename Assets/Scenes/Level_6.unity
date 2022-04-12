@@ -395,7 +395,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1357095157}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1357095156}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &408096943
 MonoBehaviour:
@@ -411,7 +423,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1357095157}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1357095156}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &446480024 stripped
 MonoBehaviour:
@@ -1116,7 +1140,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960321685}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 960321684}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &842187533
 MonoBehaviour:
@@ -1132,7 +1168,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 960321685}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 960321684}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &880259695 stripped
 MonoBehaviour:
@@ -1645,7 +1693,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 691564247}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 691564246}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &1973552393
 MonoBehaviour:
@@ -1661,7 +1721,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 691564247}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 691564246}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &388630374769641005
 PrefabInstance:
