@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7215215126277440730}
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846530, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7215215126277440731}
     - target: {fileID: 572174756303738043, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
       propertyPath: delayBetweenInteractions
       value: 0.05
@@ -218,6 +230,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Canvases
       objectReference: {fileID: 0}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7215215126277440730}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RotateCounterClockwise
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566511568694627052, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
+      propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 7215215126277440731}
     - target: {fileID: 3468851518500204867, guid: 8c1771ada7dc8ba42b8c899b014c9258, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -511,7 +535,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 310108836}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 310108835}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &570610334
 MonoBehaviour:
@@ -527,7 +563,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 310108836}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 310108835}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1 &593998661
 GameObject:
@@ -1174,7 +1222,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1621163930}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1621163929}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &944496446
 MonoBehaviour:
@@ -1190,7 +1250,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1621163930}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1621163929}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &991022983
 PrefabInstance:
@@ -1446,7 +1518,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1734199460}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1734199459}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &1187391595
 MonoBehaviour:
@@ -1462,7 +1546,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1734199460}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1734199459}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &1249284751
 PrefabInstance:
@@ -1621,7 +1717,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 991022986}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 991022985}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &1249284755
 MonoBehaviour:
@@ -1637,7 +1745,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 991022986}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 991022985}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1 &1343783299
 GameObject:
@@ -2025,7 +2145,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 706441799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 706441798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &1532831576
 MonoBehaviour:
@@ -2041,7 +2173,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 706441799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 706441798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &1539970247
 PrefabInstance:
@@ -2200,7 +2344,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2070201088}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2070201087}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &1539970251
 MonoBehaviour:
@@ -2216,7 +2372,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2070201088}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2070201087}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &1621163927
 PrefabInstance:
@@ -2840,7 +3008,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 781339799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 781339798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!114 &2079791143
 MonoBehaviour:
@@ -2856,7 +3036,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 781339799}
+        m_TargetAssemblyTypeName: RotateWithMouse, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 781339798}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   delayBetweenInteractions: 0.1
 --- !u!1001 &388630374769641005
 PrefabInstance:
