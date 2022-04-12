@@ -255,11 +255,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMax
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMin
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
@@ -572,11 +572,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMax
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMin
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
@@ -646,11 +646,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMax
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMin
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
@@ -726,11 +726,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMax
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMin
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
@@ -798,6 +798,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 258067571146726636, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -906,6 +914,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 258067571146726636, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1065,6 +1081,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
       propertyPath: m_Name
       value: Mirror Red(Temp) (1)
@@ -1188,6 +1212,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
       propertyPath: m_Name
       value: Mirror Red(Temp)
@@ -1254,6 +1286,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 258067571146726636, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1315,6 +1355,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8882622527377762852, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
       propertyPath: m_Name
       value: Mirror Red(Temp) (2)
@@ -1381,6 +1429,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1397580962}
     m_Modifications:
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1548070804, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
+      propertyPath: draggableMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 258067571146726636, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1477,11 +1533,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMax
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1659298184, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: draggableMin
-      value: -5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3885575325921007300, guid: 4d48bd7d21f4dc44598d2ea4d0d1832c, type: 3}
       propertyPath: m_Name
