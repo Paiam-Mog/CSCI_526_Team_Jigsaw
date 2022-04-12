@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 7111132560424476648, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1548070804}
+      objectReference: {fileID: 1548070805}
     - target: {fileID: 7111132560424476648, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DragForward
@@ -326,7 +326,7 @@ PrefabInstance:
     - target: {fileID: 7111132560424476649, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1548070804}
+      objectReference: {fileID: 1548070805}
     - target: {fileID: 7111132560424476649, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DragBackward
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36d31f3135eb847d582aacc03a895fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1548070804
+--- !u!114 &1548070805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1548070802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af304e76bd9b2b343afa2055e8a69539, type: 3}
+  m_Script: {fileID: 11500000, guid: 63d48b8c2d761e944be76fbf2358b30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   draggableAxis: {x: 1, y: 0}
@@ -1192,18 +1192,6 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 258067571146726635, guid: dcc6a44a69718e24586e68759974efd0, type: 3}
   m_PrefabInstance: {fileID: 1548070801}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1548070808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548070802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c68f21ee5514df45857a8cee57a9271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1586073241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1271,7 +1259,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2119076727, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
 --- !u!1 &1586073242 stripped
 GameObject:
@@ -1295,7 +1284,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 8882622527377762907, guid: f49cf5ef8e1c94849bfa35963aeb88dc, type: 3}
   m_PrefabInstance: {fileID: 1586073241}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1586073245
+--- !u!114 &1586073246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1304,7 +1293,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1586073242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af304e76bd9b2b343afa2055e8a69539, type: 3}
+  m_Script: {fileID: 11500000, guid: 63d48b8c2d761e944be76fbf2358b30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   draggableAxis: {x: 1, y: 0}
@@ -1313,18 +1302,6 @@ MonoBehaviour:
   mirrorInteractionCount: {fileID: 1586073243}
   Sensitivity: 0.2
   boxCollider2D: {fileID: 1586073244}
---- !u!114 &1586073248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586073242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c68f21ee5514df45857a8cee57a9271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1627939183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: 7111132560424476648, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1586073245}
+      objectReference: {fileID: 1586073246}
     - target: {fileID: 7111132560424476648, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DragForward
@@ -1527,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 7111132560424476649, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1586073245}
+      objectReference: {fileID: 1586073246}
     - target: {fileID: 7111132560424476649, guid: dbe78d451b940dc44afa1c5fe654088f, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DragBackward
@@ -2004,11 +1981,11 @@ PrefabInstance:
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 1586073245}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
-      objectReference: {fileID: 1548070804}
+      objectReference: {fileID: 0}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
