@@ -284,17 +284,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1418717149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
-  m_PrefabInstance: {fileID: 3763220285512970427}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a389a5c4042bd8040964fc4aa63bf21a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1508563068
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +430,14 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 39175429}
+    - target: {fileID: 2015672003, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 39175429}
+    - target: {fileID: 2015672003, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: turnOffMenuAtAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3431131626188603666, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -685,10 +682,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7533677824443904129}
     - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
-      propertyPath: targetNode
-      value: 
-      objectReference: {fileID: 1418717149}
-    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: earnedStar1
       value: 
       objectReference: {fileID: 388630374769641009}
@@ -700,14 +693,6 @@ PrefabInstance:
       propertyPath: earnedStar3
       value: 
       objectReference: {fileID: 388630374769641007}
-    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
-      propertyPath: maxTimeFor2Stars
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
-      propertyPath: maxTimeFor3Stars
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4462685340181257503, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: m_RootOrder
       value: 0

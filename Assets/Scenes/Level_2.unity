@@ -738,6 +738,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 39175429}
+    - target: {fileID: 2015672003, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: turnOffMenuAtAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3431131626188603666, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_IsActive
       value: 0
