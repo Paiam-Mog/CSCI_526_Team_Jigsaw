@@ -22,9 +22,8 @@ public class DrawLaser : MonoBehaviour
 
     private GameObject[] mirrors;
 
-    private GameObject[] prisms1;
-    private GameObject[] prisms2;
-    private GameObject[] prisms3;
+    private GameObject[] prisms;
+
     // Use this for initialization
     public void Start()
     {
@@ -32,10 +31,7 @@ public class DrawLaser : MonoBehaviour
         colorTable = new ColorTable();
 
         mirrors = GameObject.FindGameObjectsWithTag("Mirror");
-        prisms1 = GameObject.FindGameObjectsWithTag("Prism_Side_1");
-        prisms2 = GameObject.FindGameObjectsWithTag("Prism_Side_2");
-        prisms3 = GameObject.FindGameObjectsWithTag("Prism_Side_3");
-        
+        prisms = GameObject.FindGameObjectsWithTag("Prism");
     }
 
     // Update is called once per frame
@@ -64,25 +60,7 @@ public class DrawLaser : MonoBehaviour
             }
         }
 
-        foreach (var prism in prisms1)
-        {
-            foreach (Transform child in prism.transform)
-            {
-                LineRenderer renderer = child.gameObject.GetComponent<LineRenderer>();
-                renderer.enabled = false;
-            }
-        }
-
-        foreach (var prism in prisms2)
-        {
-            foreach (Transform child in prism.transform)
-            {
-                LineRenderer renderer = child.gameObject.GetComponent<LineRenderer>();
-                renderer.enabled = false;
-            }
-        }
-
-        foreach (var prism in prisms3)
+        foreach (var prism in prisms)
         {
             foreach (Transform child in prism.transform)
             {
