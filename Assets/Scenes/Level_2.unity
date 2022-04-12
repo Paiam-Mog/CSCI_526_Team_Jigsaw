@@ -702,6 +702,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457455722, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 39175429}
     - target: {fileID: 3431131626188603666, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1073,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: laserDataManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7215215126277440731}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: targetNodeSprite
       value: 
@@ -1117,7 +1121,7 @@ PrefabInstance:
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7215215126277440729}
     - target: {fileID: 2391318928068241627, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: onLevelCompleteEvent.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1277,6 +1281,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7215215125727447246, guid: 966648be7093725468dd4292f5636f2c, type: 3}
   m_PrefabInstance: {fileID: 7215215126277440728}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7215215126277440731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1254573207, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+  m_PrefabInstance: {fileID: 7215215126277440728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35078655b86e6de469c71eb1cb031185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7533677823028540797 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7920056397545927504, guid: 1ada4960266223c4c9383662604bf80c, type: 3}

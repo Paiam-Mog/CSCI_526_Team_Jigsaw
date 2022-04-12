@@ -8,6 +8,9 @@ TagManager:
   - Mirror
   - Target
   - Prism
+  - Prism_Side_1
+  - Prism_Side_2
+  - Prism_Side_3
   layers:
   - Default
   - TransparentFX

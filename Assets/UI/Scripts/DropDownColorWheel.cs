@@ -7,6 +7,7 @@ public class DropDownColorWheel: MonoBehaviour
 {
     public Button dropdownBtn;
     public GameObject Menu;
+    public bool turnOffMenuAtAwake = true;
 
     [SerializeField] 
     GameManagerScript gm;
@@ -15,7 +16,14 @@ public class DropDownColorWheel: MonoBehaviour
 
     void Awake()
     {
-        CloseMenu();
+        if (turnOffMenuAtAwake)
+        {
+            CloseMenu();
+        }
+        else
+        {
+            isToggled = true;
+        }
     }
 
     public void ToggleMenu()

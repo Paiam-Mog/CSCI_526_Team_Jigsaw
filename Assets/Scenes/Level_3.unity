@@ -1071,10 +1071,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457455722, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 39175429}
+    - target: {fileID: 457455722, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: turnOffMenuAtAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 544401481, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 581237368, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: gm
       value: 
       objectReference: {fileID: 39175429}
+    - target: {fileID: 947289611, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 388630374511188682, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -274.1
@@ -1781,6 +1797,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254573207, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+      propertyPath: initColor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7215215125727447232, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_RootOrder
       value: 6

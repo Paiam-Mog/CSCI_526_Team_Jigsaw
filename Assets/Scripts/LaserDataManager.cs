@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 public class LaserDataManager : MonoBehaviour
 {
@@ -19,12 +20,19 @@ public class LaserDataManager : MonoBehaviour
     private readonly string TargetTag = "Target";
 
     private readonly string PrismTag = "Prism";
+    private readonly string PrismSide1Tag = "Prism_Side_1";
+    private readonly string PrismSide2Tag = "Prism_Side_2";
+    private readonly string PrismSide3Tag = "Prism_Side_3";
+
+    [SerializeField]
+    private GameObject Prism_Side_1;
+    [SerializeField]
+    private GameObject Prism_Side_2;
+    [SerializeField]
+    private GameObject Prism_Side_3;
 
     private readonly int maxCount = 10;
 
-    private bool isHitPrism = false;
-
-    
     public class LaserData
     {
         public Vector2 startPoint;
@@ -48,8 +56,15 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedPrism;
     private Vector2 prev= new Vector2(0.0f, 0.0f);
     private bool flag = true;
+
     float angle1 = -60f;
     float angle2 = 60f;
+
+    // private List<float> angles1 = new List<float> { -60f, 180f };
+    // private List<float> angles2 = new List<float> { -60f, 60f };
+    // private List<float> angles3 = new List<float> { 180f, 60f };
+
+    private int side = 0;
 
     [SerializeField]
     private List<LaserData> laserDatas = new List<LaserData>();
@@ -61,6 +76,7 @@ public class LaserDataManager : MonoBehaviour
     private GameObject[] prisms;
     private Dictionary<GameObject, ColorState> mirrorsDict;
     private Dictionary<GameObject, ColorState> prismsDict;
+    private List<ColorState> colors = new List<ColorState>();
 
     private ColorTable colorTable;
 
@@ -149,78 +165,15 @@ public class LaserDataManager : MonoBehaviour
                     collidedTarget = _hit.collider.gameObject;
                     collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
                 }
-                else if (_hit.transform.tag == PrismTag)
-                {
-                    float angle = 0.0f;
-                    if (!flag)
-                    {
-                        Debug.Log("hit angle:" + Vector2.Angle(prev, _hit.point));
-                        angle = Vector2.SignedAngle(prev, _hit.point);
-                    }
-                    
-                    collidedPrism = _hit.collider.gameObject;
-                    PolygonCollider2D sr = collidedPrism.GetComponent<PolygonCollider2D>();
-                    Vector2 _prismLaserDir = collidedPrism.transform.right;
-                    Vector3 scaleFactor = collidedPrism.transform.localScale;
-                    angle1 = angle1 - angle*scaleFactor.z;
-                    angle2 = angle2 - angle*scaleFactor.z;
-                    Vector2 _dir1 = Quaternion.Euler(0, 0, angle1) * _prismLaserDir;
-                    Vector2 _dir2 = Quaternion.Euler(0, 0, angle2) * _prismLaserDir;
-                    
-
-                   
-
-                        for (int i = 0; i < sr.points.Length; i++)
-                        {
-                            Debug.Log(sr.points[i]);
-                        }
-
-                        Vector2 pivot = sr.bounds.center;
-
-                        Vector2 prismVertex1 = pivot + sr.points[0];
-                        Vector2 prismVertex2 = pivot + sr.points[1];
-                        Vector2 prismVertex3 = pivot + sr.points[2];
-                        //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
-                        //Debug.Log(offset);
-
-                        Debug.Log(prismVertex1);
-                        Debug.Log(prismVertex2);
-                        Debug.Log(prismVertex3);
-
-                        Vector2 vertex1 = (prismVertex1 + prismVertex2) / 2;
-                        Vector2 vertex2 = (prismVertex3 + prismVertex2) / 2;
-
-
-                        Debug.Log(vertex2);
-                        Debug.Log(vertex1);
-
-                        ReflectionPoint point1 = new ReflectionPoint
-                        {
-                            position = vertex1,
-                            entryLaser = laser,
-                            mirror = collidedPrism
-                        };
-
-                        ReflectionPoint point2 = new ReflectionPoint
-                        {
-                            position = vertex2,
-                            entryLaser = laser,
-                            mirror = collidedPrism
-                        };
-
-                        GenerateLaserData(vertex1, _dir1, point1, count, ColorState.Yellow);
-                        GenerateLaserData(vertex2, _dir2, point2, count, ColorState.Green);
-                    //}
-
-                    //isHitPrism = true;
-                    prev = _hit.point;
-                    flag = false;
-
+                else if(_hit.transform.tag == PrismSide1Tag){
+                    RefractionPrism(_hit, Prism_Side_2, Prism_Side_3, count, laser, color);
                 }
-                //else
-                //{
-                //    Debug.Log("No Surface");
-                //}
+                else if(_hit.transform.tag == PrismSide2Tag){
+                    RefractionPrism(_hit, Prism_Side_1, Prism_Side_3, count, laser, color);
+                }
+                else if(_hit.transform.tag == PrismSide3Tag){
+                    RefractionPrism(_hit, Prism_Side_1, Prism_Side_2, count, laser, color);
+                }
             }
         }
         else
@@ -228,6 +181,54 @@ public class LaserDataManager : MonoBehaviour
             Debug.Log("collider null");
         }
    
+    }
+
+    private void RefractionPrism(RaycastHit2D _hit, GameObject side1, GameObject side2, int count, LaserData laser, ColorState color){
+        float angle = 0.0f;
+        if (!flag)
+        {
+            angle = Vector2.SignedAngle(prev, _hit.point);
+        }
+
+        angle1 = angle1 - angle;
+        angle2 = angle2 - angle;
+    
+        BoxCollider2D sr1 = side1.GetComponent<BoxCollider2D>();
+        BoxCollider2D sr2 = side2.GetComponent<BoxCollider2D>();
+
+        Vector2 _prismLaserDir = sr1.transform.right;
+
+        Vector2 side1_bounds = sr1.bounds.center;
+        Vector2 side2_bounds = sr2.bounds.center;
+
+        // Debug.Log("Side 2 position:" + sr1.transform.position);
+        // Debug.Log("Side 2 Bounds Centre:" + side2_bounds);
+
+        Vector2 _dir1 = Quaternion.Euler(0, 0, angle2) * _prismLaserDir;
+        Vector2 _dir2 = Quaternion.Euler(0, 0, angle1) * _prismLaserDir;
+
+        ReflectionPoint point1 = new ReflectionPoint
+        {
+            position = side1_bounds,
+            entryLaser = laser,
+            mirror = side1
+        };
+
+        ReflectionPoint point2 = new ReflectionPoint
+        {
+            position = side2_bounds,
+            entryLaser = laser,
+            mirror = side2
+        };
+
+        colors = colorTable.RefractColor(color);
+
+        GenerateLaserData(side1_bounds, _dir1, point1, count, colors[0]);
+        GenerateLaserData(side2_bounds, _dir2, point2, count, colors[1]);
+
+        prev = _hit.point;
+        flag = false;
+
     }
 
     public List<LaserData> GetLaserDatas()
