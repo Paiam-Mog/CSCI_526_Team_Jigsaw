@@ -826,18 +826,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 446480024}
-    - target: {fileID: 388630374511188682, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 379
-      objectReference: {fileID: 0}
-    - target: {fileID: 388630374511188682, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -109
-      objectReference: {fileID: 0}
-    - target: {fileID: 388630374511188685, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
-      propertyPath: m_text
-      value: Press and Drag the Mirror to rotate it
-      objectReference: {fileID: 0}
+    - target: {fileID: 388630374769641011, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 446480024}
     - target: {fileID: 7920056396233588601, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

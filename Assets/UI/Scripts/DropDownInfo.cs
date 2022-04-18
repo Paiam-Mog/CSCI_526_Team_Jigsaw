@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DropDownColorWheel: MonoBehaviour
+public class DropDownInfo : MonoBehaviour
 {
     public Button dropdownBtn;
     public GameObject Menu;
 
-    [SerializeField] 
+    [SerializeField]
     GameManagerScript gm;
-
-    private bool isToggled;
 
     private bool toggleOnStart;
 
+    private bool isToggled;
+
     void Awake()
     {
+
         if (toggleOnStart)
         {
             Menu.SetActive(true);
@@ -31,12 +32,11 @@ public class DropDownColorWheel: MonoBehaviour
             Menu.SetActive(false);
             isToggled = false;
         }
-
     }
 
     void Update()
     {
-        if (gm.GetLevelNumber() == 3)
+        if (gm.GetLevelNumber() == 2)
         {
             toggleOnStart = true;
         }
@@ -48,7 +48,7 @@ public class DropDownColorWheel: MonoBehaviour
 
     public void ToggleMenu()
     {
-        if(!isToggled)
+        if (!isToggled)
         {
             Menu.SetActive(true);
             isToggled = true;
