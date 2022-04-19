@@ -6,11 +6,25 @@ public class BGMController : MonoBehaviour
 {
     AudioSource audioSource;
 
-    // Start is called before the first frame update
+    public static BGMController instance = null;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject);
+        }
+    }
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(transform.gameObject);
         if (!audioSource.isPlaying)
             audioSource.Play();
     }
