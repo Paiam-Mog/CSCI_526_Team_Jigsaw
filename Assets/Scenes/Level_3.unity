@@ -1725,6 +1725,14 @@ PrefabInstance:
       propertyPath: initColor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1254573207, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 5788949093367457155, guid: 45099857d6d5e154ea98047abda1da1d, type: 3}
+    - target: {fileID: 7215215124375001516, guid: 966648be7093725468dd4292f5636f2c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7215215125727447232, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_RootOrder
       value: 6

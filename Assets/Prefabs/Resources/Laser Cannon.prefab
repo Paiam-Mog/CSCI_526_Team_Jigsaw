@@ -181,6 +181,7 @@ MonoBehaviour:
   Prism_Side_1: {fileID: 0}
   Prism_Side_2: {fileID: 0}
   Prism_Side_3: {fileID: 0}
+  sparks: {fileID: 5788949093367457155, guid: 45099857d6d5e154ea98047abda1da1d, type: 3}
 --- !u!114 &4939614351283155535
 MonoBehaviour:
   m_ObjectHideFlags: 0
