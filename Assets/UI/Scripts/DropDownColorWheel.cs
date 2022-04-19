@@ -7,22 +7,42 @@ public class DropDownColorWheel: MonoBehaviour
 {
     public Button dropdownBtn;
     public GameObject Menu;
-    public bool turnOffMenuAtAwake = true;
 
     [SerializeField] 
     GameManagerScript gm;
 
     private bool isToggled;
 
+    private bool toggleOnStart;
+
     void Awake()
     {
-        if (turnOffMenuAtAwake)
+        if (toggleOnStart)
         {
-            CloseMenu();
+            Menu.SetActive(true);
+            isToggled = true;
+
+            toggleOnStart = false;
+
+            gm.PauseGame();
         }
         else
         {
-            isToggled = true;
+            Menu.SetActive(false);
+            isToggled = false;
+        }
+
+    }
+
+    void Update()
+    {
+        if (gm.GetLevelNumber() == 3)
+        {
+            toggleOnStart = true;
+        }
+        else
+        {
+            toggleOnStart = false;
         }
     }
 

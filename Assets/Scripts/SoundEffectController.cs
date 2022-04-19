@@ -15,7 +15,8 @@ public class SoundEffectController : MonoBehaviour
     [SerializeField] AudioClip movingStart;
     [SerializeField] AudioClip moving;
     [SerializeField] AudioClip movingEnd;
-
+    [SerializeField] AudioClip uiPopUp;
+    [SerializeField] AudioClip uiClose;
     public static SoundEffectController instance = null;
 
     private void Awake()
@@ -54,6 +55,21 @@ public class SoundEffectController : MonoBehaviour
         audioSource.Play();
     }
     
+    public void PlayUIPopUpSound()
+    {
+        audioSource.Stop();
+        audioSource.clip = uiPopUp;
+        audioSource.loop = false;
+        audioSource.Play();
+    }
+
+    public void PlayUICloseSound()
+    {
+        audioSource.Stop();
+        audioSource.clip = uiClose;
+        audioSource.Play();
+    }
+
     IEnumerator MovingSound()
     {
         audioSource.clip = movingStart;

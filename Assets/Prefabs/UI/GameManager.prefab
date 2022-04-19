@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86ea8d89b737bc47933c0c1348bf55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starList: 
   timerText: {fileID: 0}
   levelText: {fileID: 0}
   star1: {fileID: 0}
@@ -52,5 +51,5 @@ MonoBehaviour:
   earnedStar1: {fileID: 0}
   earnedStar2: {fileID: 0}
   earnedStar3: {fileID: 0}
-  maxTimeFor3Stars: 0
-  maxTimeFor2Stars: 20
+  maxTimeFor3Stars: 10
+  maxTimeFor2Stars: 15
