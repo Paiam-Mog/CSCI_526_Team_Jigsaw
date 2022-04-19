@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DrawLaser : MonoBehaviour
 {
-    private readonly float laserWidth = 0.1f;
+    private readonly float laserWidth = 0.2f;
 
     public LaserDataManager laserDataManager;
 
