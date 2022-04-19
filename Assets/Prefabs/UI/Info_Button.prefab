@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4848103429493665247}
   - component: {fileID: 1632347646264778617}
   m_Layer: 5
-  m_Name: Color_Wheel_Button
+  m_Name: Info_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

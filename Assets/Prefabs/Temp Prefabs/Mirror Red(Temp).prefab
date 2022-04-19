@@ -224,4 +224,5 @@ MonoBehaviour:
   draggableAxis: {x: 1, y: 0}
   draggableMax: 5
   draggableMin: -5
+  mirrorInteractionCount: {fileID: 0}
   boxCollider2D: {fileID: 8882622527377762907}
