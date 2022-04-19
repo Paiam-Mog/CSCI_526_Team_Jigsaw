@@ -181,8 +181,6 @@ public class LaserDataManager : MonoBehaviour
                 else if(_hit.transform.tag == PrismSide3Tag){
                     RefractionPrism(_hit, Prism_Side_1, Prism_Side_2, count, laser, color);
                 }
-
-                SpawnParticles();
             }
         }
         else
