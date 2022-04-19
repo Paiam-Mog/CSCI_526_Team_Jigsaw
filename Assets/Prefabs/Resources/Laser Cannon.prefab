@@ -178,6 +178,10 @@ MonoBehaviour:
   initColor: 1
   maxDist: 100
   firepos: {fileID: 2354431498563823244}
+  Prism_Side_1: {fileID: 0}
+  Prism_Side_2: {fileID: 0}
+  Prism_Side_3: {fileID: 0}
+  sparks: {fileID: 5788949093367457155, guid: 45099857d6d5e154ea98047abda1da1d, type: 3}
 --- !u!114 &4939614351283155535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 2354431498941283869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2354431497609801593}
   m_Father: {fileID: 0}
@@ -308,9 +312,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 00c94ba3cc9d55f42ae7ce317f48d92b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 872c65e0da1c44b4982b7d22e9c45d2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.2, y: 1.2}
@@ -336,7 +340,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1.2, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
