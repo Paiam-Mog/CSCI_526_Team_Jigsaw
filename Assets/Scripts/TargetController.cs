@@ -58,7 +58,7 @@ public class TargetController : MonoBehaviour
 
     public bool CheckAllTarget()
     {
-        Debug.Log("List of satisfied target:" + listOfSatisfiedTargets[0] + listOfSatisfiedTargets[1]);
+        //Debug.Log("List of satisfied target:" + listOfSatisfiedTargets[0] + listOfSatisfiedTargets[1]);
         for (int i = 0; i < numberOfTargets; i++)
         {
             if (listOfSatisfiedTargets[i] == false)
