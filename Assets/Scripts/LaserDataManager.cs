@@ -154,6 +154,7 @@ public class LaserDataManager : MonoBehaviour
                 }
                 else if (_hit.transform.tag == TargetTag)
                 {
+                    Debug.Log("target hit: " + color);
                     collidedTarget = _hit.collider.gameObject;
                     collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
                 }
