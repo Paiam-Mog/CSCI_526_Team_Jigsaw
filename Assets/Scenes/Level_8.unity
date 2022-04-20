@@ -336,7 +336,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 1
+=======
+      value: 2
+>>>>>>> main
 =======
       value: 2
 >>>>>>> main
@@ -404,7 +408,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 =======
 >>>>>>> main
 --- !u!114 &209788390 stripped
@@ -419,6 +426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 =======
 >>>>>>> main
@@ -2241,7 +2251,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 8
+=======
+      value: 0
+>>>>>>> main
 =======
       value: 0
 >>>>>>> main
@@ -2306,7 +2320,11 @@ PrefabInstance:
       value: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 209788390}
+>>>>>>> main
 =======
       objectReference: {fileID: 209788390}
 >>>>>>> main
@@ -2437,7 +2455,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 =======
 >>>>>>> main
 --- !u!1 &3763220285512970428 stripped
@@ -2451,6 +2472,9 @@ Transform:
   m_PrefabInstance: {fileID: 3763220285512970427}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 =======
 >>>>>>> main
