@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class ClickAndHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler
+public class ClickAndHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public UnityEvent interactAction;
     public float delayBetweenInteractions = 0f;
@@ -39,8 +39,4 @@ public class ClickAndHold : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         interacting = false;
         SoundEffectController.instance.PlayMovingEndSound();
     }
-
-    public void OnPointerClick(PointerEventData eventData) {
-        interactAction.Invoke();
-	}
 }

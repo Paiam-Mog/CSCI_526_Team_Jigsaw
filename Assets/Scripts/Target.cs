@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
 {
     public UnityEvent onLevelCompleteEvent;
 
-    [SerializeField] 
+    [SerializeField]
     GameManagerScript gm;
 
     public LaserInteractionCount laserInteractionCount;
@@ -22,32 +22,41 @@ public class Target : MonoBehaviour
 
     private GameObject collidedTarget;
     private bool collideWithTarget;
-    private bool isCompleted;
+    public bool isCompleted;
 
     public LaserDataManager laserDataManager;
 
-    private void start()
+
+    public bool isTargetSatisfied;
+
+    private void Start()
     {
         collideWithTarget = false;
         isCompleted = false;
+        isTargetSatisfied = false;
 
         if (targetNodeSprite != null && colorTable != null)
         {
-            targetNodeSprite.color = colorTable.GetColor(color);
+           targetNodeSprite.color = colorTable.GetColor(color);
         }
     }
+
+
     public void DetectTarget(Vector2 startPos, ColorState inputColor)
     {
-         if(inputColor == color && !isCompleted)
+         Debug.Log("target Nodes hit" + inputColor);
+         if(inputColor == color && !isTargetSatisfied )
          {
-            isCompleted = true;
-            OnLevelComplete();
-         }     
+            isTargetSatisfied = true; // set this false if laser moves away from target
+            Debug.Log("Target " + inputColor + " satisfied.");
+
+         }
+         
     }
 
     public void OnLevelComplete()
     {
-        //Debug.Log("Target Detected");
+        Debug.Log("Target Detected");
         CustomAnalytics customAnalytics = new CustomAnalytics();
         customAnalytics.levelCompleteTime(gm.GetLevelNumber(), gm.GetTimer());
 

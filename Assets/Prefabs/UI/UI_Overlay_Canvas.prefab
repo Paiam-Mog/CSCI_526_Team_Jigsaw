@@ -3336,8 +3336,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+<<<<<<< HEAD
       - m_Target: {fileID: 1160877852}
         m_TargetAssemblyTypeName: DropDownInfo, Assembly-CSharp
+=======
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DropDownMenu, Assembly-CSharp
+>>>>>>> main
         m_MethodName: ToggleMenu
         m_Mode: 1
         m_Arguments:
