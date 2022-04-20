@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7215215125727447246, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_Name
-      value: Laser Cannon_Whit(Temp) Variant
+      value: Laser Cannon_White(Temp) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7215215125727447247, guid: 966648be7093725468dd4292f5636f2c, type: 3}
       propertyPath: m_Sprite
