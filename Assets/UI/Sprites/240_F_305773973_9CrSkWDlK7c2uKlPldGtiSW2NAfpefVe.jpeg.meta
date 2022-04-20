@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/UI/Sprites/240_F_305773973_9CrSkWDlK7c2uKlPldGtiSW2NAfpefVe.jpeg.meta
 guid: cf371998ff4204d43a0459b439a6022f
+========
+guid: 8e6ba2b43d4a2f54c9988c47b7f189e7
+>>>>>>>> main:Assets/UI/Sprites/updated_laser_canon_blue.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

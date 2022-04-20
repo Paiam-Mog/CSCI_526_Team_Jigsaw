@@ -391,7 +391,10 @@ GameObject:
   m_PrefabInstance: {fileID: 284278373}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 --- !u!114 &284278376 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 969459233996734684, guid: 8b10ac987253b584fa70a75803b61a1f, type: 3}
@@ -403,6 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35078655b86e6de469c71eb1cb031185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!114 &309453691 stripped
 MonoBehaviour:
@@ -2299,7 +2305,11 @@ PrefabInstance:
     - target: {fileID: 1238813384802246545, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
       propertyPath: m_RootOrder
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 8
+=======
+      value: 0
+>>>>>>> main
 =======
       value: 0
 >>>>>>> main
@@ -2360,7 +2370,11 @@ PrefabInstance:
       propertyPath: laserDataManager
       value: 
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 284278376}
+>>>>>>> main
 =======
       objectReference: {fileID: 284278376}
 >>>>>>> main
@@ -2487,7 +2501,10 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 --- !u!1 &3763220285512970428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7364696307767589056, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
@@ -2498,6 +2515,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1238813384802246545, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
   m_PrefabInstance: {fileID: 3763220285512970427}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!114 &7533677823028540797 stripped
 MonoBehaviour:

@@ -168,6 +168,11 @@ MonoBehaviour:
   moving: {fileID: 8300000, guid: 761a7433db203544593ef7c027ab5b65, type: 3}
   movingEnd: {fileID: 8300000, guid: d898027364feb9945a9a3e9cff3a9059, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  uiPopUp: {fileID: 0}
+  uiClose: {fileID: 0}
+>>>>>>> main
 =======
   uiPopUp: {fileID: 0}
   uiClose: {fileID: 0}

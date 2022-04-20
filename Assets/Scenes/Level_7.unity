@@ -2720,7 +2720,10 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b10ac987253b584fa70a75803b61a1f, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 --- !u!114 &1744053323 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 969459233996734684, guid: 8b10ac987253b584fa70a75803b61a1f, type: 3}
@@ -2779,6 +2782,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!1 &1990637578
 GameObject:
@@ -3617,7 +3623,11 @@ PrefabInstance:
       propertyPath: laserDataManager
       value: 
 <<<<<<< HEAD
+<<<<<<< HEAD
       objectReference: {fileID: 0}
+=======
+      objectReference: {fileID: 1744053323}
+>>>>>>> main
 =======
       objectReference: {fileID: 1744053323}
 >>>>>>> main
@@ -3744,7 +3754,10 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> main
 --- !u!1 &3763220285512970428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7364696307767589056, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
@@ -3755,6 +3768,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1238813384802246545, guid: 572cc4b74228fca40b3052063ba71027, type: 3}
   m_PrefabInstance: {fileID: 3763220285512970427}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!114 &7533677823028540797 stripped
 MonoBehaviour:
