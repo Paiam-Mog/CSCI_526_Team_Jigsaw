@@ -68,13 +68,13 @@ public class LaserDataManager : MonoBehaviour
     private GameObject[] particles;
 
     [SerializeField] public GameObject sparks;
-    private int sparkCount;
+    private int maxSparkCount;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        sparkCount = 0;
+        maxSparkCount = 0;
         mirrorsDict = new Dictionary<GameObject, ColorState>();
         prismsDict = new Dictionary<GameObject, ColorState>();
         colorTable = new ColorTable();
