@@ -291,9 +291,9 @@ RectTransform:
   m_Father: {fileID: 265435520}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 255}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18031042
@@ -517,11 +517,11 @@ RectTransform:
   m_Children:
   - {fileID: 727059839}
   m_Father: {fileID: 265435520}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -109}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103469063
@@ -1035,6 +1035,7 @@ GameObject:
   - component: {fileID: 265435523}
   - component: {fileID: 265435522}
   - component: {fileID: 265435521}
+  - component: {fileID: 265435524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1056,15 +1057,15 @@ RectTransform:
   - {fileID: 1826091867}
   - {fileID: 18031041}
   - {fileID: 955143019}
-  - {fileID: 462019434}
   - {fileID: 103469062}
+  - {fileID: 462019434}
   m_Father: {fileID: 706853922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 56}
-  m_SizeDelta: {x: 1000, y: 1000}
+  m_AnchoredPosition: {x: 0, y: 122.64}
+  m_SizeDelta: {x: 1000, y: 866.71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &265435521
 MonoBehaviour:
@@ -1127,6 +1128,32 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2000
   m_TargetDisplay: 0
+--- !u!114 &265435524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265435519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &269110427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,11 +1443,11 @@ RectTransform:
   m_Children:
   - {fileID: 457172211}
   m_Father: {fileID: 265435520}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -285}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462019435
@@ -2865,9 +2892,9 @@ RectTransform:
   m_Father: {fileID: 265435520}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 75}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955143020
@@ -9211,10 +9238,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Paiam Moghaddam (pmoghadd@usc.edu)\nLiam Setterlund setterlu@usc.edu \nDonghyun
-    Kim (dkim7176@usc.edu)\nAjinkya Nagare: nagare@usc.edu\nSanket Bhilare (bhilare@usc.edu)\nAditya
-    Narsinghpura (narsingh@usc.edu) \nPriya Sharma (priyahan@usc.edu)\nRohit Kumar
-    Putcha (rputcha@usc.edu)\nNeha Udeshi (nudeshi@usc.edu)\nHeena Setia (hsetia@usc.edu)\nShruthi
+  m_text: "Paiam Moghaddam (pmoghadd@usc.edu)\nLiam Setterlund (setterlu@usc.edu)
+    \nDonghyun Kim (dkim7176@usc.edu)\nAjinkya Nagare: nagare@usc.edu\nSanket Bhilare
+    (bhilare@usc.edu)\nAditya Narsinghpura (narsingh@usc.edu) \nPriya Sharma (priyahan@usc.edu)\nRohit
+    Kumar Putcha (rputcha@usc.edu)\nNeha Udeshi (nudeshi@usc.edu)\nHeena Setia (hsetia@usc.edu)\nShruthi
     Ramesh (shruthir@usc.edu)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9224,7 +9251,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291145375
+    rgba: 4294177005
   m_fontColor: {r: 0.9303578, g: 0.9392285, b: 0.9528302, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
@@ -9705,9 +9732,9 @@ RectTransform:
   m_Father: {fileID: 265435520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6.9887695, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1000, y: 240}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1826091868
