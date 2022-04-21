@@ -66,14 +66,15 @@ public class LaserDataManager : MonoBehaviour
     private ColorTable colorTable;
 
     private GameObject[] particles;
+
     [SerializeField] public GameObject sparks;
-    private int sparkCount;
+    private int maxSparkCount;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        sparkCount = 0;
+        maxSparkCount = 0;
         mirrorsDict = new Dictionary<GameObject, ColorState>();
         prismsDict = new Dictionary<GameObject, ColorState>();
         colorTable = new ColorTable();
@@ -107,6 +108,7 @@ public class LaserDataManager : MonoBehaviour
         GenerateLaserData(startPos, dir, null, 1, initColor);
 
     }
+
 
     public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, ReflectionPoint prev_reflection, int count, ColorState color)
     {
@@ -150,7 +152,10 @@ public class LaserDataManager : MonoBehaviour
                         mirror = collidedMirror
                     };
 
+                    GameObject particle = Instantiate(sparks, reflectionPoint.position, Quaternion.identity);
+
                     GenerateLaserData(_hit.point, reflectedDir, reflectionPoint, count, colorTable.ChangeColor(color, mirrorColor));
+
                 }
                 else if (_hit.transform.tag == TargetTag)
                 {
@@ -276,20 +281,4 @@ public class LaserDataManager : MonoBehaviour
         return reflectionPoints;
     }
 
-    public void SpawnParticles()
-    {
-        int maxSparks = reflectionPoints.Count;
-
-        for(int i = 1; i < reflectionPoints.Count; i++)
-        {
-            GameObject tempSparks = Instantiate(sparks, reflectionPoints[i].position, Quaternion.Euler(dir));
-            particles[i] = tempSparks;
-
-            if(i >= maxSparks)
-            {
-                Destroy(particles[i - reflectionPoints.Count]);
-                particles[i] = particles[i - 1];
-            }
-        }
-    }
 }
