@@ -68,8 +68,9 @@ public class LaserDataManager : MonoBehaviour
     private ColorTable colorTable;
 
     private GameObject[] particles;
+
     [SerializeField] public GameObject sparks;
-    private int sparkCount;
+    private int maxSparkCount;
 
     private int prismHitCount;
 
@@ -82,7 +83,7 @@ public class LaserDataManager : MonoBehaviour
         angles2 = new List<float> { -60f, 60f };
         angles3 = new List<float> { 180f, 60f };
 
-        sparkCount = 0;
+        maxSparkCount = 0;
         mirrorsDict = new Dictionary<GameObject, ColorState>();
         prismsDict = new Dictionary<GameObject, ColorState>();
         colorTable = new ColorTable();
@@ -117,6 +118,7 @@ public class LaserDataManager : MonoBehaviour
         GenerateLaserData(startPos, dir, null, 1, initColor);
 
     }
+
 
     public void GenerateLaserData(Vector2 _startPos, Vector2 _dir, ReflectionPoint prev_reflection, int count, ColorState color)
     {
@@ -160,7 +162,10 @@ public class LaserDataManager : MonoBehaviour
                         mirror = collidedMirror
                     };
 
+                    GameObject particle = Instantiate(sparks, reflectionPoint.position, Quaternion.identity);
+
                     GenerateLaserData(_hit.point, reflectedDir, reflectionPoint, count, colorTable.ChangeColor(color, mirrorColor));
+
                 }
                 else if (_hit.transform.tag == TargetTag)
                 {
