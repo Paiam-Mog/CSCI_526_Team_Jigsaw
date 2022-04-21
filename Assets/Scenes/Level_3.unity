@@ -167,21 +167,8 @@ MonoBehaviour:
   movingStart: {fileID: 8300000, guid: f7b93500ab7b1b1419bd32011cf72f2c, type: 3}
   moving: {fileID: 8300000, guid: 761a7433db203544593ef7c027ab5b65, type: 3}
   movingEnd: {fileID: 8300000, guid: d898027364feb9945a9a3e9cff3a9059, type: 3}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   uiPopUp: {fileID: 0}
   uiClose: {fileID: 0}
->>>>>>> main
-=======
-  uiPopUp: {fileID: 0}
-  uiClose: {fileID: 0}
->>>>>>> main
-=======
-  uiPopUp: {fileID: 0}
-  uiClose: {fileID: 0}
->>>>>>> main
 --- !u!82 &58806647
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1565,8 +1552,6 @@ PrefabInstance:
       propertyPath: earnedStar3
       value: 
       objectReference: {fileID: 388630374769641006}
-<<<<<<< HEAD
-=======
     - target: {fileID: 4462685340181257502, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: maxTimeFor2Stars
       value: 25
@@ -1575,7 +1560,6 @@ PrefabInstance:
       propertyPath: maxTimeFor3Stars
       value: 20
       objectReference: {fileID: 0}
->>>>>>> main
     - target: {fileID: 4462685340181257503, guid: a8d00f8bb3274b542a96dcdcd50bd50e, type: 3}
       propertyPath: m_RootOrder
       value: 0
