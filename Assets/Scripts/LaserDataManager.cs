@@ -185,8 +185,6 @@ public class LaserDataManager : MonoBehaviour
                             Debug.Log(sr.points[i]);
                         }
 
-                        Debug.Log("RotationFactor: " + rotationFactor);
-
                         Vector2 pivot = prismTransform.position;
 
                         Vector2 prismVertex1 = pivot + sr.points[0] * scaleFactor.x;
