@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DrawLaser : MonoBehaviour
 {
-    private readonly float laserWidth = 0.1f;
+    public float laserWidth = 0.2f;
 
     public LaserDataManager laserDataManager;
 
@@ -106,5 +106,15 @@ public class DrawLaser : MonoBehaviour
         laser.SetPosition(1, laserData.endPoint);
         laser.startColor = colorTable.GetColor(laserData.laserColor);
         laser.endColor = colorTable.GetColor(laserData.laserColor);
+        Material material = Resources.Load("SB_LaserMaterial", typeof(Material)) as Material;
+        Material shader = Resources.Load("Laser_shader", typeof(Material)) as Material;
+        List<Material> materials = new List<Material>
+        {
+            material,
+            shader
+        };
+
+        Material[] materialsArray = materials.ToArray();
+        laser.materials = materialsArray;
     }
 }

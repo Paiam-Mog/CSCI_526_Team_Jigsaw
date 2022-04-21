@@ -45,9 +45,6 @@ public class LaserDataManager : MonoBehaviour
     private GameObject collidedPrism;
     private Vector2 prev = new Vector2(0.0f, 0.0f);
     private bool flag = true;
-    private List<float> angles1 = new List<float> { -60f, 180f };
-    private List<float> angles2 = new List<float> { -60f, 60f };
-    private List<float> angles3 = new List<float> { 180f, 60f };
 
     private int side = 0;
 
@@ -63,6 +60,11 @@ public class LaserDataManager : MonoBehaviour
     private Dictionary<GameObject, ColorState> prismsDict;
     private List<ColorState> colors = new List<ColorState>();
 
+
+    private List<float> angles1;
+    private List<float> angles2;
+    private List<float> angles3;
+
     private ColorTable colorTable;
 
     private GameObject[] particles;
@@ -70,9 +72,16 @@ public class LaserDataManager : MonoBehaviour
     [SerializeField] public GameObject sparks;
     private int maxSparkCount;
 
+    private int prismHitCount;
+
+    private bool isPrismRotated = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        angles1 = new List<float> { -60f, 180f };
+        angles2 = new List<float> { -60f, 60f };
+        angles3 = new List<float> { 180f, 60f };
 
         maxSparkCount = 0;
         mirrorsDict = new Dictionary<GameObject, ColorState>();
@@ -105,6 +114,7 @@ public class LaserDataManager : MonoBehaviour
         dir = firepos.right;
         laserDatas = new List<LaserData>();
         reflectionPoints = new List<ReflectionPoint>();
+        prismHitCount = 0;
         GenerateLaserData(startPos, dir, null, 1, initColor);
 
     }
@@ -165,102 +175,137 @@ public class LaserDataManager : MonoBehaviour
                 }
                 else if (_hit.transform.tag == PrismTag)
                 {
-                    float angle = 0.0f;
-                    if (!flag)
+                    prismHitCount += 1;
+                    if (prismHitCount == 1)
                     {
-                        Debug.Log("hit angle:" + Vector2.Angle(prev, _hit.point));
-                        angle = Vector2.SignedAngle(prev, _hit.point);
+                        collidedPrism = _hit.collider.gameObject;
+                        PolygonCollider2D sr = collidedPrism.GetComponent<PolygonCollider2D>();
+
+                        Transform prismTransform = collidedPrism.transform;
+
+                        Vector2 _prismLaserDir = prismTransform.right;
+                        Vector3 scaleFactor = prismTransform.localScale;
+
+                        Vector3 rotationFactor = prismTransform.rotation.eulerAngles;
+                        List<int> sidesList = new List<int>();
+                        float rotationAngle = rotationFactor.z % 360;
+
+                        float angle = 0.0f;
+                        if (!flag)
+                        {
+                            Debug.Log("hit angle:" + Vector2.Angle(prev, _hit.point));
+                            angle = Vector2.SignedAngle(prev, _hit.point);
+                        }
+
+                        if (!isPrismRotated)
+                        {
+                            angles1[0] -= rotationAngle;
+                            angles1[1] -= rotationAngle;
+
+                            angles2[0] -= rotationAngle;
+                            angles2[1] -= rotationAngle;
+
+                            angles3[0] -= rotationAngle;
+                            angles3[1] -= rotationAngle;
+
+                            isPrismRotated = true;
+                        }
+
+                        Debug.Log("RotationAngle: " + rotationAngle);
+
+                        Vector2 pivot = prismTransform.position;
+
+                        Vector2 prismVertex1 = pivot + sr.points[0] * scaleFactor.x;
+                        Vector2 prismVertex2 = pivot + sr.points[1] * scaleFactor.x;
+                        Vector2 prismVertex3 = pivot + sr.points[2] * scaleFactor.x;
+
+                        //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
+                        //Debug.Log(offset);
+
+                        Debug.Log("Prism Vertex 1: " + prismVertex1);
+                        Debug.Log("Prism Vertex 2: " + prismVertex2);
+                        Debug.Log("Prism Vertex 3: " + prismVertex3);
+
+                        Debug.Log("Hit point: " + _hit.point);
+
+                        float distanceFromVertex1 = Vector2.Distance(prismVertex1, _hit.point);
+                        float distanceFromVertex2 = Vector2.Distance(prismVertex2, _hit.point);
+                        float distanceFromVertex3 = Vector2.Distance(prismVertex3, _hit.point);
+
+                        Debug.Log($"Distance from Prism Vertex 1 at rotation angle {rotationAngle}: " + distanceFromVertex1);
+                        Debug.Log($"Distance from Prism Vertex 2 at rotation angle {rotationAngle}: " + distanceFromVertex2);
+                        Debug.Log($"Distance from Prism Vertex 3 at rotation angle {rotationAngle}: " + distanceFromVertex3);
+
+                        Vector2 vertex1 = new Vector2();
+                        Vector2 vertex2 = new Vector2();
+
+                        if (distanceFromVertex1 < distanceFromVertex2 && distanceFromVertex3 < distanceFromVertex2)
+                        {
+                            side = 2;
+                        }
+                        else if (distanceFromVertex2 < distanceFromVertex3 && distanceFromVertex1 < distanceFromVertex3)
+                        {
+                            side = 3;
+                        }
+                        else if (distanceFromVertex3 < distanceFromVertex1 && distanceFromVertex2 < distanceFromVertex1)
+                        {
+                            side = 1;
+                        }
+
+                        Debug.Log("Side: " + side);
+
+                        if (distanceFromVertex1 < distanceFromVertex2 && distanceFromVertex3 < distanceFromVertex2)
+                        {
+                            angles2[0] -= angle * scaleFactor.z;
+                            angles2[1] -= angle * scaleFactor.z;
+
+                            vertex1 = (prismVertex1 + prismVertex2) / 2;
+                            vertex2 = (prismVertex3 + prismVertex2) / 2;
+                        }
+                        else if (distanceFromVertex2 < distanceFromVertex3 && distanceFromVertex1 < distanceFromVertex3)
+                        {
+                            angles3[0] -= angle * scaleFactor.z;
+                            angles3[1] -= angle * scaleFactor.z;
+
+                            vertex1 = (prismVertex1 + prismVertex3) / 2;
+                            vertex2 = (prismVertex2 + prismVertex3) / 2;
+                        }
+                        else if (distanceFromVertex3 < distanceFromVertex1 && distanceFromVertex2 < distanceFromVertex1)
+                        {
+                            angles1[0] -= angle * scaleFactor.z;
+                            angles1[1] -= angle * scaleFactor.z;
+
+                            vertex1 = (prismVertex2 + prismVertex1) / 2;
+                            vertex2 = (prismVertex3 + prismVertex1) / 2;
+                        }
+
+                        Debug.Log(vertex2);
+                        Debug.Log(vertex1);
+
+                        Vector2 _dir1 = Quaternion.Euler(0, 0, (side == 1 ? angles1[0] : side == 2 ? angles2[0] : angles3[0])) * _prismLaserDir;
+                        Vector2 _dir2 = Quaternion.Euler(0, 0, (side == 1 ? angles1[1] : side == 2 ? angles2[1] : angles3[1])) * _prismLaserDir;
+
+                        ReflectionPoint point1 = new ReflectionPoint
+                        {
+                            position = vertex1,
+                            entryLaser = laser,
+                            mirror = collidedPrism
+                        };
+
+                        ReflectionPoint point2 = new ReflectionPoint
+                        {
+                            position = vertex2,
+                            entryLaser = laser,
+                            mirror = collidedPrism
+                        };
+
+                        colors = colorTable.RefractColor(color);
+                        GenerateLaserData(vertex1, _dir1, point1, count, colors[0]);
+                        GenerateLaserData(vertex2, _dir2, point2, count, colors[1]);
+
+                        prev = _hit.point;
+                        flag = false;
                     }
-
-                    collidedPrism = _hit.collider.gameObject;
-                    PolygonCollider2D sr = collidedPrism.GetComponent<PolygonCollider2D>();
-
-                    Transform prismTransform = collidedPrism.transform;
-                    Vector2 _prismLaserDir = prismTransform.right;
-                    Vector3 scaleFactor = prismTransform.localScale;
-
-                    for (int i = 0; i < sr.points.Length; i++)
-                    {
-                        Debug.Log(sr.points[i]);
-                    }
-
-                    Vector2 pivot = prismTransform.position;
-
-                    Vector2 prismVertex1 = pivot + sr.points[0] * scaleFactor.x;
-                    Vector2 prismVertex2 = pivot + sr.points[1] * scaleFactor.x;
-                    Vector2 prismVertex3 = pivot + sr.points[2] * scaleFactor.x;
-
-                    //Vector2 offset = collidedPrism.transform.position - sr.bounds.center;
-                    //Debug.Log(offset);
-
-                    Debug.Log(prismVertex1);
-                    Debug.Log(prismVertex2);
-                    Debug.Log(prismVertex3);
-
-                    float distanceFromVertex1 = Vector2.Distance(prismVertex1, _hit.point);
-                    float distanceFromVertex2 = Vector2.Distance(prismVertex2, _hit.point);
-                    float distanceFromVertex3 = Vector2.Distance(prismVertex3, _hit.point);
-
-                    Vector2 vertex1 = new Vector2();
-                    Vector2 vertex2 = new Vector2();
-
-                    if (distanceFromVertex1 < distanceFromVertex2 && distanceFromVertex3 < distanceFromVertex2)
-                    {
-                        side = 2;
-
-                        angles2[0] -= angle * scaleFactor.z;
-                        angles2[1] -= angle * scaleFactor.z;
-
-                        vertex1 = (prismVertex1 + prismVertex2) / 2;
-                        vertex2 = (prismVertex3 + prismVertex2) / 2;
-                    }
-                    else if (distanceFromVertex2 < distanceFromVertex3 && distanceFromVertex1 < distanceFromVertex3)
-                    {
-                        side = 3;
-
-                        angles3[0] -= angle * scaleFactor.z;
-                        angles3[1] -= angle * scaleFactor.z;
-
-                        vertex1 = (prismVertex1 + prismVertex3) / 2;
-                        vertex2 = (prismVertex2 + prismVertex3) / 2;
-                    }
-                    else if (distanceFromVertex3 < distanceFromVertex1 && distanceFromVertex2 < distanceFromVertex1)
-                    {
-                        side = 1;
-
-                        angles1[0] -= angle * scaleFactor.z;
-                        angles1[1] -= angle * scaleFactor.z;
-
-                        vertex1 = (prismVertex2 + prismVertex1) / 2;
-                        vertex2 = (prismVertex3 + prismVertex1) / 2;
-                    }
-
-                    Debug.Log(vertex2);
-                    Debug.Log(vertex1);
-
-                    Vector2 _dir1 = Quaternion.Euler(0, 0, (side == 1 ? angles1[0] : side == 2 ? angles2[0] : angles3[0])) * _prismLaserDir;
-                    Vector2 _dir2 = Quaternion.Euler(0, 0, (side == 1 ? angles1[1] : side == 2 ? angles2[1] : angles3[1])) * _prismLaserDir;
-
-                    ReflectionPoint point1 = new ReflectionPoint
-                    {
-                        position = vertex1,
-                        entryLaser = laser,
-                        mirror = collidedPrism
-                    };
-
-                    ReflectionPoint point2 = new ReflectionPoint
-                    {
-                        position = vertex2,
-                        entryLaser = laser,
-                        mirror = collidedPrism
-                    };
-
-                    colors = colorTable.RefractColor(color);
-                    GenerateLaserData(vertex1, _dir1, point1, count, colors[0]);
-                    GenerateLaserData(vertex2, _dir2, point2, count, colors[1]);
-
-                    prev = _hit.point;
-                    flag = false;
                 }
             }
         }
@@ -281,4 +326,20 @@ public class LaserDataManager : MonoBehaviour
         return reflectionPoints;
     }
 
+    public void SpawnParticles()
+    {
+        int maxSparks = reflectionPoints.Count;
+
+        for (int i = 1; i < reflectionPoints.Count; i++)
+        {
+            GameObject tempSparks = Instantiate(sparks, reflectionPoints[i].position, Quaternion.Euler(dir));
+            particles[i] = tempSparks;
+
+            if (i >= maxSparks)
+            {
+                Destroy(particles[i - reflectionPoints.Count]);
+                particles[i] = particles[i - 1];
+            }
+        }
+    }
 }
