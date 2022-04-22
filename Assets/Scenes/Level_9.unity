@@ -1956,6 +1956,10 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 446480024}
+    - target: {fileID: 325615229738230342, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 446480024}
     - target: {fileID: 388630375503698234, guid: 1ada4960266223c4c9383662604bf80c, type: 3}
       propertyPath: m_Value
       value: 0.5

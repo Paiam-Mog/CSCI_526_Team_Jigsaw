@@ -25,7 +25,7 @@ public class DropDownInfo : MonoBehaviour
 
             toggleOnStart = false;
 
-            gm.PauseGame();
+            if (gm) gm.PauseGame();
         }
         else
         {
@@ -36,6 +36,8 @@ public class DropDownInfo : MonoBehaviour
 
     void Update()
     {
+        if (!gm) return;
+
         if (gm.GetLevelNumber() == 2)
         {
             toggleOnStart = true;
@@ -53,14 +55,14 @@ public class DropDownInfo : MonoBehaviour
             Menu.SetActive(true);
             isToggled = true;
 
-            gm.PauseGame();
+            if (gm) gm.PauseGame();
         }
         else if (isToggled)
         {
             Menu.SetActive(false);
             isToggled = false;
 
-            gm.ResumeGame();
+            if (gm) gm.ResumeGame();
         }
 
     }
@@ -70,6 +72,6 @@ public class DropDownInfo : MonoBehaviour
         Menu.SetActive(false);
         isToggled = false;
 
-        gm.ResumeGame();
+        if (gm) gm.ResumeGame();
     }
 }
