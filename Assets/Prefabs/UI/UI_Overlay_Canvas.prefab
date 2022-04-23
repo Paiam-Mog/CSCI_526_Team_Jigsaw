@@ -1477,7 +1477,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1893,8 +1893,8 @@ RectTransform:
   m_Father: {fileID: 388630374095161982}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4413,7 +4413,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4806,7 +4806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7920056396849166764}
   - component: {fileID: 7920056396849166767}
-  - component: {fileID: 7920056396849166765}
+  - component: {fileID: 4669965441426569809}
   m_Layer: 5
   m_Name: Complete
   m_TagString: Untagged
@@ -4842,7 +4842,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7920056396849166771}
   m_CullTransparentMesh: 1
---- !u!114 &7920056396849166765
+--- !u!114 &4669965441426569809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4851,12 +4851,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7920056396849166771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebad63ff6917eb54b9baba1798c625ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a22f4a4e503927408499e93ac2dbbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropdownBtn: {fileID: 7920056396795909843}
-  Menu: {fileID: 1596237253039878043}
+  Menu: {fileID: 7920056396849166771}
   gm: {fileID: 0}
+  menuButton: {fileID: 7920056396795909843}
+  colorButton: {fileID: 8363674477894729289}
+  infoButton: {fileID: 1770560623039315066}
 --- !u!1 &7920056396981013953
 GameObject:
   m_ObjectHideFlags: 0
