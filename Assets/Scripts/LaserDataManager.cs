@@ -76,6 +76,10 @@ public class LaserDataManager : MonoBehaviour
 
     private bool isPrismRotated = false;
 
+    private GameObject[] targets;
+
+    private List<bool> targetsHit = new List<bool>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -105,6 +109,11 @@ public class LaserDataManager : MonoBehaviour
         //laserDatas = new List<LaserData>();
         //reflectionPoints = new List<ReflectionPoint>();
         //GenerateLaserData(startPos, dir, null, 1, initColor);
+
+        targets = GameObject.FindGameObjectsWithTag(TargetTag);
+        foreach (var target in targets) {
+            targetsHit.Add(false);
+        }
     }
 
     // Update is called once per frame
@@ -115,8 +124,19 @@ public class LaserDataManager : MonoBehaviour
         laserDatas = new List<LaserData>();
         reflectionPoints = new List<ReflectionPoint>();
         prismHitCount = 0;
+
+        for (int i = 0; i < targetsHit.Count; i++) { 
+            targetsHit[i] = false;
+        }
+        
         GenerateLaserData(startPos, dir, null, 1, initColor);
 
+        // If not detected this frame, set them to false
+        for (int i = 0; i < targetsHit.Count; i++) {
+            if (targetsHit[i] == false) {
+                targets[i].GetComponent<Target>().isTargetSatisfied = false;
+            }
+        }
     }
 
 
@@ -144,7 +164,6 @@ public class LaserDataManager : MonoBehaviour
 
             //float distance = Vector2.Distance(_startPos, _hit.point);
             //Debug.DrawRay(_startPos, _dir * distance, GetColor(color));
-
             if (count <= maxCount)
             {
                 count++;
@@ -172,6 +191,12 @@ public class LaserDataManager : MonoBehaviour
                     Debug.Log("target hit: " + color);
                     collidedTarget = _hit.collider.gameObject;
                     collidedTarget.GetComponent<Target>().DetectTarget(_hit.point, color);
+
+                    for(int i = 0; i < targets.Length; i++) {
+                        if (targets[i].Equals(collidedTarget)) {
+                            targetsHit[i] = true;
+                        }
+                    }
                 }
                 else if (_hit.transform.tag == PrismTag)
                 {

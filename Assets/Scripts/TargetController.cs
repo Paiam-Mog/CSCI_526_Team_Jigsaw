@@ -26,8 +26,8 @@ public class TargetController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    // Called in Late Update to allow for the target satisfaction to be updated by Laser Data Manager
+    void LateUpdate()
     {
         TargetSatisfied();
         isGameCompleted();
